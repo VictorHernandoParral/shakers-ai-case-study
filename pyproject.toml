@@ -1,0 +1,56 @@
+[tool.poetry]
+name = "shakers-ai-case-study"
+version = "0.1.0"
+description = "Intelligent Support (RAG) + Personalized Recommendations"
+authors = ["Victor Hernando <victorhernandoparral@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+fastapi = "^0.112.0"
+uvicorn = {extras=["standard"], version="^0.30.0"}
+httpx = "^0.27.0"
+python-dotenv = "^1.0.1"
+loguru = "^0.7.2"
+# RAG & NLP
+sentence-transformers = "^3.0.1"
+faiss-cpu = "^1.8.0.post1"
+chromadb = "^0.5.5"
+scikit-learn = "^1.5.1"
+numpy = "^1.26.4"
+pandas = "^2.2.2"
+# DB layer
+sqlmodel = "^0.0.21"
+sqlalchemy = "^2.0.31"
+aiosqlite = "^0.20.0"
+# Optional LLM clients (plug & play)
+openai = "^1.40.0"
+# groq and google-generativeai are optional; keep import-guarded in code
+
+# Frontend dashboard
+streamlit = "^1.36.0"
+
+# Performance & JSON
+orjson = "^3.10.6"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.2.0"
+pytest-asyncio = "^0.23.8"
+black = "^24.8.0"
+ruff = "^0.5.7"
+isort = "^5.13.2"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.ruff]
+line-length = 100
+select = ["E","F","W","I","UP","B","C90"]
+ignore = ["E501"]
+
+[tool.black]
+line-length = 100
+
+[tool.isort]
+profile = "black"
