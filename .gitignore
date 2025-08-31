@@ -1,0 +1,12 @@
+# Python & tooling
+.venv/
+__pycache__/
+*.pyc
+
+# Local data / vector store
+store/**
+!store/.gitkeep
+
+# Env & secrets
+.env
+.env.*

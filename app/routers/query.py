@@ -3,7 +3,7 @@ from pydantic import BaseModel
 from typing import List, Dict, Any
 import time
 from app.services.retrieval import similarity_search
-from app.utils.embeddings import get_embedding_model
+
 
 router = APIRouter()
 
@@ -16,6 +16,8 @@ class QueryRequest(BaseModel):
     user_id: str
     query: str
     where: Dict[str, Any] | None = None
+    top_k: int | None = None
+    min_similarity: float | None = None
 
 class QueryResponse(BaseModel):
     answer: str
@@ -39,7 +41,12 @@ def make_answer_english(query: str, contexts: list[str]) -> str:
 @router.post("/query/", response_model=QueryResponse)
 def post_query(body: QueryRequest):
     t0 = time.time()
-    docs, metas, sims = similarity_search(body.query, where=body.where)
+    docs, metas, sims = similarity_search(
+        body.query,
+        where=body.where,
+        top_k=body.top_k,
+        min_similarity=body.min_similarity,
+    )
     sources: list[Source] = []
     for i, m in enumerate(metas):
         sources.append(
@@ -49,6 +56,13 @@ def post_query(body: QueryRequest):
                 url=m.get("source"),
             )
         )
+    if not docs:
+        answer = (
+            "I could not find a confident answer in the knowledge base for your question. "
+            "Please rephrase or provide more detail (in English), or broaden your filters."
+        )
+        latency = int((time.time() - t0) * 1000)
+        return QueryResponse(answer=answer, sources=[], latency_ms=latency, oos=True)
     answer = make_answer_english(body.query, docs)
     latency = int((time.time() - t0) * 1000)
     return QueryResponse(answer=answer, sources=sources, latency_ms=latency, oos=(len(docs) == 0))
