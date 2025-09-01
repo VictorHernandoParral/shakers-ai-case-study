@@ -1,8 +1,14 @@
+# =============================================
+# File: app/routers/metrics.py
+# Purpose: Expose internal metrics as JSON
+# =============================================
+from __future__ import annotations
 from fastapi import APIRouter
-from ..services.eval import get_metrics
+from app.utils.metrics import snapshot
 
-router = APIRouter()
+router = APIRouter(tags=["metrics"])
 
-@router.get("/")
-async def metrics_root():
-    return await get_metrics()
+@router.get("/metrics")
+def get_metrics():
+    """Return in-process metrics (JSON)."""
+    return snapshot()

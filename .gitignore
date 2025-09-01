@@ -1,12 +1,12 @@
-# Python & tooling
+# venv & caches
 .venv/
 __pycache__/
-*.pyc
+.pytest_cache/
 
-# Local data / vector store
-store/**
-!store/.gitkeep
+# local vector store + telemetry
+.chroma/
 
-# Env & secrets
+# env & OS junk
 .env
-.env.*
+.DS_Store
+Thumbs.db

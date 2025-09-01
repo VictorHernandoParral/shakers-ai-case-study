@@ -1,0 +1,17 @@
+- id: payments_weekly
+  query: "How often does Shakers process payments?"
+  must_include:
+    - "weekly"
+    - "friday"
+  expect_titles_contains:
+    - "018"
+    - "payment-system"
+
+- id: start_work_freelancer
+  query: "How do I start working with a freelancer?"
+  must_include:
+    - "in-app chat"
+    - "milestones"
+  expect_titles_contains:
+    - "012"
+    - "freelancer"
