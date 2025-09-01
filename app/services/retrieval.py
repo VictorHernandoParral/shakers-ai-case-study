@@ -1,78 +1,173 @@
-import os
-from typing import Any, Dict, List, Tuple
+# app/services/retrieval.py
+from __future__ import annotations
+
+from typing import Any, Dict, List, Optional, Tuple
+
 import chromadb
-from chromadb.config import Settings
-from app.utils.embeddings import embed_texts, embed_text
+from chromadb.utils.embedding_functions import (
+    SentenceTransformerEmbeddingFunction,
+)
 
-COLLECTION_NAME = os.getenv("CHROMA_COLLECTION", "kb-docs")
-DEFAULT_TOP_K = int(os.getenv("TOP_K", "4"))
-DEFAULT_MIN_SIM = float(os.getenv("MIN_SIMILARITY", "0.78"))  # cosine-sim threshold
+# -------------------------
+# Chroma client & constants
+# -------------------------
 
-def get_client() -> chromadb.Client:
-    os.environ["CHROMA_TELEMETRY_ENABLED"] = "false"  # optional: silences telemetry
-    persist_dir = os.getenv("CHROMA_DIR", "store/chroma")
-    os.makedirs(persist_dir, exist_ok=True)
-    return chromadb.PersistentClient(
-        path=persist_dir,
-        settings=Settings(anonymized_telemetry=False),
-    )
+# Persistent local store (already created in your project)
+CHROMA_PATH = "store/chroma"
+
+# One collection for English KB
+COLLECTION_NAME = "kb_en"
+
+# Use cosine to be consistent with most sentence-transformers
+HNSW_SPACE = "cosine"
+
+# Default model: small + fast and available offline once downloaded
+EMBEDDING_MODEL = "all-MiniLM-L6-v2"
+
+# Singleton Chroma client
+_client = chromadb.PersistentClient(path=CHROMA_PATH)
+
+
+def _get_embedding_function() -> SentenceTransformerEmbeddingFunction:
+    """Return a sentence-transformers embedding function for Chroma."""
+    return SentenceTransformerEmbeddingFunction(model_name=EMBEDDING_MODEL)
+
 
 def get_collection():
-    client = get_client()
-    # We store documents and metadata in English only
-    return client.get_or_create_collection(
+    """Get or create the KB collection with the configured embedding fn."""
+    ef = _get_embedding_function()
+    # Chroma v0.5+: pass both metadata (for index space) and embedding_function
+    return _client.get_or_create_collection(
         name=COLLECTION_NAME,
-        metadata={"hnsw:space": "cosine"},
-        embedding_function=None,  # we call our own embedder
+        metadata={"hnsw:space": HNSW_SPACE},
+        embedding_function=ef,
     )
 
-def _normalize_meta(m: Dict[str, Any], doc_id: str, chunk_idx: int) -> Dict[str, Any]:
-    """Ensure minimal metadata fields exist without breaking current callers."""
-    m = dict(m or {})
-    m.setdefault("doc_id", doc_id)
-    m.setdefault("chunk_id", chunk_idx)
-    m.setdefault("lang", "en")
-    m.setdefault("doctype", "product")  # safest default
-    # 'title' and 'source' are used downstream for citations; keep if present
-    return m
+
+# -------------------------
+# Upsert helper
+# -------------------------
 
 def upsert_batch(
     ids: List[str],
     documents: List[str],
-    metadatas: List[Dict[str, Any]]
+    metadatas: Optional[List[Dict[str, Any]]] = None,
+    batch_size: int = 256,
 ) -> None:
+    """
+    Upsert records in manageable batches.
+
+    Args:
+        ids: Stable ids (e.g., "<relpath>#<chunk_idx>").
+        documents: Chunk texts.
+        metadatas: Per-chunk metadata dicts.
+        batch_size: Max records per upsert call.
+    """
+    if metadatas is None:
+        metadatas = [{} for _ in documents]
+
     col = get_collection()
-    embeddings = embed_texts(documents)
-    # Soft-normalize metadata to guarantee filters later (no hard failures)
-    norm_metas: List[Dict[str, Any]] = []
-    for i, m in enumerate(metadatas):
-        norm_metas.append(_normalize_meta(m, doc_id=m.get("doc_id", ids[i]), chunk_idx=m.get("chunk_id", i)))
-    col.upsert(ids=ids, documents=documents, metadatas=norm_metas, embeddings=embeddings)
+    n = len(ids)
+    for i in range(0, n, batch_size):
+        col.upsert(
+            ids=ids[i : i + batch_size],
+            documents=documents[i : i + batch_size],
+            metadatas=metadatas[i : i + batch_size],
+        )
+
+
+# -------------------------
+# Query / similarity search
+# -------------------------
+
+def _distance_to_similarity(dist: float, space: str) -> float:
+    """
+    Convert Chroma distance to a similarity score in [0,1]-ish range.
+
+    For cosine, Chroma returns distance = 1 - cosine_sim, so we invert.
+    For L2/IP, we provide simple monotonic transforms (not strictly bounded).
+    """
+    if space == "cosine":
+        return 1.0 - float(dist)
+    if space == "l2":
+        # Smaller distance -> higher similarity
+        return 1.0 / (1.0 + float(dist))
+    if space in ("ip", "inner_product"):
+        # Chroma returns negative inner product as distance in some configs;
+        # map to a soft-bounded score.
+        return 1.0 / (1.0 + float(dist))
+    return 1.0 - float(dist)
+
+
+def _build_where(
+    audience: Optional[str],
+    source: Optional[str],
+) -> Optional[Dict[str, Any]]:
+    """
+    Build Chroma v0.5+ filter dict using operator syntax.
+
+    Examples:
+      {"audience": {"$eq": "freelancer"}}
+      {"$and": [{"audience": {"$eq": "freelancer"}}, {"source": {"$eq": "shakers_faq"}}]}
+    """
+    clauses: List[Dict[str, Any]] = []
+    if audience:
+        clauses.append({"audience": {"$eq": audience}})
+    if source:
+        clauses.append({"source": {"$eq": source}})
+
+    if not clauses:
+        return None
+    if len(clauses) == 1:
+        return clauses[0]
+    return {"$and": clauses}
+
 
 def similarity_search(
-    query: str,
-    top_k: int = None,
-    where: Dict[str, Any] | None = None,
-    min_similarity: float | None = None,
+    query_text: str,
+    audience: Optional[str] = None,
+    source: Optional[str] = None,
+    min_similarity: float = 0.25,
+    top_k: Optional[int] = None,
 ) -> Tuple[List[str], List[Dict[str, Any]], List[float]]:
+    """
+    Retrieve top-K chunks filtered by metadata and threshold by similarity.
+
+    Args:
+        query_text: The user's query in English.
+        audience: "freelancer" | "company" (optional).
+        source: e.g., "shakers_faq" or "internal_kb" (optional).
+        min_similarity: Drop results below this similarity.
+        top_k: Max results to request from the index (default 4).
+
+    Returns:
+        (documents, metadatas, similarities)
+    """
+    k = int(top_k) if top_k is not None else 4
+    where = _build_where(audience, source)
+
     col = get_collection()
-    k = top_k or DEFAULT_TOP_K
-    thr = DEFAULT_MIN_SIM if min_similarity is None else float(min_similarity)
-    q_emb = embed_text(query)
     res = col.query(
-        query_embeddings=[q_emb],
+        query_texts=[query_text],
         n_results=k,
         where=where,
         include=["documents", "metadatas", "distances"],
     )
-    docs = res["documents"][0] if res["documents"] else []
-    metas = res["metadatas"][0] if res["metadatas"] else []
-    # Chroma returns distances (smaller is closer for cosine); convert to similarity
-    dists = res["distances"][0] if res["distances"] else []
-    sims = [1 - d for d in dists]
-    # Apply threshold filtering, keep order from Chroma (already sorted)
-    filtered = [(d, m, s) for d, m, s in zip(docs, metas, sims) if s >= thr]
+
+    docs = res.get("documents", [[]])[0]
+    metas = res.get("metadatas", [[]])[0]
+    dists = res.get("distances", [[]])[0]
+
+    sims = [
+        _distance_to_similarity(float(d), HNSW_SPACE) for d in dists
+    ]
+
+    filtered = [
+        (d, m, s) for d, m, s in zip(docs, metas, sims) if s >= float(min_similarity)
+    ]
+
     if not filtered:
         return [], [], []
+
     fd, fm, fs = zip(*filtered)
     return list(fd), list(fm), list(fs)

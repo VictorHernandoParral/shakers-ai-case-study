@@ -1,68 +1,84 @@
+# app/routers/query.py
+from __future__ import annotations
+
+import time
+from typing import List, Dict, Any, Optional
+
 from fastapi import APIRouter
 from pydantic import BaseModel
-from typing import List, Dict, Any
-import time
+
 from app.services.retrieval import similarity_search
 
+router = APIRouter(prefix="/query", tags=["query"])
 
-router = APIRouter()
 
-class Source(BaseModel):
-    id: str
-    title: str | None = None
-    url: str | None = None
+# --------- Schemas ---------
 
 class QueryRequest(BaseModel):
     user_id: str
     query: str
-    where: Dict[str, Any] | None = None
-    top_k: int | None = None
-    min_similarity: float | None = None
+    audience: Optional[str] = None   # "freelancer" | "company"
+    source: Optional[str] = None     # e.g., "shakers_faq"
+    min_similarity: float = 0.25
+    top_k: int = 4                   # ensure n_results is never None
+
 
 class QueryResponse(BaseModel):
     answer: str
-    sources: List[Source]
-    latency_ms: int
-    oos: bool = False
+    refs: List[Dict[str, Any]]
+    oos: bool
 
-def make_answer_english(query: str, contexts: list[str]) -> str:
+
+# --------- Answer composer (English-only for now) ---------
+
+def make_answer_english(user_query: str, contexts: List[str]) -> str:
     """
-    Minimal deterministic answer composer in ENGLISH ONLY (no LLM here yet).
-    Later we'll swap this for an LLM that is instructed to answer ONLY in English.
+    Minimal, deterministic answer in ENGLISH ONLY (no LLM yet).
     """
-    # A super-simple template for now:
-    context_snippets = "\n- " + "\n- ".join(ctx[:300] for ctx in contexts) if contexts else ""
+    if not contexts:
+        return (
+            "I couldn't find a confident answer in the knowledge base. "
+            "Please rephrase or provide more detail (in English)."
+        )
+    bullets = "\n- " + "\n- ".join(c[:300].strip() for c in contexts)
     return (
         "Here is what I found:\n"
-        f"{context_snippets}\n\n"
+        f"{bullets}\n\n"
         "If you need more detail, please ask a follow-up question in English."
     )
 
+
+# --------- Route ---------
+
 @router.post("/query/", response_model=QueryResponse)
-def post_query(body: QueryRequest):
+def post_query(req: QueryRequest) -> QueryResponse:
     t0 = time.time()
+
     docs, metas, sims = similarity_search(
-        body.query,
-        where=body.where,
-        top_k=body.top_k,
-        min_similarity=body.min_similarity,
+        query_text=req.query,
+        audience=req.audience,
+        source=req.source,
+        min_similarity=req.min_similarity,
+        top_k=req.top_k,
     )
-    sources: list[Source] = []
+
+    # Build lightweight refs for the UI
+    refs: List[Dict[str, Any]] = []
     for i, m in enumerate(metas):
-        sources.append(
-            Source(
-                id=str(i),
-                title=(m.get("title") or m.get("source")),
-                url=m.get("source"),
-            )
+        refs.append(
+            {
+                "id": str(i),
+                "title": m.get("title") or m.get("relpath") or m.get("source") or "KB",
+                "audience": m.get("audience"),
+                "source": m.get("source"),
+                "relpath": m.get("relpath"),
+                "chunk_index": m.get("chunk_index"),
+                "similarity": float(sims[i]) if i < len(sims) else None,
+            }
         )
-    if not docs:
-        answer = (
-            "I could not find a confident answer in the knowledge base for your question. "
-            "Please rephrase or provide more detail (in English), or broaden your filters."
-        )
-        latency = int((time.time() - t0) * 1000)
-        return QueryResponse(answer=answer, sources=[], latency_ms=latency, oos=True)
-    answer = make_answer_english(body.query, docs)
-    latency = int((time.time() - t0) * 1000)
-    return QueryResponse(answer=answer, sources=sources, latency_ms=latency, oos=(len(docs) == 0))
+
+    answer = make_answer_english(req.query, docs)
+    oos = len(docs) == 0
+
+    # (We keep the response schema minimal: answer, refs, oos)
+    return QueryResponse(answer=answer, refs=refs, oos=oos)
