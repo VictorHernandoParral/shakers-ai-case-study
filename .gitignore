@@ -1,12 +1,25 @@
-# venv & caches
-.venv/
+# Python
 __pycache__/
+*.py[cod]
+*.pyo
+
+# Virtual env
+.venv/
+
+# Local data / caches
+store/
 .pytest_cache/
+.ipynb_checkpoints/
+*.log
 
-# local vector store + telemetry
-.chroma/
-
-# env & OS junk
+# Env & secrets
 .env
+.env.*.local
+
+# OS cruft
 .DS_Store
 Thumbs.db
+
+# Coverage / tooling
+.coverage
+htmlcov/
