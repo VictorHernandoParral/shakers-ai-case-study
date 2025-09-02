@@ -7,7 +7,9 @@ from typing import List, Dict, Any, Optional
 from fastapi import APIRouter, Request, HTTPException
 from pydantic import BaseModel
 
-from app.services.retrieval import similarity_search
+# Use the tuple-returning API and alias it to the expected name
+from app.services.retrieval import similarity_search_tuple as similarity_search
+
 from app.utils.reranker import rerank                   # Rerank retrieved chunks by relevance
 from app.utils.compressor import compress_chunks        # Extractive compression (few sentences)
 from app.services.generation import generate_with_llm   # LLM answer with guaranteed citations
@@ -230,10 +232,13 @@ def post_query(req: QueryRequest, request: Request) -> QueryResponse:
     for ch in top_chunks:
         i = ch["_orig_idx"]
         m = metas[i]
+        # --- ensure 'url' exists in each ref ---
+        url = m.get("url") or (f"kb://{m.get('relpath')}" if m.get("relpath") else "kb://source")
         refs.append(
             {
                 "id": str(i),
                 "title": m.get("title") or m.get("relpath") or m.get("source") or "KB",
+                "url": url,  # <— added
                 "audience": m.get("audience"),
                 "source": m.get("source"),
                 "relpath": m.get("relpath"),
@@ -343,10 +348,12 @@ def get_query_stream(
         for ch in top_chunks:
             i = ch["_orig_idx"]
             m = metas[i]
+            url = m.get("url") or (f"kb://{m.get('relpath')}" if m.get("relpath") else "kb://source")
             refs.append(
                 {
                     "id": str(i),
                     "title": m.get("title") or m.get("relpath") or m.get("source") or "KB",
+                    "url": url,  # keep parity for stream refs too
                     "audience": m.get("audience"),
                     "source": m.get("source"),
                     "relpath": m.get("relpath"),
@@ -374,7 +381,7 @@ def get_query_stream(
             for r in refs:
                 title = r.get("title") or "Source"
                 rel = r.get("relpath") or ""
-                url = f"kb://{rel}" if rel else ""
+                url = r.get("url") or (f"kb://{rel}" if rel else "")
                 items.append(f"[{title}]({url})" if url else title)
             if items:
                 sources_block = "Sources: " + " · ".join(items)
@@ -399,4 +406,3 @@ def get_query_stream(
         media_type="text/event-stream",
         headers={"Cache-Control": "no-cache"},
     )
-

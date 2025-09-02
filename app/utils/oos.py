@@ -1,9 +1,10 @@
 from typing import List, Dict
+import os
 
 # Tunable thresholds; start conservative and refine with logs.
-SIM_MIN = 0.72         # top similarity must be at least this
-MARGIN_MIN = 0.05      # top-1 must beat top-2 by this margin
-REQUIRE_TOPK = 2       # need at least 2 retrieved to apply margin
+SIM_MIN = float(os.getenv("OOS_SIM_MIN", "0.72"))
+MARGIN_MIN = float(os.getenv("OOS_MARGIN_MIN", "0.05"))
+REQUIRE_TOPK = int(os.getenv("OOS_REQUIRE_TOPK", "2"))
 
 def score(distances: List[float]) -> Dict:
     if not distances:

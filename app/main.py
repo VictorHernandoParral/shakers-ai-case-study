@@ -3,6 +3,8 @@ from fastapi.middleware.cors import CORSMiddleware
 from .routers import query, recommend, metrics
 import time
 from app.utils import slog
+from app.routers import recommend as recommend_router
+from app.utils.metrics import record_request, record_endpoint
 
 app = FastAPI(title="Shakers AI — Support & Recommendations", version="0.1.0")
 
@@ -47,6 +49,16 @@ async def _logging_middleware(request, call_next):
         client_ip=client_ip,
         ctx=ctx,
     )
+    # --- metrics wiring ---
+    try:
+        # best-effort: extract optional fields for model/oos; defaults are safe
+        model = ctx.get("model") if isinstance(ctx, dict) else None
+        oos = bool(ctx.get("oos", False)) if isinstance(ctx, dict) else False
+        record_request(latency_ms=latency_ms, model=model, oos=oos)
+        record_endpoint(method=request.method, path=str(request.url.path), latency_ms=latency_ms)
+    except Exception:
+        pass
+    
     try:
         response.headers["X-Request-ID"] = req_id
     except Exception:
@@ -62,3 +74,4 @@ def health():
 app.include_router(query.router, prefix="/query", tags=["query"])        # :contentReference[oaicite:0]{index=0}
 app.include_router(recommend.router, prefix="/recommend", tags=["recommend"])  # :contentReference[oaicite:1]{index=1}
 app.include_router(metrics.router)  #   :contentReference[oaicite:2]{index=2}
+app.include_router(recommend_router.router)

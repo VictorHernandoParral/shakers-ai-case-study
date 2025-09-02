@@ -98,6 +98,35 @@ def _distance_to_similarity(dist: float, space: str) -> float:
         return 1.0 / (1.0 + float(dist))
     return 1.0 - float(dist)
 
+# --- Helpers for normalization (for the list adapter) ---
+
+def _first_line_title(doc: str, fallback: str = "KB") -> str:
+    """Derive a short title from the first non-empty line of a document."""
+    if not doc:
+        return fallback
+    for line in doc.splitlines():
+        t = line.strip().lstrip("#").strip()
+        if t:
+            return t[:120]
+    return fallback
+
+def _derive_url(meta: Dict[str, Any]) -> str:
+    """
+    Prefer an explicit URL from metadata; otherwise, fall back to a stable kb:// URL
+    using relpath/path/id so that 'url' is never empty.
+    """
+    url = (meta.get("url") or "").strip()
+    if url:
+        return url
+
+    rel = (meta.get("relpath") or meta.get("path") or meta.get("id") or "").strip()
+    if rel:
+        # Cheap cross-platform basename without importing pathlib
+        rel_simple = rel.replace("\\", "/").split("/")[-1]
+        return f"kb://{rel_simple}"
+
+    return "kb://source"
+
 
 def _build_where(
     audience: Optional[str],
@@ -123,51 +152,123 @@ def _build_where(
     return {"$and": clauses}
 
 
+# --- Internal core that returns a TUPLE (original behavior) ---
+
+def _similarity_search_core_tuple(
+    query_text: str,
+    audience: Optional[str] = None,
+    source: Optional[str] = None,
+    min_similarity: float = 0.25,
+    top_k: Optional[int] = None,
+    k: Optional[int] = None,
+) -> Tuple[List[str], List[Dict[str, Any]], List[float]]:
+    """
+    ORIGINAL tuple-based retrieval:
+    returns (documents, metadatas, similarities)
+    """
+    # Prefer explicit k when provided; otherwise use top_k; default=4
+    k_final = 4
+    if k is not None:
+        k_final = int(k)
+    elif top_k is not None:
+        k_final = int(top_k)
+
+    where = _build_where(audience, source)
+
+    col = get_collection()
+    try:
+        res = col.query(
+            query_texts=[query_text],
+            n_results=k_final,
+            where=where,
+            include=["documents", "metadatas", "distances"],
+        )
+    except Exception:
+        # Robust fallback: no results instead of raising up the stack
+        return [], [], []
+
+    docs = res.get("documents", [[]])[0]
+    metas = res.get("metadatas", [[]])[0]
+    dists = res.get("distances", [[]])[0]
+
+    sims = [_distance_to_similarity(float(d), HNSW_SPACE) for d in dists]
+
+    filtered = [(d, m, s) for d, m, s in zip(docs, metas, sims) if s >= float(min_similarity)]
+    if not filtered:
+        return [], [], []
+
+    fd, fm, fs = zip(*filtered)
+    # Always return top-k_final after thresholding, preserving order
+    return list(fd)[:k_final], list(fm)[:k_final], list(fs)[:k_final]
+
+
+# --- Public, stable tuple API for internal callers ---
+
+def similarity_search_tuple(
+    query_text: str,
+    audience: Optional[str] = None,
+    source: Optional[str] = None,
+    min_similarity: float = 0.25,
+    top_k: Optional[int] = None,
+    k: Optional[int] = None,
+) -> Tuple[List[str], List[Dict[str, Any]], List[float]]:
+    """
+    Backward-compatible retrieval for internal code: (documents, metadatas, similarities).
+    """
+    return _similarity_search_core_tuple(
+        query_text=query_text,
+        audience=audience,
+        source=source,
+        min_similarity=min_similarity,
+        top_k=top_k,
+        k=k,
+    )
+
+
+# --- Public list API (adapter) for tests and new code ---
+
 def similarity_search(
     query_text: str,
     audience: Optional[str] = None,
     source: Optional[str] = None,
     min_similarity: float = 0.25,
     top_k: Optional[int] = None,
-) -> Tuple[List[str], List[Dict[str, Any]], List[float]]:
+    k: Optional[int] = None,  # alias supported by tests
+) -> List[Dict[str, Any]]:
     """
-    Retrieve top-K chunks filtered by metadata and threshold by similarity.
-
-    Args:
-        query_text: The user's query in English.
-        audience: "freelancer" | "company" (optional).
-        source: e.g., "shakers_faq" or "internal_kb" (optional).
-        min_similarity: Drop results below this similarity.
-        top_k: Max results to request from the index (default 4).
-
-    Returns:
-        (documents, metadatas, similarities)
+    Return a LIST of normalized candidates. Each item:
+    {
+      'title': str,
+      'url': str,
+      'similarity': float,
+      'metadata': dict,
+      'document': str,
+    }
     """
-    k = int(top_k) if top_k is not None else 4
-    where = _build_where(audience, source)
+    try:
+        docs, metas, sims = _similarity_search_core_tuple(
+            query_text=query_text,
+            audience=audience,
+            source=source,
+            min_similarity=min_similarity,
+            top_k=top_k,
+            k=k,
+        )
+    except Exception:
+        # If the core fails, return an empty list instead of None
+        return []
 
-    col = get_collection()
-    res = col.query(
-        query_texts=[query_text],
-        n_results=k,
-        where=where,
-        include=["documents", "metadatas", "distances"],
-    )
-
-    docs = res.get("documents", [[]])[0]
-    metas = res.get("metadatas", [[]])[0]
-    dists = res.get("distances", [[]])[0]
-
-    sims = [
-        _distance_to_similarity(float(d), HNSW_SPACE) for d in dists
-    ]
-
-    filtered = [
-        (d, m, s) for d, m, s in zip(docs, metas, sims) if s >= float(min_similarity)
-    ]
-
-    if not filtered:
-        return [], [], []
-
-    fd, fm, fs = zip(*filtered)
-    return list(fd), list(fm), list(fs)
+    items: List[Dict[str, Any]] = []
+    for doc, meta, sim in zip(docs or [], metas or [], sims or []):
+        title = (meta.get("title") or meta.get("name") or "").strip() or _first_line_title(doc, "KB")
+        url = _derive_url(meta)
+        items.append({
+        "title": title,
+        "url": url,
+        "similarity": float(sim),
+        "metadata": dict(meta or {}),
+        "document": doc or "",
+        "content": doc or "",
+    })
+    # Always return a list (empty if no items)
+    return items or []

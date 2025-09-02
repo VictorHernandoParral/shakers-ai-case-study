@@ -1,22 +1,35 @@
-from pydantic import BaseModel
-from fastapi import APIRouter
-from ..services.recommend import recommend_items
+# app/routers/recommend.py
+from __future__ import annotations
+from typing import List, Dict
+from fastapi import APIRouter, HTTPException
+from pydantic import BaseModel, Field
+
+from app.services.recommender import recommend
 
 router = APIRouter()
 
 class RecommendRequest(BaseModel):
-    user_id: str
-    current_query: str
+    user_id: str = Field(..., min_length=1)
+    query: str = Field(..., min_length=2, max_length=500)
 
-class RecItem(BaseModel):
-    id: str
+class Recommendation(BaseModel):
+    id: str | None = None
     title: str
-    why: str
+    url: str
+    reason: str
 
 class RecommendResponse(BaseModel):
-    items: list[RecItem]
-    latency_ms: int
+    recommendations: List[Recommendation]
 
-@router.post("/", response_model=RecommendResponse)
-async def post_recommend(payload: RecommendRequest):
-    return await recommend_items(payload.user_id, payload.current_query)
+@router.post("/recommend", response_model=RecommendResponse)
+def post_recommend(req: RecommendRequest) -> RecommendResponse:
+    """
+    Returns 2–3 personalized recommendations based on the user's recent query history.
+    - Ensures diversity (MMR) and filters already seen resources.
+    - Each recommendation includes a brief explanation (reason).
+    """
+    try:
+        recs = recommend(user_id=req.user_id, current_query=req.query, k=3)
+        return RecommendResponse(recommendations=recs)
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))

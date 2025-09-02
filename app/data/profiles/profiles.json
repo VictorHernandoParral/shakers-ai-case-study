@@ -1,0 +1,95 @@
+{
+  "u42": {
+    "query_history": [
+      "payments and invoices on the platform",
+      "payments and invoices on the platform",
+      "payments and invoices on the platform",
+      "payments and invoices on the platform",
+      "payments and invoices on the platform",
+      "payments and invoices on the platform"
+    ],
+    "seen_resources": [
+      "kb://015-how-do-i-find-my-invoices-on-shakers.md",
+      "kb://016-how-does-the-secure-payment-system-work.md",
+      "kb://033-what-information-should-an-invoice-include.md",
+      "kb://035-once-the-invoice-has-been-uploaded-how-long-will-it-take-for-the-payment-to-reac.md",
+      "kb://038-what-happens-if-the-issue-or-due-date-of-my-invoice-has-expired-on-the-platform.md",
+      "kb://039-how-can-i-know-if-my-invoice-has-been-paid.md",
+      "kb://046-when-can-i-upload-my-invoice-to-the-app.md",
+      "kb://054-how-do-i-upload-and-collect-my-invoices.md",
+      "kb://056-how-does-the-payment-plan-work.md",
+      "kb://shakers_faq/company/001-how-do-i-add-users-to-my-organization.md",
+      "kb://shakers_faq/company/002-how-do-i-change-a-members-permissions.md",
+      "kb://shakers_faq/company/003-how-do-i-add-or-change-project-members.md"
+    ]
+  },
+  "u43": {
+    "query_history": [
+      "freelancers and hiring policy",
+      "freelancers and hiring policy",
+      "project workflow and milestones",
+      "freelancers and hiring policy",
+      "project workflow and milestones",
+      "freelancers and hiring policy",
+      "project workflow and milestones",
+      "freelancers and hiring policy",
+      "project workflow and milestones",
+      "freelancers and hiring policy",
+      "project workflow and milestones"
+    ],
+    "seen_resources": [
+      "kb://008-can-i-see-the-freelancers-i-have-worked-with.md",
+      "kb://017-why-work-by-milestones.md",
+      "kb://019-how-can-i-activate-and-validate-milestones.md",
+      "kb://019-what-is-our-value-proposition.md",
+      "kb://020-would-you-like-to-earn-money-through-our-referral-program.md",
+      "kb://021-is-it-free-to-create-an-account-on-shakers-to-search-for-a-freelancer.md",
+      "kb://021-not-a-freelancer-but-thinking-about-becoming-one.md",
+      "kb://027-freeworking-do-you-know-what-it-is.md",
+      "kb://034-can-i-access-all-freelance-profiles.md",
+      "kb://050-what-does-the-status-of-a-milestone-mean.md",
+      "kb://051-when-should-i-start-working-on-the-project.md",
+      "kb://072-what-amount-will-be-allocated-to-each-milestone.md",
+      "kb://073-how-do-milestones-work-in-a-project.md",
+      "kb://074-what-statuses-can-a-milestone-have.md",
+      "kb://075-what-is-a-milestone.md",
+      "kb://076-why-do-we-work-by-milestones-at-shakers.md",
+      "kb://127-not-a-freelancer-yet-but-considering-it.md",
+      "kb://contracts.md",
+      "kb://shakers_faq/company/001-how-do-i-add-users-to-my-organization.md",
+      "kb://shakers_faq/company/002-how-do-i-change-a-members-permissions.md",
+      "kb://shakers_faq/company/003-how-do-i-add-or-change-project-members.md",
+      "kb://shakers_faq/company/004-want-to-change-the-project-owner.md",
+      "kb://shakers_faq/company/005-how-do-i-check-my-browsers-microphone-and-camera-permissions.md",
+      "kb://shakers_faq/company/006-what-value-does-shakers-bring-to-companies-and-talent.md"
+    ]
+  },
+  "u99": {
+    "query_history": [
+      "payments and invoices"
+    ],
+    "seen_resources": [
+      "kb://shakers_faq/company/001-how-do-i-add-users-to-my-organization.md",
+      "kb://shakers_faq/company/002-how-do-i-change-a-members-permissions.md",
+      "kb://shakers_faq/company/003-how-do-i-add-or-change-project-members.md"
+    ]
+  },
+  "t_e2e_1": {
+    "query_history": [
+      "freelancers and hiring policy",
+      "freelancers and hiring policy",
+      "freelancers and hiring policy"
+    ],
+    "seen_resources": [
+      "kb://019-what-is-our-value-proposition.md",
+      "kb://021-is-it-free-to-create-an-account-on-shakers-to-search-for-a-freelancer.md",
+      "kb://021-not-a-freelancer-but-thinking-about-becoming-one.md",
+      "kb://027-freeworking-do-you-know-what-it-is.md",
+      "kb://127-not-a-freelancer-yet-but-considering-it.md",
+      "kb://contracts.md",
+      "kb://shakers_faq/company/001-how-do-i-add-users-to-my-organization.md",
+      "kb://shakers_faq/company/002-how-do-i-change-a-members-permissions.md",
+      "kb://shakers_faq/company/003-how-do-i-add-or-change-project-members.md"
+    ]
+  }
+}

@@ -153,4 +153,42 @@ OOS detection via similarity threshold (MIN_SIMILARITY in .env).
 
 KB expansion is manual: add English docs under app/data/kb/ and re-run index.
 
+## Out-of-Scope (OOS) Detection
+
+The system detects queries that fall outside the knowledge base (KB) and returns a safe fallback response without calling an LLM.
+
+**How it works**
+- Retrieval returns ranked chunks with either `distance ∈ [0,1]` (lower is closer) or `similarity ∈ [0,1]`.
+- The OOS gate evaluates:
+  - `SIM_MIN`: required absolute top similarity (via `1 - distance`).
+  - `MARGIN_MIN`: required margin between top-1 and top-2 similarities.
+  - `REQUIRE_TOPK`: margin is only applied when at least this many chunks exist.
+- If the gate triggers, the API responds with:
+  ```json
+  {
+    "answer": "I don't have information on this. Please ask me something related to the Shakers platform (e.g., payments, project workflow, freelancers, etc.).",
+    "sources": [],
+    "oos": true
+  }
+
+
+### Recommendation Service
+
+**Endpoint**
+`POST /recommend`
+Request: `{ "user_id": string, "query": string }`  
+Response: `{ "recommendations": [{ "id": string|null, "title": string, "url": string, "reason": string }] }`
+
+**How it works**
+1) Builds a lightweight user profile (recent queries and seen resources).
+2) Retrieves candidate resources from the KB.
+3) Filters out already seen items per user.
+4) Applies a simple MMR diversification to ensure topic variety.
+5) Returns 2–3 items, each with a brief explanation of relevance.
+
+**Profile updates**
+- Profiles are updated on each `/recommend` call.
+- Profiles are also updated after `/query` answers (query appended; sources marked as seen).
+- Storage: JSON file at `app/data/profiles/profiles.json`.
+
 
