@@ -1,9 +1,8 @@
 # app/services/recommender.py
 from __future__ import annotations
-from typing import Any, Dict, List, Tuple
+from typing import Any, Dict, List
 from math import inf
 from app.services.profiles import PROFILE_STORE
-   
 from app.services.retrieval import similarity_search
 from loguru import logger
 import os
@@ -16,24 +15,26 @@ def _kb_file_candidates(k: int = 20) -> List[Dict[str, Any]]:
     """
     base = os.path.join(os.path.dirname(os.path.dirname(__file__)), "data", "kb")
     paths = sorted(
-        glob.glob(os.path.join(base, "**", "*.md"), recursive=True) +
-        glob.glob(os.path.join(base, "**", "*.txt"), recursive=True)
+        glob.glob(os.path.join(base, "**", "*.md"), recursive=True)
+        + glob.glob(os.path.join(base, "**", "*.txt"), recursive=True)
     )
     cands: List[Dict[str, Any]] = []
-    for i, p in enumerate(paths[: max(3*k, 50)]):  # oversample a bit for diversity, cap
+    for i, p in enumerate(paths[: max(3 * k, 50)]):  # oversample a bit for diversity, cap
         try:
             with open(p, "r", encoding="utf-8", errors="ignore") as f:
                 text = f.read().strip()
             rel = os.path.relpath(p, base).replace("\\", "/")
             title = os.path.splitext(os.path.basename(p))[0].replace("_", " ").title()
             url = f"kb://{rel}"
-            cands.append({
-                "id": f"kbfile-{i}",
-                "title": title or "KB",
-                "url": url,
-                "content": text[:2000],  # small preview is enough
-                # No similarity here; MMR falls back to a flat prior (0.5)
-            })
+            cands.append(
+                {
+                    "id": f"kbfile-{i}",
+                    "title": title or "KB",
+                    "url": url,
+                    "content": text[:2000],  # small preview is enough
+                    # No similarity here; MMR falls back to a flat prior (0.5)
+                }
+            )
         except Exception:
             continue
     return cands
@@ -41,7 +42,7 @@ def _kb_file_candidates(k: int = 20) -> List[Dict[str, Any]]:
 
 def _candidateize(query: str, k: int = 20) -> List[Dict[str, Any]]:
     """
-    Get candidate resources for recommendation using the fallback similarity_search.
+    Get candidate resources for recommendation using the regular similarity_search.
     If empty, fall back to scanning KB files so we always have something to recommend.
     """
     try:
@@ -50,8 +51,7 @@ def _candidateize(query: str, k: int = 20) -> List[Dict[str, Any]]:
         chunks = []
 
     if not chunks:
-        # NEW: file-based fallback to avoid returning 0 recommendations
-        chunks = _kb_file_candidates(k=k)
+        chunks = _kb_file_candidates(k=k)  # robust fallback
 
     # dedupe by (url or id)
     uniq = {}
@@ -60,6 +60,7 @@ def _candidateize(query: str, k: int = 20) -> List[Dict[str, Any]]:
         if key and key not in uniq:
             uniq[key] = c
     return list(uniq.values())
+
 
 def _mmr_select(cands: List[Dict[str, Any]], k: int = 3, lam: float = 0.7) -> List[Dict[str, Any]]:
     """
@@ -73,8 +74,8 @@ def _mmr_select(cands: List[Dict[str, Any]], k: int = 3, lam: float = 0.7) -> Li
             return 0.5
 
     def jaccard(a: Dict[str, Any], b: Dict[str, Any]) -> float:
-        A = set(str(a.get("title","")).lower().split())
-        B = set(str(b.get("title","")).lower().split())
+        A = set(str(a.get("title", "")).lower().split())
+        B = set(str(b.get("title", "")).lower().split())
         if not A or not B:
             return 0.0
         inter = len(A & B)
@@ -97,11 +98,13 @@ def _mmr_select(cands: List[Dict[str, Any]], k: int = 3, lam: float = 0.7) -> Li
         pool.remove(best)
     return selected
 
+
 def _reason_for(user_id: str, rec: Dict[str, Any], cur_query: str) -> str:
     prof = PROFILE_STORE.get_profile(user_id)
     last_topics = ", ".join(q for q in prof.get("query_history", [])[-3:])
     title = rec.get("title", "this topic")
     return f"Recommended because you recently asked about {last_topics or cur_query}. This resource covers '{title}'."
+
 
 def recommend(user_id: str, current_query: str, k: int = 3) -> List[Dict[str, Any]]:
     """
@@ -123,12 +126,14 @@ def recommend(user_id: str, current_query: str, k: int = 3) -> List[Dict[str, An
     # Build output with reasons
     recs: List[Dict[str, Any]] = []
     for r in picks:
-        recs.append({
-            "id": r.get("id"),
-            "title": r.get("title"),
-            "url": r.get("url"),
-            "reason": _reason_for(user_id, r, current_query)
-        })
+        recs.append(
+            {
+                "id": r.get("id"),
+                "title": r.get("title"),
+                "url": r.get("url"),
+                "reason": _reason_for(user_id, r, current_query),
+            }
+        )
 
     # Mark as seen so we won't recommend them again next time
     PROFILE_STORE.add_seen(user_id, [key(r) for r in picks])

@@ -4,13 +4,11 @@ from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple
 
 import chromadb
-from chromadb.utils.embedding_functions import (
-    SentenceTransformerEmbeddingFunction,
-)
+from chromadb.utils.embedding_functions import SentenceTransformerEmbeddingFunction
 
-# -------------------------
+# ---------------------------------------------------------------------
 # Chroma client & constants
-# -------------------------
+# ---------------------------------------------------------------------
 
 # Persistent local store (already created in your project)
 CHROMA_PATH = "store/chroma"
@@ -44,9 +42,9 @@ def get_collection():
     )
 
 
-# -------------------------
+# ---------------------------------------------------------------------
 # Upsert helper
-# -------------------------
+# ---------------------------------------------------------------------
 
 def upsert_batch(
     ids: List[str],
@@ -76,29 +74,33 @@ def upsert_batch(
         )
 
 
-# -------------------------
+# ---------------------------------------------------------------------
 # Query / similarity search
-# -------------------------
+# ---------------------------------------------------------------------
 
 def _distance_to_similarity(dist: float, space: str) -> float:
     """
-    Convert Chroma distance to a similarity score in [0,1]-ish range.
+    Convert Chroma distance to a similarity score roughly in [0, 1].
 
     For cosine, Chroma returns distance = 1 - cosine_sim, so we invert.
-    For L2/IP, we provide simple monotonic transforms (not strictly bounded).
+    We clamp the value into [0, 1] to avoid tiny numeric artifacts.
     """
     if space == "cosine":
-        return 1.0 - float(dist)
-    if space == "l2":
-        # Smaller distance -> higher similarity
-        return 1.0 / (1.0 + float(dist))
-    if space in ("ip", "inner_product"):
-        # Chroma returns negative inner product as distance in some configs;
-        # map to a soft-bounded score.
-        return 1.0 / (1.0 + float(dist))
-    return 1.0 - float(dist)
+        sim = 1.0 - float(dist)
+        return max(0.0, min(1.0, sim))
 
-# --- Helpers for normalization (for the list adapter) ---
+    # Simple monotonic transforms for other spaces
+    if space == "l2":
+        sim = 1.0 / (1.0 + float(dist))
+        return max(0.0, min(1.0, sim))
+    if space in ("ip", "inner_product"):
+        sim = 1.0 / (1.0 + float(dist))
+        return max(0.0, min(1.0, sim))
+    sim = 1.0 - float(dist)
+    return max(0.0, min(1.0, sim))
+
+
+# ---------------- Normalization helpers for the list adapter ---------------- #
 
 def _first_line_title(doc: str, fallback: str = "KB") -> str:
     """Derive a short title from the first non-empty line of a document."""
@@ -109,6 +111,7 @@ def _first_line_title(doc: str, fallback: str = "KB") -> str:
         if t:
             return t[:120]
     return fallback
+
 
 def _derive_url(meta: Dict[str, Any]) -> str:
     """
@@ -152,7 +155,7 @@ def _build_where(
     return {"$and": clauses}
 
 
-# --- Internal core that returns a TUPLE (original behavior) ---
+# ----------------------- Core tuple-based retrieval ------------------------- #
 
 def _similarity_search_core_tuple(
     query_text: str,
@@ -169,9 +172,12 @@ def _similarity_search_core_tuple(
     # Prefer explicit k when provided; otherwise use top_k; default=4
     k_final = 4
     if k is not None:
-        k_final = int(k)
+        k_final = max(0, int(k))
     elif top_k is not None:
-        k_final = int(top_k)
+        k_final = max(0, int(top_k))
+
+    if k_final == 0:
+        return [], [], []
 
     where = _build_where(audience, source)
 
@@ -193,16 +199,18 @@ def _similarity_search_core_tuple(
 
     sims = [_distance_to_similarity(float(d), HNSW_SPACE) for d in dists]
 
-    filtered = [(d, m, s) for d, m, s in zip(docs, metas, sims) if s >= float(min_similarity)]
+    filtered = [
+        (d, m, s) for d, m, s in zip(docs, metas, sims) if s >= float(min_similarity)
+    ]
     if not filtered:
         return [], [], []
 
     fd, fm, fs = zip(*filtered)
-    # Always return top-k_final after thresholding, preserving order
+    # Preserve the returned order for the core API
     return list(fd)[:k_final], list(fm)[:k_final], list(fs)[:k_final]
 
 
-# --- Public, stable tuple API for internal callers ---
+# -------------------------- Public tuple API -------------------------------- #
 
 def similarity_search_tuple(
     query_text: str,
@@ -225,7 +233,7 @@ def similarity_search_tuple(
     )
 
 
-# --- Public list API (adapter) for tests and new code ---
+# ---------------------- Public LIST adapter for recommender ----------------- #
 
 def similarity_search(
     query_text: str,
@@ -239,11 +247,16 @@ def similarity_search(
     Return a LIST of normalized candidates. Each item:
     {
       'title': str,
-      'url': str,
-      'similarity': float,
+      'url': str,              # always present (falls back to kb://...)
+      'similarity': float,     # clamped [0,1]
       'metadata': dict,
-      'document': str,
+      'document': str,         # raw content
+      'content': str,          # alias for compatibility with UIs
     }
+
+    The returned list is:
+      * deduplicated by URL (first keep the highest-sim item),
+      * deterministically ordered by (-similarity, url).
     """
     try:
         docs, metas, sims = _similarity_search_core_tuple(
@@ -258,17 +271,36 @@ def similarity_search(
         # If the core fails, return an empty list instead of None
         return []
 
-    items: List[Dict[str, Any]] = []
+    # Normalize & build items
+    raw_items: List[Dict[str, Any]] = []
     for doc, meta, sim in zip(docs or [], metas or [], sims or []):
+        meta = dict(meta or {})
         title = (meta.get("title") or meta.get("name") or "").strip() or _first_line_title(doc, "KB")
         url = _derive_url(meta)
-        items.append({
-        "title": title,
-        "url": url,
-        "similarity": float(sim),
-        "metadata": dict(meta or {}),
-        "document": doc or "",
-        "content": doc or "",
-    })
-    # Always return a list (empty if no items)
-    return items or []
+        raw_items.append(
+            {
+                "title": title,
+                "url": url,
+                "similarity": float(sim),
+                "metadata": meta,
+                "document": doc or "",
+                "content": doc or "",  # alias used by some UIs
+            }
+        )
+
+    if not raw_items:
+        return []
+
+    # Deduplicate by URL keeping the item with the highest similarity.
+    by_url: Dict[str, Dict[str, Any]] = {}
+    for item in raw_items:
+        url = item["url"]
+        prev = by_url.get(url)
+        if prev is None or item["similarity"] > prev["similarity"]:
+            by_url[url] = item
+
+    # Deterministic order: highest similarity first, then URL lexicographically.
+    items = list(by_url.values())
+    items.sort(key=lambda x: (-x["similarity"], x["url"]))
+
+    return items

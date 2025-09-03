@@ -91,5 +91,33 @@
       "kb://shakers_faq/company/002-how-do-i-change-a-members-permissions.md",
       "kb://shakers_faq/company/003-how-do-i-add-or-change-project-members.md"
     ]
+  },
+  "ui_df7fb1da": {
+    "query_history": [
+      "hello",
+      "hello",
+      "how do I contact a client?"
+    ],
+    "seen_resources": [
+      "kb://024-how-can-i-improve-my-communication-with-the-client.md",
+      "kb://043-what-to-do-if-you-have-already-delivered-the-milestone-and-the-client-has-not-pa.md",
+      "kb://059-what-if-no-one-contacts-me.md",
+      "kb://shakers_faq/company/001-how-do-i-add-users-to-my-organization.md",
+      "kb://shakers_faq/company/002-how-do-i-change-a-members-permissions.md",
+      "kb://shakers_faq/company/003-how-do-i-add-or-change-project-members.md",
+      "kb://shakers_faq/company/004-want-to-change-the-project-owner.md",
+      "kb://shakers_faq/company/005-how-do-i-check-my-browsers-microphone-and-camera-permissions.md",
+      "kb://shakers_faq/company/006-what-value-does-shakers-bring-to-companies-and-talent.md"
+    ]
+  },
+  "ui_3a9e45d0": {
+    "query_history": [
+      "how do I contact a client?"
+    ],
+    "seen_resources": [
+      "kb://024-how-can-i-improve-my-communication-with-the-client.md",
+      "kb://043-what-to-do-if-you-have-already-delivered-the-milestone-and-the-client-has-not-pa.md",
+      "kb://059-what-if-no-one-contacts-me.md"
+    ]
   }
 }

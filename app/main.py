@@ -1,20 +1,59 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import HTMLResponse, RedirectResponse, FileResponse
+from fastapi.staticfiles import StaticFiles
+from fastapi.templating import Jinja2Templates
+from pathlib import Path
+from fastapi.openapi.docs import (
+    get_swagger_ui_html,
+    get_swagger_ui_oauth2_redirect_html,
+)
+
 from .routers import query, recommend, metrics
 import time
 from app.utils import slog
 from app.routers import recommend as recommend_router
 from app.utils.metrics import record_request, record_endpoint
 
-app = FastAPI(title="Shakers AI — Support & Recommendations", version="0.1.0")
+BASE_DIR = Path(__file__).resolve().parent
 
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=["*"],
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
+app = FastAPI(
+    title="Shakers AI Case Study",
+    # we'll serve our own docs so we can brand them
+    docs_url=None,
+    redoc_url=None,
+    openapi_url="/openapi.json",
 )
+
+# 1) Serve /static
+app.mount("/static", StaticFiles(directory=BASE_DIR / "static"), name="static")
+
+# 2) Jinja templates
+templates = Jinja2Templates(directory=str(BASE_DIR / "templates"))
+
+# 3) Home page "/"
+@app.get("/", response_class=HTMLResponse, include_in_schema=False)
+def home(request: Request):
+    return templates.TemplateResponse("index.html", {"request": request})
+
+# 4) Favicon for browsers (handles GET /favicon.ico)
+@app.get("/favicon.ico", include_in_schema=False)
+def favicon():
+    return FileResponse(BASE_DIR / "static" / "branding" / "favicon.ico")
+
+# 5) Custom Swagger UI that uses your favicon + CSS
+@app.get("/docs", include_in_schema=False)
+def custom_swagger_ui():
+    return get_swagger_ui_html(
+        openapi_url=app.openapi_url,
+        title="Shakers API – Docs",
+        swagger_favicon_url="/static/branding/favicon.ico",
+        swagger_css_url="/static/branding/swagger.css",  # put your CSS here
+    )
+
+@app.get(app.swagger_ui_oauth2_redirect_url, include_in_schema=False)
+def swagger_ui_redirect():
+    return get_swagger_ui_oauth2_redirect_html()
 
 @app.middleware("http")
 async def _logging_middleware(request, call_next):
@@ -69,6 +108,27 @@ async def _logging_middleware(request, call_next):
 @app.get("/health")
 def health():
     return {"status": "ok"}
+
+# Home 
+@app.get("/", response_class=HTMLResponse, include_in_schema=False)
+async def root(request: Request):
+    # If not template we address Swagger as fallback
+    index_html = TEMPLATES_DIR / "index.html"
+    if not index_html.exists():
+        return RedirectResponse(url="/docs")
+    return templates.TemplateResponse(
+        "index.html",
+        {"request": request, "app_name": "Shakers AI"}
+    )
+
+# Favicon
+@app.get("/favicon.ico", include_in_schema=False)
+async def favicon():
+    fav = STATIC_DIR / "branding" / "favicon.ico"
+    if fav.exists():
+        return FileResponse(fav)
+    # fallback: 204
+    return HTMLResponse(status_code=204)
 
 
 app.include_router(query.router, prefix="/query", tags=["query"])        # :contentReference[oaicite:0]{index=0}

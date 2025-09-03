@@ -1,0 +1,12 @@
+/* Hide the default Swagger wordmark and show your logo */
+.swagger-ui .topbar .link img { display: none; }
+.swagger-ui .topbar .link::after {
+  content: "";
+  display: inline-block;
+  width: 140px;
+  height: 32px;
+  background: url("/static/branding/logo.png") no-repeat center / contain;
+}
+
+/* Optional brand color for the topbar */
+.swagger-ui .topbar { background: #0f172a; }
