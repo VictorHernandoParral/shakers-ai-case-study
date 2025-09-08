@@ -1,3 +1,8 @@
+# =============================================
+# File: app/main.py
+# Purpose: Main FastAPI application entrypoint
+# =============================================
+
 from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import HTMLResponse, RedirectResponse, FileResponse
@@ -14,6 +19,9 @@ import time
 from app.utils import slog
 from app.routers import recommend as recommend_router
 from app.utils.metrics import record_request, record_endpoint
+
+from dotenv import load_dotenv
+load_dotenv()
 
 BASE_DIR = Path(__file__).resolve().parent
 

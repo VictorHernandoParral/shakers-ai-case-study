@@ -1,3 +1,8 @@
+# =============================================
+# File: app/utils/retrieval.py
+# Purpose: Scaffold RetrievalEngine with mock search over local KB
+# =============================================
+
 from dataclasses import dataclass
 from typing import List
 import os

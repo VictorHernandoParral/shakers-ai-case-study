@@ -2,16 +2,13 @@
 title: "How long does the process of registering as a self-employed worker in Spain take?"
 audience: freelancer
 source: shakers_faq
+relpath: freelancer/010-how-long-does-the-process-of-registering-as-a-self-employed-worker-in-spain-take.md
 ordinal: 10
-relpath: shakers_faq/freelancer/010-how-long-does-the-process-of-registering-as-a-self-employed-worker-in-spain-take.md
-tags: [faq]
 ---
 
-# How long does the process of registering as a self-employed worker in Spain take?
+**Answer:**
 
-**Q:** How long does the process of registering as a self-employed worker in Spain take?
-
-**A:** The deadlines are:
+The deadlines are:
 
 1 day at the Tax Office
 

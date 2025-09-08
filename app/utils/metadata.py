@@ -1,3 +1,8 @@
+# =============================================
+# File: app/utils/metadata.py
+# Purpose: Metadata utilities that normalize topics
+# =============================================
+
 from typing import Dict, Optional
 from pathlib import Path
 import datetime as dt

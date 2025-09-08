@@ -5,10 +5,12 @@
 from __future__ import annotations
 import os
 from typing import List, Dict, Tuple
+import json
 
 from ..utils.prompting import build_messages_en
 from ..utils.citations import ensure_citations
 from ..utils.answer_style import enforce_style
+from ..utils.answer_post import clean_answer
 
 _OPENAI_AVAILABLE = False
 try:
@@ -19,7 +21,7 @@ except Exception:
 
 DEFAULT_MODEL = os.getenv("LLM_MODEL", "gpt-4o-mini")
 DEFAULT_TEMPERATURE = float(os.getenv("LLM_TEMPERATURE", "0.2"))
-MAX_TOKENS = int(os.getenv("LLM_MAX_TOKENS", "600"))
+MAX_TOKENS = int(os.getenv("LLM_MAX_TOKENS", "900"))
 # NEW: timeout & retries
 TIMEOUT_S = float(os.getenv("LLM_TIMEOUT_SECONDS", "4"))
 MAX_RETRIES = int(os.getenv("LLM_MAX_RETRIES", "1"))
@@ -62,11 +64,11 @@ def _enough_evidence(sources: List[Dict], min_chars: int | None = None, min_item
     return total >= max(0, min_chars)
 
 def _fallback_answer(sources: List[Dict]) -> str:
-    """Deterministic, safe fallback using compressed sources."""
     joined = " ".join((s.get("content") or "").strip() for s in sources if s.get("content"))
     text = (joined[:500] + ("…" if len(joined) > 500 else ""))
-    text = ensure_citations(text, sources)
-    text = enforce_style(text, max_sentences=6)
+    text = clean_answer(text, user_query=None)
+    text = enforce_style(text, max_sentences=14)
+    text = ensure_citations(text, sources, append_block=False)
     return text
 
 def _chat_completion_with_retry(client, messages) -> Tuple[str | None, str | None]:
@@ -80,6 +82,7 @@ def _chat_completion_with_retry(client, messages) -> Tuple[str | None, str | Non
         try:
             resp = client.chat.completions.create(
                 model=DEFAULT_MODEL,
+                response_format={"type": "json_object"},
                 temperature=DEFAULT_TEMPERATURE,
                 max_tokens=MAX_TOKENS,
                 messages=messages,
@@ -91,6 +94,27 @@ def _chat_completion_with_retry(client, messages) -> Tuple[str | None, str | Non
             last_err = e
             continue
     return None, None
+
+def _parse_llm_json(text: str) -> Tuple[str, list]:
+    """
+    Extract (answer, followups) from the model output.
+    Tolerant to small wrappers around the JSON.
+    """
+    if not text:
+        return "", []
+    start = text.find("{")
+    end = text.rfind("}")
+    if start == -1 or end == -1 or end <= start:
+        return text.strip(), []
+    raw = text[start:end + 1]
+    try:
+        data = json.loads(raw)
+        answer = (data.get("answer") or "").strip()
+        followups = data.get("followups") or []
+        followups = [str(f).strip() for f in followups if str(f).strip()]
+        return answer, followups[:5]
+    except Exception:
+        return text.strip(), []
 
 def generate_with_llm(query: str, sources: List[Dict]) -> Tuple[str, Dict]:
     """
@@ -120,7 +144,13 @@ def generate_with_llm(query: str, sources: List[Dict]) -> Tuple[str, Dict]:
     if text.lower().startswith("i don’t have") or text.lower().startswith("i don't have"):
         return OOS_SENTENCE, {"model": model, "oos": True}
 
-    # 5) Ensure citations & style
-    text = ensure_citations(text, sources)
-    text = enforce_style(text, max_sentences=6)
-    return text, {"model": model, "oos": False}
+    # 5) Parse JSON -> answer + followups
+    answer_raw, followups = _parse_llm_json(text)
+
+    # 6) Sanitize + style (no trailing Sources: block added here)
+    answer_fmt = clean_answer(answer_raw, user_query=query)
+    answer_fmt = enforce_style(answer_fmt, max_sentences=22)
+    answer_fmt = ensure_citations(answer_fmt, sources, append_block=False)
+
+    return answer_fmt, {"model": model, "oos": False, "followups": followups}
+

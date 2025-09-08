@@ -1,3 +1,8 @@
+# =============================================
+# File: app/utils/oos.py
+# Purpose: Out-of-scope scoring logic
+# =============================================
+
 from typing import List, Dict
 import os
 

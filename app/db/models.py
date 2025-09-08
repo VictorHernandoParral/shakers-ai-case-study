@@ -1,3 +1,8 @@
+# =============================================
+# File: app/db/models.py
+# Purpose: SQLModel ORM definitions for persisted analytics: user query events (including OOS flag and latency) and recommendation logs.
+# =============================================
+
 from sqlmodel import SQLModel, Field
 from typing import Optional
 from datetime import datetime

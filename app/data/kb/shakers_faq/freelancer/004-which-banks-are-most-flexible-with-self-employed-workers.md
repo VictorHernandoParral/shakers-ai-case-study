@@ -2,16 +2,13 @@
 title: "Which banks are most flexible with self-employed workers?"
 audience: freelancer
 source: shakers_faq
+relpath: freelancer/004-which-banks-are-most-flexible-with-self-employed-workers.md
 ordinal: 4
-relpath: shakers_faq/freelancer/004-which-banks-are-most-flexible-with-self-employed-workers.md
-tags: [faq]
 ---
 
-# Which banks are most flexible with self-employed workers?
+**Answer:**
 
-**Q:** Which banks are most flexible with self-employed workers?
-
-**A:** 1. Banco Sabadell
+1. Banco Sabadell
 
 Banco Sabadell offers specific accounts and lines of credit for self-employed workers. It has programs designed to take into account the variability of self-employed workers' income and offers specialized advice.
 

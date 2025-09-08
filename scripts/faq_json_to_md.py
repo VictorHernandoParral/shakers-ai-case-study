@@ -1,3 +1,8 @@
+# =============================================
+# File: scripts/faq_json_to_md.py
+# Purpose: Script to convert Shakers FAQ JSON/JSONL into markdown KB files
+# =============================================
+
 # scripts/faq_json_to_md.py
 
 import argparse

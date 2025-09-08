@@ -1,3 +1,8 @@
+# =============================================
+# File: app/utils/caching.py
+# Purpose: In-memory TTL cache with LRU eviction
+# =============================================
+
 import time
 from typing import Any
 from collections import OrderedDict

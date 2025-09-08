@@ -1,3 +1,8 @@
+# =============================================
+# File: scripts/index_kb.py
+# Purpose: Script to index KB documents into Chroma
+# =============================================
+
 # scripts/index_kb.py
 import re
 from pathlib import Path
@@ -42,8 +47,12 @@ def main():
         if not body.strip():
             continue
 
+        
+        text_for_embedding = (f"Question: {fm.get('title','')}\n\n{body}").strip()
+
         # token-aware chunking from your util
-        chunks = chunk_text(body, max_tokens=350, overlap_tokens=60)
+        chunks = chunk_text(text_for_embedding, max_tokens=350, overlap_tokens=60)
+
 
         base_meta = build_metadata(str(file_path), language="en", source=fm.get("source") or "internal_kb")
         # merge front-matter fields (audience, title, etc.)

@@ -1,6 +1,6 @@
 # =============================================
 # File: app/utils/citations.py
-# Purpose: Ensure answers include clickable citations
+# Purpose: Ensure answers include citations
 # =============================================
 from __future__ import annotations
 from typing import List, Dict
@@ -16,23 +16,23 @@ def _dedupe_sources(sources: List[Dict]) -> List[Dict]:
             result.append(s)
     return result
 
-def ensure_citations(answer: str, sources: List[Dict]) -> str:
+def ensure_citations(answer: str, sources: List[Dict], append_block: bool = False) -> str:
     """
     If the model didn't add inline citations like [Title](URL),
-    append a 'Sources:' line with clickable links.
+    append a 'Sources:' line with the title of the faq source.
     """
-    if not sources:
-        return answer
+    if not append_block or not sources:
+        return answer or ""
 
     text = answer or ""
     low = text.lower()
-    # Simple heuristic: if it already contains [..](http...), don't add a Sources: line
+    
     if "[" in low and "](" in low:
         return text
 
     items = []
     for s in _dedupe_sources(sources):
-        title = s.get("title") or "Source"
+        title = (s.get("title") or "Source").strip()
         url = safe_url(s.get("url") or "")
         items.append(f"[{title}]({url})" if url else title)
 

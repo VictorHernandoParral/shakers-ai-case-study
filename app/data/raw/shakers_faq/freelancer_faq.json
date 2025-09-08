@@ -81,25 +81,31 @@
     "audience": "freelancer",
     "source": "shakers_faq",
     "question": "Do I need any kind of insurance as a self-employed person?",
-    "answer": "It is not compulsory to take out any insurance as a self-employed worker, although sometimes some self-employed workers decide to take out certain types of insurance (depending on their professional activity):\n\nProfessional Liability Insurance: This insurance covers material or personal damage that you may cause to third parties in the course of your professional activity. It is especially important if your work involves risks to third parties, as in the case of doctors, lawyers, architects, etc.\n\nWorkers' Compensation Insurance: This protects both you as a freelancer and your employees in the event of workplace accidents that occur during the course of your professional activity.\n\nHealth Insurance: As a self-employed person, you do not have access to social security through an employer, so taking out private health insurance can be important to cover medical expenses and ensure prompt, quality medical care.\n\nDisability Insurance: This type of insurance provides income in the event that you are temporarily unable to work due to an illness or injury that prevents you from carrying out your professional activity.\n\nCommercial Vehicle Insurance: If you use a vehicle in the course of your professional activity, it is important to insure it adequately to cover any damage that may occur.\n\nProperty Damage Insurance: Protect your business assets, such as equipment, inventory, or workspace, against damage or loss caused by events such as fire, flood, theft, etc.\n\nVAT: how VAT works, how it is paid to the tax authorities, how it is deducted\n\n1. Charging VAT: When a self-employed person issues an invoice for the provision of services, they must add the corresponding VAT to the sale price. This VAT charged is collected from the customer and broken down on the invoice, showing the amount before tax, the VAT rate applied (usually 21%, although it can be 10% or 4% depending on the product or service), and the total amount including VAT.\n\n2. VAT settlement: Self-employed workers must submit a VAT return (form 303) to the Tax Agency on a quarterly basis. In this return, the input VAT (paid on purchases) is subtracted from the output VAT (charged on sales).\n\nIf the VAT charged is greater than the VAT paid, the difference must be paid to the Tax Agency.\n\nIf the input VAT is greater than the output VAT, a refund of the difference can be requested or it can be offset in future returns.\n\n3. Forms 303 and 390:\n\nForm 303: This is submitted quarterly and is the form used to settle VAT.\n\nForm 390: This is an annual summary return of all transactions subject to VAT carried out during the year. It is filed in January of the year following the fiscal year.\n\n4. VAT rates: There are different VAT rates depending on the product or service:\n\nGeneral rate (21%): Most goods and services.\n\nReduced rate (10%): Food products, transport services, hotels and restaurants, etc.\n\nSuper-reduced rate (4%): Essential products such as bread, milk, books, medicines, etc."
+    "answer": "It is not compulsory to take out any insurance as a self-employed worker, although sometimes some self-employed workers decide to take out certain types of insurance (depending on their professional activity):\n\nProfessional Liability Insurance: This insurance covers material or personal damage that you may cause to third parties in the course of your professional activity. It is especially important if your work involves risks to third parties, as in the case of doctors, lawyers, architects, etc.\n\nWorkers' Compensation Insurance: This protects both you as a freelancer and your employees in the event of workplace accidents that occur during the course of your professional activity.\n\nHealth Insurance: As a self-employed person, you do not have access to social security through an employer, so taking out private health insurance can be important to cover medical expenses and ensure prompt, quality medical care.\n\nDisability Insurance: This type of insurance provides income in the event that you are temporarily unable to work due to an illness or injury that prevents you from carrying out your professional activity.\n\nCommercial Vehicle Insurance: If you use a vehicle in the course of your professional activity, it is important to insure it adequately to cover any damage that may occur.\n\nProperty Damage Insurance: Protect your business assets, such as equipment, inventory, or workspace, against damage or loss caused by events such as fire, flood, theft, etc."
+  },
+  {
+    "audience": "freelancer",
+    "source": "shakers_faq",
+    "question": "VAT: how VAT works, how it is paid to the tax authorities, how it is deducted?",
+    "answer": "1. Charging VAT: When a self-employed person issues an invoice for the provision of services, they must add the corresponding VAT to the sale price. This VAT charged is collected from the customer and broken down on the invoice, showing the amount before tax, the VAT rate applied (usually 21%, although it can be 10% or 4% depending on the product or service), and the total amount including VAT.\n\n\n\n\n2. VAT settlement: Self-employed workers must submit a VAT return (form 303) to the Tax Agency on a quarterly basis. In this return, the input VAT (paid on purchases) is subtracted from the output VAT (charged on sales).\n\nIf the VAT charged is greater than the VAT paid, the difference must be paid to the Tax Agency.\n\nIf the input VAT is greater than the output VAT, a refund of the difference can be requested or it can be offset in future returns.\n\n3. Forms 303 and 390:\n\n\nForm 303: This is submitted quarterly and is the form used to settle VAT.\n\nForm 390: This is an annual summary return of all transactions subject to VAT carried out during the year. It is filed in January of the year following the fiscal year.\n\n4. VAT rates: There are different VAT rates depending on the product or service:\n\n\nGeneral rate (21%): Most goods and services.\n\nReduced rate (10%): Food products, transport services, hotels and restaurants, etc.\n\nSuper-reduced rate (4%): Essential products such as bread, milk, books, medicines, etc."
   },
   {
     "audience": "freelancer",
     "source": "shakers_faq",
     "question": "I am moving to Spain in the next few months. Will I be able to register as self-employed?",
-    "answer": "Yes, you can register as self-employed, but first you will have to complete the following procedures:\n\nApply for a NIE (foreigner identification number) to carry out any procedures with the Spanish administration.\n\nYou will need to have your work permit approved so that Social Security will allow you to register with the RETA (Special Scheme for Self-Employed Workers).\n\nHave a Spanish bank account."
+    "answer": "Yes, you can register as self-employed, but first you will have to complete the following procedures:\n\n\nApply for a NIE (foreigner identification number) to carry out any procedures with the Spanish administration.\n\nYou will need to have your work permit approved so that Social Security will allow you to register with the RETA (Special Scheme for Self-Employed Workers).\n\nHave a Spanish bank account.\n\nIf this is your first time in Spain, until you regularize your situation, unfortunately, you will not be able to register as a self-employed worker."
   },
   {
     "audience": "freelancer",
     "source": "shakers_faq",
-    "question": "If this is your first time in Spain, until you regularize your situation, unfortunately, you will not be able to register as a self-employed worker. What expenses related to my activity can I deduct?",
+    "question": "What expenses related to my activity can I deduct?",
     "answer": "Here are some examples of VAT-deductible expenses:\n\nSupplies\n\nWater, electricity, gas, telephone, and internet. For self-employed workers who work from home, a percentage of these expenses can be deducted, calculated based on the space dedicated to professional activity.\n\nNote: Since 2018, you can deduct 30% of utility expenses calculated based on the percentage of the home's floor space dedicated to the activity.\n\nOffice supplies\n\nStationery, printer cartridges, computer equipment, etc.\n\nRent\n\nRental of premises, offices, or coworking spaces. If you work from home, you can deduct the percentage of rent corresponding to the space dedicated to your business activity.\n\nVehicles\n\nFuel, maintenance, and vehicle insurance. Vehicle deductions are only allowed if the vehicle is used for professional activities and is adequately justified.\n\nInsurance\n\nCivil liability insurance, health insurance for the self-employed person, their spouse, and children under 25 living at home. The maximum deductible premium is €500 per person (€1,500 in the case of persons with disabilities).\n\nTraining and Travel\n\nCourses, seminars, and travel related to professional activity. These include transportation, accommodation, and per diem expenses, provided they are duly justified and related to the activity.\n\nAdvertising and Promotion\n\nExpenses for advertising, marketing, website, etc.\n\nFinancial Expenses\n\nInterest on loans and credits related to the activity, bank fees."
   },
   {
     "audience": "freelancer",
     "source": "shakers_faq",
     "question": "What financial benefits will I have as a self-employed person?",
-    "answer": "Reduced flat rate for the first 12 months as a self-employed worker (€86.66/month)\n\nBonus for being self-employed for the first time:\n\nThe tax authorities allow 20% of your invoiced income during the first 2 years as a self-employed worker to be exempt from taxation.\n\nVAT deduction on expenses related to your professional activity."
+    "answer": "Reduced flat rate for the first 12 months as a self-employed worker (€86.66/month)\n\nBonus for being self-employed for the first time:\n\n\nThe tax authorities allow 20% of your invoiced income during the first 2 years as a self-employed worker to be exempt from taxation.\n\nVAT deduction on expenses related to your professional activity."
   },
   {
     "audience": "freelancer",
@@ -110,32 +116,50 @@
   {
     "audience": "freelancer",
     "source": "shakers_faq",
-    "question": "What is our value proposition?",
-    "answer": "Shakers is a startup whose mission is to become the home of (freelance) talent, a place where we can meet face to face and satisfy any work-related need, from networking to receiving legal support.\n\nBut to get there, we have to take many steps, and that's why we've decided to start with the first and most important one: offering you good projects.\n\nWe don't let just any client in; we filter projects just as we filter you. We evaluate the project (making sure it's not a gig job, that the hourly rate is decent, etc.) and we evaluate the client itself (making sure they know how to deal with freelancers, etc.).\n\nWe do all this through a matching algorithm (like Tinder)🪄 that takes into account not only professional aspects, but also motivational and personal ones. As we like to say, we don't want to match Java with Java, but Javier with Javier. We know that if you are truly motivated by your work, nothing can stop you.\n\nThat's why we are NOT a freelancer search engine like the others, we are not a kind of e-commerce site where you are a face with a price, we are a project search engine where you (are at the center of everything), you choose to apply for projects, although as we are a startup and we are improving our team, they may come looking for you.\n\nAt Shakers, we ARE an exclusive community:\n\nWe don't want 15,000 freelancers, we want 1,000, but the 1,000 best. That's why we want to make sure you're good, that you like our idea and our vision, and that you're going to help us achieve our goal of being the home of talent. Both of these things are extremely important to us at . If you're on board, we'll do everything in our power to improve your life as a freelancer.\n\nWe also want to make the most of your time. Let me give you an example of our sales team's goals:\n\nOur goals (for which we earn our bonuses) are to get you to dedicate as much time as possible to us and, in doing so, become a significant source of your monthly revenue.\n\nTo do this, we go out and find projects for you, not just any projects.\n\nOur goals are to get you to dedicate as much time as possible to us and, in doing so, become a significant contributor to your monthly revenue.\n\nThat's why our team of account managers will be by your side and will be your partner in helping you close sales. Once you join the cycle, our team will get to work for you.\n\nOBVIOUSLY, we don't do this because we are altruistic or the nicest people in the world. We do this because we know that if we GIVE, if we are important to you, we will RECEIVE and we will build a relationship of trust with you, counting on your help to grow this community and bring us closer to the vision I mentioned earlier. It will be a win-win relationship🤝 in which we all win. ❤️"
+    "question": "What is Shaker's value proposition?",
+    "answer": "Shakers is a startup whose mission is to become the home of (freelance) talent, a place where we can meet face to face and satisfy any work-related need, from networking to receiving legal support.\n\nBut to get there, we have to take many steps, and that's why we've decided to start with the first and most important one: offering you good projects.\n\nWe don't let just any client in; we filter projects just as we filter you. We evaluate the project (making sure it's not a gig job, that the hourly rate is decent, etc.) and we evaluate the client itself (making sure they know how to deal with freelancers, etc.).\n\nWe do all this through a matching algorithm (like Tinder)🪄 that takes into account not only professional aspects, but also motivational and personal ones. As we like to say, we don't want to match Java with Java, but Javier with Javier. We know that if you are truly motivated by your work, nothing can stop you.\n\nThat's why we are NOT a freelancer search engine like the others, we are not a kind of e-commerce site where you are a face with a price, we are a project search engine where you (are at the center of everything), you choose to apply for projects, although as we are a startup and we are improving our team, they may come looking for you."
   },
   {
     "audience": "freelancer",
     "source": "shakers_faq",
-    "question": "Would you like to earn money through our Referral Program?",
+    "question": "Why is Shakers an exclusive community?",
+    "answer": "We don't want 15,000 freelancers, we want 1,000, but the 1,000 best. That's why we want to make sure you're good, that you like our idea and our vision, and that you're going to help us achieve our goal of being the home of talent. Both of these things are extremely important to us at . If you're on board, we'll do everything in our power to improve your life as a freelancer."
+  },
+  {
+    "audience": "freelancer",
+    "source": "shakers_faq",
+    "question": "What are Shakers goals?",
+    "answer": "Our goals (for which we earn our bonuses) are to get you to dedicate as much time as possible to us and, in doing so, become a significant source of your monthly revenue.\n\nTo do this, we go out and find projects for you, not just any projects.\n\nOur goals are to get you to dedicate as much time as possible to us and, in doing so, become a significant contributor to your monthly revenue.\n\nThat's why our team of account managers will be by your side and will be your partner in helping you close sales. Once you join the cycle, our team will get to work for you.\n\nOBVIOUSLY, we don't do this because we are altruistic or the nicest people in the world. We do this because we know that if we GIVE, if we are important to you, we will RECEIVE and we will build a relationship of trust with you, counting on your help to grow this community and bring us closer to the vision I mentioned earlier. It will be a win-win relationship🤝 in which we all win. ❤️"
+  },
+  {
+    "audience": "freelancer",
+    "source": "shakers_faq",
+    "question": "Can I earn money through the Referral Program?",
     "answer": "At Shakers, apart from having the possibility of earning money by carrying out projects, you also have another possible source of income. 💸\n\nWe have a referral program through which you can refer tech profiles or companies that need freelance profiles.\n\nHow can you do this?\n\n📝 Log in to your Shakers profile and, in the \"Referral Plan\" panel, fill out the recommendation form for any of the published positions.\n\n📞 We will contact your referral to validate them.\n\n🤑 If your referral is selected to work on the project you referred them for, you can earn up to €1,000 and your friend gets a great project to work on."
   },
   {
     "audience": "freelancer",
     "source": "shakers_faq",
-    "question": "Not a freelancer but thinking about becoming one?",
+    "question": "How do I become a freelancer?",
     "answer": "If you've been thinking about becoming a freelancer for a while but still have some doubts,  are a few articles with useful information on how to make the leap to freelancing. ⚡️\n\nIf you have any questions and would like to consult us, please contact our Support team so they can help you."
   },
   {
     "audience": "freelancer",
     "source": "shakers_faq",
-    "question": "Where and how can I give feedback?",
-    "answer": "Feedback contributes to the success of the project.\n\nOn the project page, you'll find the \"Feedback\" tab, where you can report to the client on a weekly basis about the progress of the project and the tasks you had planned for that week.\n\nReasons why feedback is important:\n\nImproves performance: In order to meet the expectations and deliverables of a project, it is important to be very clear about what they are. Feedback clarifies expectations and keeps the team working within the scope of the project.\n\nBuilds trust: Honesty and openness create a culture of trust and security between the parties involved in the project.\n\nImproves communication: Feedback can be a two-way conversation between the freelancer and the client; it doesn't have to be a monologue. Good feedback gives the client the opportunity to respond, express their concerns, and address your questions.\n\nAnticipates problems: Following a feedback schedule provides an opportunity to discuss negative behaviors or issues that affect the project and try to resolve them before they lead to disputes or project failure.\n\nCheck tasks/objectives: Feedback gives us the opportunity to discuss urgent tasks/milestones and overall objectives. Talking openly with the client or team helps to identify what is realistic or achievable in the current phase of the project.\n\nQualities of good feedback"
+    "question": "How can I give feedback on my project?",
+    "answer": "Feedback contributes to the success of the project.\n\nOn the project page, you'll find the \"Feedback\" tab, where you can report to the client on a weekly basis about the progress of the project and the tasks you had planned for that week."
   },
   {
     "audience": "freelancer",
     "source": "shakers_faq",
-    "question": "When giving feedback, we recommend that it be:",
-    "answer": "Goal-oriented \n\nConcrete 🔤\n\nTangible 👁\n\nTimely 👍\n\nFocused 🔍\n\nSincere 😇\n\n👀 At Shakers, we recommend that our freelancers send weekly feedback. We encourage you to set a schedule with the client so that this can be done throughout the project."
+    "question": "Why is feedback important?",
+    "answer": "Improves performance: In order to meet the expectations and deliverables of a project, it is important to be very clear about what they are. Feedback clarifies expectations and keeps the team working within the scope of the project.\n\nBuilds trust: Honesty and openness create a culture of trust and security between the parties involved in the project.\n\nImproves communication: Feedback can be a two-way conversation between the freelancer and the client; it doesn't have to be a monologue. Good feedback gives the client the opportunity to respond, express their concerns, and address your questions.\n\nAnticipates problems: Following a feedback schedule provides an opportunity to discuss negative behaviors or issues that affect the project and try to resolve them before they lead to disputes or project failure.\n\nCheck tasks/objectives: Feedback gives us the opportunity to discuss urgent tasks/milestones and overall objectives. Talking openly with the client or team helps to identify what is realistic or achievable in the current phase of the project."
+  },
+  {
+    "audience": "freelancer",
+    "source": "shakers_faq",
+    "question": "What are the features of good feedback?",
+    "answer": "When giving feedback, we recommend that it be:\n\nGoal-oriented 🎯\n\nConcrete 🔤\n\nTangible 👁\n\nTimely 👍\n\nFocused 🔍\n\nSincere 😇\n\n👀 At Shakers, we recommend that our freelancers send weekly feedback. We encourage you to set a schedule with the client so that this can be done throughout the project."
   },
   {
     "audience": "freelancer",
@@ -146,19 +170,19 @@
   {
     "audience": "freelancer",
     "source": "shakers_faq",
-    "question": "Our focus is on you, and we work every day to make your life \"a little easier.\" How?",
-    "answer": "Access the most challenging projects that match your skills: we eliminate gig-works from our horizon; there is no place for this type of project here.\n\nWork on your own terms, with flexibility: whenever you want, however you want, with clients who understand your way of working.\n\nGenerate proposals quickly and easily using our tool.\n\nForget about worrying about your billing: leave it in our hands. The project Account Manager and our Billing team will take care of all procedures directly related to the billing of your projects through Shakers.\n\nYour project's Account Manager will ensure that the project you undertake through Shakers is developed successfully and satisfactorily for both parties, so if any dispute arises, we will be by your side.\n\nAccess Shakers where you will find, in addition to projects of interest to you, exclusive benefits and perks simply for being a Shaker, quality content that will help you improve your professional life on , and much more!\n\nThink it's going to be expensive? It costs €0. We won't charge you for working, nor will we charge you any fees, so forget about that.\n\nAnd whenever you need it, you'll have the Talent team at your disposal to help you make your profile stand out. 🌟"
+    "question": "What are the benefits of being a Shaker?",
+    "answer": "Our focus is on you, and we work every day to make your life \"a little easier.\" How? \n\nAccess the most challenging projects that match your skills: we eliminate gig-works from our horizon; there is no place for this type of project here.\n\nWork on your own terms, with flexibility: whenever you want, however you want, with clients who understand your way of working.\n\nGenerate proposals quickly and easily using our tool.\n\nForget about worrying about your billing: leave it in our hands. The project Account Manager and our Billing team will take care of all procedures directly related to the billing of your projects through Shakers.\n\nYour project's Account Manager will ensure that the project you undertake through Shakers is developed successfully and satisfactorily for both parties, so if any dispute arises, we will be by your side.\n\nAccess Shakers where you will find, in addition to projects of interest to you, exclusive benefits and perks simply for being a Shaker, quality content that will help you improve your professional life on , and much more!\n\nThink it's going to be expensive? It costs €0. We won't charge you for working, nor will we charge you any fees, so forget about that.\n\nAnd whenever you need it, you'll have the Talent team at your disposal to help you make your profile stand out. 🌟"
   },
   {
     "audience": "freelancer",
     "source": "shakers_faq",
     "question": "What are the values of a Shaker?",
-    "answer": "The 9 principles that drive a Shaker:\n\nBelieve that you can have a positive impact on the world🌏 through your actions.\n\n📈Never stop evolving and believing in your purpose in life.\n\n⚖️Seek complete balance in your life: personal, social, and professional.\n\n🤟Wanting to enjoy your work.\n\n🧘‍♀️Want to wake up every day with a positive, constructive, creative, dynamic, flexible, autonomous, responsible, and self-taught attitude.\n\n🗺Believe that the whole world should have the opportunity to develop and generate value equally.\n\nBelieving that technology👨‍💻 can help us with this.\n\nBe part of a generation that has no age, but rather values and attitudes🏆 .\n\nBe part of the generation that inspires the world🎯 ."
+    "answer": "The 9 principles that drive a Shaker:\n\nBelieve that you can have a positive impact on the world🌏 through your actions. \n\n📈Never stop evolving and believing in your purpose in life.\n\n⚖️Seek complete balance in your life: personal, social, and professional.\n\n🤟Wanting to enjoy your work.\n\n🧘‍♀️Want to wake up every day with a positive, constructive, creative, dynamic, flexible, autonomous, responsible, and self-taught attitude.\n\n🗺Believe that the whole world should have the opportunity to develop and generate value equally.\n\nBelieving that technology👨‍💻 can help us with this.\n\nBe part of a generation that has no age, but rather values and attitudes🏆 .\n\nBe part of the generation that inspires the world🎯 ."
   },
   {
     "audience": "freelancer",
     "source": "shakers_faq",
-    "question": "Freeworking, do you know what it is?",
+    "question": "What is Freeworking?",
     "answer": "When we define the worker of the \"future\" as someone who enjoys complete flexibility, is delocalized, highly specialized, works by milestones, etc., we are painting an accurate picture of the freelancer. These are profiles who, for the most part, at the peak of their careers, decide to invest in their talent and develop it to its full potential by working on projects that motivate them.\n\nThe problem? The term \"freelancer\" still has negative connotations in the collective imagination of companies, and freelancers are only considered for \"cheap\" projects and specific tasks, without understanding their true potential and limiting the growth potential of their businesses.\n\nThat is why we have coined our own term to define this way of working for professionals who are reinventing the world of work and meeting their expectations: greater flexibility and freedom at work.\n\nFreeworking is the lever that will differentiate companies in the coming years and act as a multiplier of their results by Víctor Manasé.\n\nIt's simple: anyone who wants to have the best talent on their teams will have to jump on the freeworking bandwagon:\n\nFlexible work\n\nDelocalized\n\nHybrid teams\n\nSuper-specialization\n\nProject-based work\n\nMotivation through SACO"
   },
   {
@@ -176,7 +200,7 @@
   {
     "audience": "freelancer",
     "source": "shakers_faq",
-    "question": "Can I invoice if I have a Limited Company but am not self-employed?",
+    "question": "Can I invoice if I have an SL but am not self-employed?",
     "answer": "Yes, you can invoice under the name of your SL as long as your company's activity is related to the work you are going to perform within the app."
   },
   {
@@ -189,7 +213,7 @@
     "audience": "freelancer",
     "source": "shakers_faq",
     "question": "If I am self-employed, what percentage of income tax should I include in my app profile and on my invoices?",
-    "answer": "Depending on your tax bracket, if you are a tax resident in Spain, you must include 7% or 15% income tax. We recommend that you talk to your advisor to include the income tax percentage that best suits your tax situation.\n\nIf you are not a tax resident in Spain, you do not have to include income tax or VAT on your invoices."
+    "answer": "Depending on your tax bracket, if you are a tax resident in Spain, you must include 7% or 15% income tax. We recommend that you talk to your advisor to include the income tax percentage that best suits your tax situation. \n\nIf you are not a tax resident in Spain, you do not have to include income tax or VAT on your invoices."
   },
   {
     "audience": "freelancer",
@@ -218,14 +242,14 @@
   {
     "audience": "freelancer",
     "source": "shakers_faq",
-    "question": "What if that period passes and I don't receive the payment?",
-    "answer": "If more than 5 business days have passed and you still haven't received the payment:\n\nAccess the support chat from the app or website\n\nIndicate that you need to speak to the Billing team\n\nThey will review your case and get back to you as soon as possible"
+    "question": "What if that period of 5 business days passes and I don't receive the payment?",
+    "answer": "If more than 5 business days have passed and you still haven't received the payment:\n\nAccess the support chat from the app or website\n\nIndicate that you need to speak to the Billing team\n\nThey will review your case and get back to you as soon as possible\n\nDo you have any other questions about your bill or payment status? Write to us, we are here to help you 💙"
   },
   {
     "audience": "freelancer",
     "source": "shakers_faq",
     "question": "What happens if the issue or due date of my invoice has expired on the platform?",
-    "answer": "Don't worry. The dates that appear on the platform are for guidance only and do not affect the payment agreed with the customer.\n\n📅 Has the date expired? Don't worry, it's not a problem.\n\nIf you see that the issue or due date of your invoice has passed, don't worry:\n\nIt does not affect the payment\n\nYou don't need to reissue the invoice\n\nYou will still be paid the amount agreed in your initial financial proposal\n\nThe important thing is that the milestone has been validated by the client and you have correctly uploaded your invoice in PDF format."
+    "answer": "Don't worry. The dates that appear on the platform are for guidance only and do not affect the payment agreed with the customer.\n\nIf the date has expired, don't worry, it's not a problem.\n\nIf you see that the issue or due date of your invoice has passed, don't worry:\n\nIt does not affect the payment\n\nYou don't need to reissue the invoice\n\nYou will still be paid the amount agreed in your initial financial proposal\n\nThe important thing is that the milestone has been validated by the client and you have correctly uploaded your invoice in PDF format."
   },
   {
     "audience": "freelancer",
@@ -236,26 +260,32 @@
   {
     "audience": "freelancer",
     "source": "shakers_faq",
-    "question": "Once completing the payment, When will I be notified?",
+    "question": "When will I be notified after a payment has been issued?",
     "answer": "When we make the payment, you will receive an automatic email confirming that your invoice has been processed.\nThat email is your signal that the money is on its way."
   },
   {
     "audience": "freelancer",
     "source": "shakers_faq",
     "question": "How long does it take for the payment to arrive?",
-    "answer": "It depends on your bank.\n\nIt can usually take up to 48 business hours for the transfer to go through\n\n📌 If more than 3 business days have passed and you do not see the deposit, please contact us to check the status."
+    "answer": "It depends on your bank.\n\nIt can usually take up to 48 business hours for the transfer to go through\n\nIf more than 3 business days have passed and you do not see the deposit, please contact us to check the status."
   },
   {
     "audience": "freelancer",
     "source": "shakers_faq",
     "question": "What should I do if I have completed a milestone and the client has not yet paid the invoice?",
-    "answer": "This situation should not occur, as at Shakers you should not start a milestone if it has not been paid for in advance. But if it has happened, here's how to resolve it as quickly as possible.\n\n⚠️ First: remember the key rule\n\nBefore you start working on a milestone, always check that the client has activated and paid for it.\nThis is the only way to guarantee payment through Shakers Payments."
+    "answer": "This situation should not occur, as at Shakers you should not start a milestone if it has not been paid for in advance. But if it has happened, here's how to resolve it as quickly as possible.\n\nFirst: remember the key rule\n\nBefore you start working on a milestone, always check that the client has activated and paid for it.\nThis is the only way to guarantee payment through Shakers Payments.\n\nContact the project's Account Manager immediately\n\nGo to the project chat\n\nIn the upper right corner, you will see three dots with photos of the client, the Account Manager, and yourself\n\nClick on the Account Manager's photo to open a private 1-to-1 chat\n\nTell them what has happened so they can deal with it directly with the client. It may be that they have simply forgotten to make the payment."
   },
   {
     "audience": "freelancer",
     "source": "shakers_faq",
-    "question": "What to do if you have already delivered the milestone and the client has not paid?",
-    "answer": "Contact the project's Account Manager immediately\n\nGo to the project chat\n\nIn the upper right corner, you will see three dots with photos of the client, the Account Manager, and yourself\n\nClick on the Account Manager's photo to open a private 1-to-1 chat\n\n💬 Tell them what has happened so they can deal with it directly with the client. It may be that they have simply forgotten to make the payment.\n\n2. You can also write to them by email\n\nIf you have their email address, you can communicate the situation directly that way.\n\n🧠 Shakers tip\n\nTo avoid this type of situation, never start working on a milestone that is in \"pending payment\" status.\nIf you don't know how to check the status, check it from your dashboard or contact your Account Manager before you start."
+    "question": "Can I contact the client via email?",
+    "answer": "You can also write to them by email\n\nIf you have their email address, you can communicate the situation directly that way."
+  },
+  {
+    "audience": "freelancer",
+    "source": "shakers_faq",
+    "question": "How do I avoid not being paid?",
+    "answer": "To avoid this type of situation, never start working on a milestone that is in \"pending payment\" status.\nIf you don't know how to check the status, check it from your dashboard or contact your Account Manager before you start."
   },
   {
     "audience": "freelancer",
@@ -266,20 +296,20 @@
   {
     "audience": "freelancer",
     "source": "shakers_faq",
-    "question": "What do you need to get paid if you live outside Spain?",
+    "question": "What do I need to get paid if I live outside Spain?",
     "answer": "Have an active bank account (it can be in any country)\n\nMake sure your IBAN or SWIFT details are correct when uploading your invoice\n\nAssume any transfer costs if you are outside the EU"
   },
   {
     "audience": "freelancer",
     "source": "shakers_faq",
     "question": "When can I upload my invoice to the app?",
-    "answer": "You can upload your invoice right after the client validates the work milestone. That's when the payment is ready to be processed.\n\n📩 You will receive a notification email."
+    "answer": "You can upload your invoice right after the client validates the work milestone. That's when the payment is ready to be processed.\n\n📩 You will receive a notification email.\n\nWhen the customer validates your milestone, you will receive an email with the subject line:\n\"💸 It's money time! Upload your invoice to the Shakers app.\"\n\nThis email includes a direct link to the section where you can upload your invoice."
   },
   {
     "audience": "freelancer",
     "source": "shakers_faq",
-    "question": "How to upload your invoice?",
-    "answer": "Click on the link in the email or go directly to your profile → \"Payments\" section\n\nFind the validated milestone\n\nClick on \"Upload invoice.\"\n\nAttach the PDF file\n\nCheck that all the information is correct\n\nIn that same section, you will see Shakers' tax information so that you can complete your invoice correctly."
+    "question": "How to upload my invoice?",
+    "answer": "Click on the link in the email or go directly to your profile → \"Payments\" section\n\nFind the validated milestone\n\nClick on \"Upload invoice.\"\n\nAttach the PDF file\n\nCheck that all the information is correct\n\nIn that same section, you will see Shakers' tax information so that you can complete your invoice correctly.\n\nAnd then, once you upload your invoice:\n\nOur team will review and process the payment\n\nYou will receive a confirmation email when the money is on its way"
   },
   {
     "audience": "freelancer",
@@ -290,68 +320,74 @@
   {
     "audience": "freelancer",
     "source": "shakers_faq",
-    "question": "If I have completed a milestone but I do not get any feedback, When to take action?",
+    "question": "When should I take action if the client has not yet validated a work milestone?",
     "answer": "You have completed the milestone work\n\nYou have clicked the \"Deliver\" button\n\nThe client has not validated the milestone after several days"
   },
   {
     "audience": "freelancer",
     "source": "shakers_faq",
-    "question": "What does the status of a Milestone mean?",
-    "answer": "Each milestone in a project has a status that indicates where it is in the process. Here we explain what each one means and what actions you can (or cannot) take.\n\n🔴 Pending payment\n\n📌 You cannot start working.\n\nThis status indicates that the client has not yet deposited payment for the milestone.\nUntil that happens:"
+    "question": "What do I do if the client has not validated the milestone after several days?",
+    "answer": "Contact the project's Account Manager\n\nYou can do this directly from the project chat:\n\nGo to the application chat\n\nAt the top right, you will see three dots with photos of the client, the Account Manager, and yourself\n\nClick on the Account Manager's icon\n\nA one-on-one chat will open so you can explain your situation"
+  },
+  {
+    "audience": "freelancer",
+    "source": "shakers_faq",
+    "question": "What does the status of a milestone mean?",
+    "answer": "Each milestone in a project has a status that indicates where it is in the process. Here we explain what each one means and what actions you can (or cannot) take.\n\n🔴 Pending payment\n\n📌 You cannot start working.\n\nThis status indicates that the client has not yet deposited payment for the milestone.\nUntil that happens:\n\nDo not start work, as Shakers will not be able to guarantee payment.\n\nTalk to your Account Manager so they can contact the client and request payment\n\n🚨 If you work on the milestone in this status, you do so at your own risk.\n\n🟠 Pending\n\n📌 The work is already done, but it is pending validation by the client.\n\nYour role at this point:\n\nEnsure that the client has received everything that was agreed upon.\n\nYou can send them a reminder message to review and validate the milestone\n\n🟢 Active\n\n📌 You can start working now!\n\nThis means that:\n\nThe client has activated the milestone\n\nThey have made the corresponding payment, which Shakers securely retains\n\nYou are officially authorized to proceed with the work\n\n✅ Completed\n\n📌 The client has validated the milestone and the payment has been processed.\n\nYou can now:\n\nUpload your invoice from the Payments section\n\nPrepare for the next milestone, if any"
   },
   {
     "audience": "freelancer",
     "source": "shakers_faq",
     "question": "When should I start working on the project?",
-    "answer": "Even if the client has accepted your proposal, you should not start working until the first milestone is activated. We explain how to know when it is the right time to start.\n\n⚠️ Important!\n\nYou will receive an email when your proposal is accepted, but that does not mean you can start working right away.\nAcceptance of the project is not the same as the start of work."
+    "answer": "Even if the client has accepted your proposal, you should not start working until the first milestone is activated. We explain how to know when it is the right time to start.\n\n\nYou will receive an email when your proposal is accepted, but that does not mean you can start working right away.\nAcceptance of the project is not the same as the start of work.\n\n\nYou should only start when the client activates the first milestone.\nThis ensures that:\n\nThe client has made the corresponding payment\n\nThe work is officially underway\n\nYou are covered by the Shakers payment system"
   },
   {
     "audience": "freelancer",
     "source": "shakers_faq",
-    "question": "When can I start?",
-    "answer": "You should only start when the client activates the first milestone.\nThis ensures that:\n\nThe client has made the corresponding payment\n\nThe work is officially underway\n\nYou are covered by the Shakers payment system"
-  },
-  {
-    "audience": "freelancer",
-    "source": "shakers_faq",
-    "question": "How will I know when you can start?",
+    "question": "How will I know when I can start working on a project?",
     "answer": "You will receive a confirmation email when the client has activated the first milestone.\nFrom that moment on, you can get to work with complete peace of mind."
   },
   {
     "audience": "freelancer",
     "source": "shakers_faq",
-    "question": "How do I upload and collect my invoices?",
-    "answer": "At Shakers, we have designed a billing system that offers you security, convenience, speed, and continuity. Here's how to collect your milestones in just three steps.\n\n1. Check the \"My Invoices\" section\n\nLog in to your profile\n\nClick on the left side menu\n\nGo to the \"Payments\" section\n\n2. Upload your invoice"
+    "question": "Can you let me know the full process of invoicing?",
+    "answer": "At Shakers, we have designed a billing system that offers you security, convenience, speed, and continuity. Here's how to collect your milestones in just three steps.\n\n1. Check the \"My Invoices\" section\n\nLog in to your profile\n\nClick on the left side menu\n\nGo to the \"Payments\" section\n\n2. Upload your invoice\n\nWhen the customer validates that the milestone is complete, you will be able to upload the corresponding invoice.\n\nCheck the information that must appear on the invoice (name, date, exact amount of the milestone, etc.).\n\nGenerate your invoice in PDF format\n\nUpload it directly using the button provided in that section.\n\nThe status of the invoice will be updated automatically, and you will be able to track it from the dashboard.\n\n3. Payment confirmation\n\nOnce we review and process the invoice:\n\n📩 We will notify you by email as soon as the payment is made.\n\n✅ And that's it! The money will be transferred to your bank account.\n\n📌 Remember:\n\nYou can only upload the invoice once the client has validated the milestone\n\nThe Shakers team manages the payment to the client and pays you directly"
   },
   {
     "audience": "freelancer",
     "source": "shakers_faq",
     "question": "What payment plan does Shakers offer?",
-    "answer": "At Shakers, we use a secure and transparent payment system called Shakers Payments, where we act as intermediaries between you and the client. This way, we guarantee that you get paid on time and with all the guarantees."
-  },
-  {
-    "audience": "freelancer",
-    "source": "shakers_faq",
-    "question": "How does the payment plan work?",
-    "answer": "Each project is divided into milestones (phases), and each milestone has its own invoice.\nYour proposal must fit this structure."
+    "answer": "At Shakers, we use a secure and transparent payment system called Shakers Payments, where we act as intermediaries between you and the client. This way, we guarantee that you get paid on time and with all the guarantees.\n\nEach project is divided into milestones (phases), and each milestone has its own invoice.\nYour proposal must fit this structure."
   },
   {
     "audience": "freelancer",
     "source": "shakers_faq",
     "question": "What is Shakers Payments?",
-    "answer": "It is the system we use to manage payments securely.\nShakers:\n\nCollects payment from the customer\n\nHolds the money until you deliver your work\n\nReleases the payment when the customer validates the delivery\n\nPays you directly into your account\n\n📌 Step-by-step payment process\n\nCreate your proposal with defined milestones\nEach milestone represents a part of the work, with its own amount.\n\nRequest the activation of the milestone\nYou can do this at any time from the project dashboard.\n\nShakers requests payment from the client\nThey have up to 48 hours to pay the full amount for the milestone.\n\nThe client activates the milestone\nWhen doing so, they must pay for the milestone. If they activate it without paying, you will see a warning on the dashboard.\n\nShakers holds the money\nThis ensures that the amount is secured before you start working.\n\nYou deliver your work and request validation\nWhen you have completed the milestone, mark it as delivered and request that the client validate it.\n\nInvoice and payment\nOnce validated, you can upload your invoice and Shakers will send the money to your account."
+    "answer": "It is the system we use to manage payments securely.\nShakers:\n\nCollects payment from the customer\n\nHolds the money until you deliver your work\n\nReleases the payment when the customer validates the delivery\n\nPays you directly into your account"
+  },
+  {
+    "audience": "freelancer",
+    "source": "shakers_faq",
+    "question": "Can you let me know the step-by-step payment process?",
+    "answer": "Create your proposal with defined milestones\nEach milestone represents a part of the work, with its own amount.\n\nRequest the activation of the milestone\nYou can do this at any time from the project dashboard.\n\nShakers requests payment from the client\nThey have up to 48 hours to pay the full amount for the milestone.\n\nThe client activates the milestone\nWhen doing so, they must pay for the milestone. If they activate it without paying, you will see a warning on the dashboard.\n\nShakers holds the money\nThis ensures that the amount is secured before you start working.\n\nYou deliver your work and request validation\nWhen you have completed the milestone, mark it as delivered and request that the client validate it.\n\nInvoice and payment\nOnce validated, you can upload your invoice and Shakers will send the money to your account."
   },
   {
     "audience": "freelancer",
     "source": "shakers_faq",
     "question": "Why is my application still not visible to the client?",
-    "answer": "If, when applying for a project, you see the message \"Your application is not yet visible to the client,\" it means that the Account Manager needs to validate some details with you before submitting your application. Here we explain what this means and what you can do."
+    "answer": "If, when applying for a project, you see the message \"Your application is not yet visible to the client,\" it means that the Account Manager needs to validate some details with you before submitting your application. Here we explain what this means and what you can do.\n\nWhen you see this message, your application has been temporarily frozen.\nThe project Account Manager does this for one of the following reasons:\n\nTo validate your actual availability\n\nTo confirm a certification required by the client\n\nTo clarify your technical experience with a key tool or technology\n\nReview a specific aspect of your profile before introducing you"
   },
   {
     "audience": "freelancer",
     "source": "shakers_faq",
-    "question": "What if no one contacts me?",
-    "answer": "🚨 If 2-3 days have passed since you applied and you haven't received any messages, take the initiative:\n\n👉 Write to them directly via the project's internal chat\nAsk them directly:\n\n\"Hello, I see that my application is not yet visible. Is there anything you need to validate in order to move forward?\"\n\n🤝 Final tip\n\nThis step does not mean anything negative. On the contrary, it is an opportunity to highlight your profile and resolve any questions that may arise before showing it to the client."
+    "question": "What happens to my application after I have filled it in?",
+    "answer": "The Account Manager will contact you to validate the necessary points\n\nOnce everything is clear, they will decide whether to present your profile to the client or if it does not match what the client is looking for"
+  },
+  {
+    "audience": "freelancer",
+    "source": "shakers_faq",
+    "question": "What if no one contacts me after filling in the application?",
+    "answer": "🚨 If 2-3 days have passed since you applied and you haven't received any messages, take the initiative:\n\n👉 Write to them directly via the project's internal chat\nAsk them directly:\n\n\"Hello, I see that my application is not yet visible. Is there anything you need to validate in order to move forward?\""
   },
   {
     "audience": "freelancer",
@@ -362,8 +398,14 @@
   {
     "audience": "freelancer",
     "source": "shakers_faq",
-    "question": "What can I do to improve your match?",
-    "answer": "1. Click on the pencil icon to the right of each skill\n\nThis allows you to update the necessary fields to get closer to 70%.\n\n2. Adjust your super specialty\n\n📌 If, for example, the client is looking for a No Code Web Developer as a super specialty, but you have another one, change it in the editor and save the changes.\n\n3. Add the essential skills\n\nExample: the project requires these 2 skills:\n\nNo code\n\nPrototyping\n\nAnd you only have one of the two. Solution:\n\nGo to \"Edit\"\n\nAdd the ones you're missing\n\nAssign stars according to your level of experience\n\n💡 Only include the ones you really master. Forcing skills you don't have can hurt you in the process.\n\n4. Complete the required languages\n\nIf you are missing a language that the client has marked as mandatory, simply:\n\nClick on the pencil next to languages\n\nAdd the missing language\n\nSelect your actual level\n\n🔄 Important: refresh the page\n\n⚠️ If you have made changes and do not see an increase in the match percentage, refresh the page.\nSometimes the AI needs to reload to update the data correctly.\n\n👀 Some key clarifications\n\nYou don't need to have certified skills to apply, but they do help improve your match.\n\nMake sure that everything you include in your profile is something you truly master. Otherwise, it can work against you.\n\n🎥 Watch this video where we explain how to add skills and languages step by step:"
+    "question": "What can I do to improve my match?",
+    "answer": "1. Click on the pencil icon to the right of each skill\n\nThis allows you to update the necessary fields to get closer to 70%.\n\n2. Adjust your super specialty\n\n📌 If, for example, the client is looking for a No Code Web Developer as a super specialty, but you have another one, change it in the editor and save the changes.\n\n3. Add the essential skills\n\nExample: the project requires these 2 skills:\n\nNo code\n\nPrototyping\n\nAnd you only have one of the two. Solution:\n\nGo to \"Edit\"\n\nAdd the ones you're missing\n\nAssign stars according to your level of experience\n\n4. Complete the required languages\n\nIf you are missing a language that the client has marked as mandatory, simply:\n\nClick on the pencil next to languages\n\nAdd the missing language\n\nSelect your actual level"
+  },
+  {
+    "audience": "freelancer",
+    "source": "shakers_faq",
+    "question": "What about the match improving?",
+    "answer": "Some key clarifications\n\nYou don't need to have certified skills to apply, but they do help improve your match.\n\nMake sure that everything you include in your profile is something you truly master. Otherwise, it can work against you."
   },
   {
     "audience": "freelancer",
@@ -380,56 +422,50 @@
   {
     "audience": "freelancer",
     "source": "shakers_faq",
-    "question": "How can you avoid missing out?",
+    "question": "How can I avoid missing out?",
     "answer": "Check your email or notification as soon as you receive it\n\nAccess the project from the app or website and apply if it suits you\n\nAct fast: the best projects go quickly ✈️"
   },
   {
     "audience": "freelancer",
     "source": "shakers_faq",
     "question": "Can I do anything if the project is no longer available?",
-    "answer": "No. If you see the message, it means that there are already profiles moving forward with the client and it is not possible to apply at that time.\n\n💬 Shakers tip\n\nKeep your profile up to date and your availability clear. That way, when you automatically match with a new project, you'll be ready to apply without wasting any time."
+    "answer": "No. If you see the message, it means that there are already profiles moving forward with the client and it is not possible to apply at that time.\n\nKeep your profile up to date and your availability clear. That way, when you automatically match with a new project, you'll be ready to apply without wasting any time."
   },
   {
     "audience": "freelancer",
     "source": "shakers_faq",
-    "question": "Since I applied to a project, How long should I wait?",
-    "answer": "If it has been 3-4 days since you applied and you haven't received a response, don't worry. It's normal for some processes to take a while, especially if the client has a busy schedule.\n\n✅ What you can do\n\n1. Send a second message to the client\n\nGo to the project chat and write to them directly.\nYou can say something like:\n\"Hello, I am very interested in this project. Could we schedule a meeting to review the briefing together?\"\n\nBeing proactive helps show your commitment and professionalism.\n\n2. Contact the project's Account Manager\n\nIf after several attempts the client does not respond, look for the Account Manager's photo in the upper right corner of the chat.\nClick on it and send them a direct message.\n\nThe Account Manager is the person who communicates directly with the client and can help you resolve the situation.\n\n🙏 Shakers Tip\n\nWe know that waiting can be frustrating, but sometimes clients are overwhelmed and can't keep up.\nWe ask for a little patience, and in the meantime, keep applying to other projects if there are more opportunities that suit you."
+    "question": "How do I know the status of the project I applied for and how long should I wait?",
+    "answer": "If it has been 3-4 days since you applied and you haven't received a response, don't worry. It's normal for some processes to take a while, especially if the client has a busy schedule.\n\n✅ What you can do\n\n1. Send a second message to the client\n\nGo to the project chat and write to them directly.\nYou can say something like:\n\"Hello, I am very interested in this project. Could we schedule a meeting to review the briefing together?\"\n\nBeing proactive helps show your commitment and professionalism.\n\n2. Contact the project's Account Manager\n\nIf after several attempts the client does not respond, look for the Account Manager's photo in the upper right corner of the chat.\nClick on it and send them a direct message.\n\nThe Account Manager is the person who communicates directly with the client and can help you resolve the situation."
   },
   {
     "audience": "freelancer",
     "source": "shakers_faq",
     "question": "What are the rules for applying to a project?",
-    "answer": "In order for your application to be successful and aligned with our value proposition, it is essential that you follow the Happy Path. Here we explain how to apply correctly for a project and what to avoid.\n\n1. Check your match level\n\nBefore applying, make sure you have at least a 70% match with the project.\nIf you don't, review and update your profile so you can apply.\n\n2. Write an introductory message to the client\n\nIntroduce yourself briefly and show genuine interest in the project.\nInclude:"
+    "answer": "In order for your application to be successful and aligned with our value proposition, it is essential that you follow the Happy Path. Here we explain how to apply correctly for a project and what to avoid.\n\n1. Check your match level\n\nBefore applying, make sure you have at least a 70% match with the project.\nIf you don't, review and update your profile so you can apply.\n\n2. Write an introductory message to the client\n\nIntroduce yourself briefly and show genuine interest in the project.\nInclude:\n\nWho you are and what motivates you about the project\n\nPropose 2-3 times to schedule a video call directly through Shakers\n\n\n3. Highlight your relevant experience\n\nSelect 2 projects from your portfolio that are related to what the client needs.\nThis will give them confidence and clarity about your experience.\n\n4. Click \"Apply and send\"\n\nThe client will receive your application and can start the conversation."
   },
   {
     "audience": "freelancer",
     "source": "shakers_faq",
-    "question": "Who you are and what motivates you about the project",
-    "answer": "Propose 2-3 times to schedule a video call directly through Shakers\n\n💡 We use artificial intelligence to help you write this first message based on your profile and the project. You can edit it if you wish.\n\n3. Highlight your relevant experience\n\nSelect 2 projects from your portfolio that are related to what the client needs.\nThis will give them confidence and clarity about your experience.\n\n4. Click \"Apply and send\"\n\nThe client will receive your application and can start the conversation.\n\n🚨 Very important: What you should not do\n\nDuring the conversation with the client in the Shakers chat, DO NOT share:\n\nYour personal email address\n\nYour phone number\n\nYour Calendly or other external scheduling tools\n\nYour hourly rate or financial proposals in PDF format\n\n💬 All communication must be kept within the platform so that the Account Manager, who is also in that chat, can help you if necessary."
+    "question": "What should I not do when applying to a project?",
+    "answer": "During the conversation with the client in the Shakers chat, DO NOT share:\n\nYour personal email address\n\nYour phone number\n\nYour Calendly or other external scheduling tools\n\nYour hourly rate or financial proposals in PDF format\n\nAll communication must be kept within the platform so that the Account Manager, who is also in that chat, can help you if necessary."
   },
   {
     "audience": "freelancer",
     "source": "shakers_faq",
-    "question": "How to withdraw or edit a proposal?",
-    "answer": "If you have sent a proposal and want to make changes or withdraw it completely, you can easily do so from your profile. Here's how.\n\n📌 Step by step guide to withdrawing or editing your proposal\n\n1. Access your applications\n\nGo to the left side menu and click on \"💼 Applications.\"\n\nSelect \"Submitted proposals.\"\n\nYou will see a list of all the proposals you have submitted\n\n2. Open the proposal you want to change or withdraw\n\nFind the project in question\n\nClick \"View proposal\"\n\nAll details will be displayed, including:\n\nDescription of milestones\n\nAdditional information\n\nPayment plans\n\nLegal clauses\n\nAnd buttons to edit or withdraw\n\n✍️ If you want to edit your proposal:\n\nClick on \"Edit proposal\"\n\nYou will be taken to the \"Review and submit\" section, where you can modify:\n\nQuantities\n\nTitles\n\nMilestones (adding or removing)"
+    "question": "How to withdraw a proposal?",
+    "answer": "If you have sent a proposal and want to make changes or withdraw it completely, you can easily do so from your profile. Here's how.\n\nStep by step guide to withdrawing or editing your proposal\n\n1. Access your applications\n\nGo to the left side menu and click on \"💼 Applications.\"\n\nSelect \"Submitted proposals.\"\n\nYou will see a list of all the proposals you have submitted\n\n2. Open the proposal you want to change or withdraw\n\nFind the project in question\n\nClick \"View proposal\"\n\nAll details will be displayed, including:\n\nDescription of milestones\n\nAdditional information\n\nPayment plans\n\nLegal clauses\n\nAnd buttons to edit or withdraw\n\nClick on \"Withdraw proposal\"\n\nA confirmation pop-up will appear informing you that all associated information will be deleted\n\nIf you are sure, confirm the action"
+  },
+  {
+    "audience": "freelancer",
+    "source": "shakers_faq",
+    "question": "How to edit a proposal?",
+    "answer": "Click on \"Edit proposal\"\n\nYou will be taken to the \"Review and submit\" section, where you can modify:\n\nQuantities\n\nTitles\n\nMilestones (adding or removing)\n\nWhen you are finished, click \"Submit proposal\" again"
   },
   {
     "audience": "freelancer",
     "source": "shakers_faq",
     "question": "How do I extend a proposal?",
-    "answer": "If the project is going well and the client needs more work, you can extend your proposal directly from your dashboard. This allows you to add new milestones, adjusting deadlines and deliverables with ease.\n\n⚡ Keep up the momentum!"
-  },
-  {
-    "audience": "freelancer",
-    "source": "shakers_faq",
-    "question": "When it becomes clear that more deliverables are needed",
-    "answer": "Because the client wants to take advantage of your availability for more tasks\n\n📌 Step by step guide to extending a proposal\n\n1. Confirm with the client\n\nMake sure you both understand:"
-  },
-  {
-    "audience": "freelancer",
-    "source": "shakers_faq",
-    "question": "What amount will be allocated to each milestone?",
-    "answer": "2. Click on the \"Extend agreement\" button\n\nFrom your dashboard, select the project and click on \"Extend agreement.\"\n\n3. Create the extension\n\nThe process is exactly the same as when you made the initial proposal:\n\nAdd the new milestones\n\nSpecify the description, amount, and dates for each one\n\nCheck that everything is correct before sending it\n\n4. Wait for the client's acceptance\n\nAs with the initial proposal:\n\nThe customer must accept it for the new milestones to be activated\n\nThis time you already have trust, so if you want, you can notify them via chat to speed up the process 😜\n\n5. Let's get started!"
+    "answer": "If the project is going well and the client needs more work, you can extend your proposal directly from your dashboard. This allows you to add new milestones, adjusting deadlines and deliverables with ease.\n\n⚡ Keep up the momentum!\n\nWhen the client and freelancer are aligned and the project needs to be extended, it is normal to agree on an extension. This may arise:\n\nDuring a follow-up meeting\n\nWhen it becomes clear that more deliverables are needed\n\nBecause the client wants to take advantage of your availability for more tasks\n\n📌 Step by step guide to extending a proposal\n\n1. Confirm with the client\n\nMake sure you both understand:\n\nWhat new deliverables will be included\n\nWhat deadlines will be used\n\nWhat amount will be allocated to each milestone\n\n2. Click on the \"Extend agreement\" button\n\nFrom your dashboard, select the project and click on \"Extend agreement.\"\n\n\n3. Create the extension\n\nThe process is exactly the same as when you made the initial proposal:\n\nAdd the new milestones\n\nSpecify the description, amount, and dates for each one\n\nCheck that everything is correct before sending it\n\n4. Wait for the client's acceptance\n\nAs with the initial proposal:\n\nThe customer must accept it for the new milestones to be activated\n\nThis time you already have trust, so if you want, you can notify them via chat to speed up the process 😜\n\n5. Let's get started!\n\nWhen the client accepts, the new milestones will appear on your dashboard with:\n\nDescription\n\nDelivery dates\n\nPayment status"
   },
   {
     "audience": "freelancer",
@@ -441,43 +477,61 @@
     "audience": "freelancer",
     "source": "shakers_faq",
     "question": "What statuses can a milestone have?",
-    "answer": "Each milestone within a project can have one of these three statuses:\n\n1. Activate\n\n📌 This status indicates that work on that part of the project has not yet begun.\n\nWe activate the first milestone when the project moves to \"Active\" status.\n\nThe rest of the milestones can be activated by the client.\n\nIf any of them remain inactive, you can ask the client to activate them (sometimes a little nudge helps😉 ).\n\n🔐 When a milestone is activated, the client makes the corresponding payment. Shakers holds that payment until you complete and deliver the milestone.\n\n2. Deliver\n\n📦 Once you have completed the milestone work, click \"Deliver.\" This means:\n\nYou are communicating to the client that the work for that milestone is ready\n\nThe client will review and validate the delivery\n\nOnce validated, the field to upload the invoice for that milestone will be enabled\n\n3. Completed\n\n✅ When the milestone is validated and completed, it changes to \"Completed\" status.\n\nThis allows you to see on your dashboard:"
+    "answer": "Each milestone within a project can have one of these three statuses:\n\n1. Activate\n\n📌 This status indicates that work on that part of the project has not yet begun.\n\nWe activate the first milestone when the project moves to \"Active\" status.\n\nThe rest of the milestones can be activated by the client.\n\nIf any of them remain inactive, you can ask the client to activate them (sometimes a little nudge helps😉 ).\n\n🔐 When a milestone is activated, the client makes the corresponding payment. Shakers holds that payment until you complete and deliver the milestone.\n\n2. Deliver\n\n📦 Once you have completed the milestone work, click \"Deliver.\" This means:\n\nYou are communicating to the client that the work for that milestone is ready\n\nThe client will review and validate the delivery\n\nOnce validated, the field to upload the invoice for that milestone will be enabled\n\n3. Completed\n\n✅ When the milestone is validated and completed, it changes to \"Completed\" status.\n\nThis allows you to see on your dashboard:\n\nWhich milestones are in progress\n\nWhich ones you have already delivered\n\nAnd how many have been completed\n\n🧭 It's an easy way to track the progress of the project, both for you and for the client.\n\nYou can manage milestones during a project from the project's \"Dashboard\" tab.\n\nIf the client does not approve your work, don't worry; you are not alone. The person responsible for the Shakers Project Success team, who is in charge of monitoring the project, will intervene and act as a \"judge\" to determine whether payment should be released."
   },
   {
     "audience": "freelancer",
     "source": "shakers_faq",
     "question": "What is a milestone?",
-    "answer": "📌 Definition\n\nThey are reference points that divide a project into clear phases.\n\nThey help to plan, schedule, and execute the work in an orderly manner.\n\nEach deliverable proposal in Shakers consists of one or more milestones.\n\nRemember 👇\n\nThe number of milestones you define in your proposal determines:"
+    "answer": "They are reference points that divide a project into clear phases.\n\nThey help to plan, schedule, and execute the work in an orderly manner.\n\nEach deliverable proposal in Shakers consists of one or more milestones."
   },
   {
     "audience": "freelancer",
     "source": "shakers_faq",
-    "question": "🎯 Why do we work by milestones at Shakers?",
+    "question": "How many milestones can I define in a proposal?",
+    "answer": "The number of milestones you define in your proposal determines:\n\nHow many invoices you will need to issue to Shakers\n\nHow many invoices Shakers will issue to the client (once your work has been validated)"
+  },
+  {
+    "audience": "freelancer",
+    "source": "shakers_faq",
+    "question": "Why do you work by milestones at Shakers?",
     "answer": "There are three key reasons:\n\nProgressive and stable payment\n\nYou receive payments as you progress, rather than waiting until the entire project is completed\n\nIt gives you more financial stability and helps with tax management (you avoid paying VAT in advance for work that has not been paid for)\n\nControlled disbursements for the client\n\nThe client pays in phases, which facilitates investment and builds trust\n\nQuality control and flexibility\n\nThe quality of the work is reviewed at each stage\n\nAllows for adjustments to be made on the fly as the project evolves"
   },
   {
     "audience": "freelancer",
     "source": "shakers_faq",
     "question": "How do I create and organize my tasks?",
-    "answer": "When you participate in a project as a freelancer, you can create and organize tasks, assign responsibilities and set deadlines, with the aim of keeping the client informed of your work asynchronously.\n\nOur methodology is based on:\n\nAn initial definition of key tasks and milestones.\n\nWeekly monitoring of these tasks.\n\n🤔 Check out the article  for information on how to mark key milestones in a project.\n\n🤖 Project dashboard\n\nAll project management is done from the project dashboard. You can access the dashboard for a project you are participating in from the side menu, under \"My projects.\"\n\nTo access all the tasks in a project, go to the \"Board\" tab.\n\nThe board is organized in a 3-column Kanban style:"
+    "answer": "When you participate in a project as a freelancer, you can create and organize tasks, assign responsibilities and set deadlines, with the aim of keeping the client informed of your work asynchronously.\n\nOur methodology is based on: \n\nAn initial definition of key tasks and milestones.\n\nWeekly monitoring of these tasks."
+  },
+  {
+    "audience": "freelancer",
+    "source": "shakers_faq",
+    "question": "How does the project dashboard work?",
+    "answer": "All project management is done from the project dashboard. You can access the dashboard for a project you are participating in from the side menu, under \"My projects.\"\n\nTo access all the tasks in a project, go to the \"Board\" tab.\n\nThe board is organized in a 3-column Kanban style: \n\nWhat do you have pending? This is where you will find the tasks that are not being worked on in the current week.\n\nWhat do you have this week? This is where all the tasks that are being worked on in the current week are located.\n\nWhat have you already done? Where all completed tasks are located.\n\nTo create a task, click on the \"Create Task\" button and fill in the fields.\n\nTask name\n\nDescription (if you want to explain something in more detail)\n\nDue date (if you know it)\n\nPerson responsible\n\nOnce you have filled in the information you consider necessary, click on \"Save.\" \n\nTask activity\n\nAdditionally, you can add comments to a task from the right-hand panel. All users involved in a task will receive a notification with your comment."
   },
   {
     "audience": "freelancer",
     "source": "shakers_faq",
     "question": "How do I start working on a project?",
-    "answer": "Great news! If the client has accepted your proposal, it's time to get to work. Here's a step-by-step guide on how to get started:\n\n✅ 1. Active project notification\n\nYou will receive an email and in-app notification when the project changes to \"Active\" status.\nThis means you can now start using Shakers' project management tool.\n\n🏁 2. Prepare for the start of the project\n\nAlthough it is not mandatory, we highly recommend that you do this:\n\n📌 Create an initial load of tasks in the \"What do you have pending?\" column.\nThis will help you:\n\nHave a clear vision of what you are going to do\n\nGet better organized\n\nSet your own deadlines\n\nStreamline collaboration with the client\n\n💡 It's a small gesture that makes a big difference. Trust us, we've seen it in hundreds of projects.\n\n👉 Read more about\n\n🧭 3. From there, everything flows!\n\nOnce you get started, the real work begins.\nYour Shakers Account Manager will be at your disposal throughout the project to help you with any questions or unforeseen issues that may arise.\n\n📣 Remember:\n\nUse the project management tool to keep everything centralized\n\nCommunicate clearly with the client\n\nIf something unexpected comes up, you're not alone! Write to us"
+    "answer": "Great news! If the client has accepted your proposal, it's time to get to work. Here's a step-by-step guide on how to get started:\n\n✅ 1. Active project notification\n\nYou will receive an email and in-app notification when the project changes to \"Active\" status.\nThis means you can now start using Shakers' project management tool.\n\n🏁 2. Prepare for the start of the project\n\nAlthough it is not mandatory, we highly recommend that you do this:\n\n📌 Create an initial load of tasks in the \"What do you have pending?\" column.\nThis will help you:\n\nHave a clear vision of what you are going to do\n\nGet better organized\n\nSet your own deadlines\n\nStreamline collaboration with the client\n\n💡 It's a small gesture that makes a big difference. Trust us, we've seen it in hundreds of projects.\n\n\n🧭 3. From there, everything flows!\n\nOnce you get started, the real work begins.\nYour Shakers Account Manager will be at your disposal throughout the project to help you with any questions or unforeseen issues that may arise."
   },
   {
     "audience": "freelancer",
     "source": "shakers_faq",
     "question": "What is the match percentage and how does it work?",
-    "answer": "It's your degree of affinity with a project. As a freelancer, it helps you quickly identify the projects you're most motivated to work on, and as a client, it helps you filter candidates interested in your project."
+    "answer": "It's your degree of affinity with a project. As a freelancer, it helps you quickly identify the projects you're most motivated to work on, and as a client, it helps you filter candidates interested in your project.\n\nShakers was born with a mission: to help millions of people wake up inspired and satisfied with the work they do. For this to happen, we need to work on things that motivate us and make us want to get out of bed in the morning. Today's workers are no longer satisfied with just a project and a guarantee of payment at the end. Today's workers want challenges; they want their work to align with their lifestyle and values. If you're a basketball fan, wouldn't you rather work for the NBA than Coca-Cola?\n\nThat's why we decided to create an algorithm that goes beyond the typical variables taken into account in other talent or project marketplaces (professional skills, experience, etc.) and includes variables such as motivation and personality."
   },
   {
     "audience": "freelancer",
     "source": "shakers_faq",
     "question": "How does the algorithm work?",
-    "answer": "To calculate the match, we use a hybrid approach that combines collaborative filtering and content-based filtering techniques. Collaborative filtering is based on prior information provided by users, both freelancers and clients (variables that we have categorized as \"base\" variables and \"accuracy\" variables).\n\nOn the other hand, content-based filtering uses specific information about each candidate and job (such as skills and experience) to recommend similar jobs or candidates. These techniques are implemented in an deep learning architecture that improves the accuracy of our recommendation systems and improves our accuracy with each project and each candidate.\n\nVariables used by the algorithm\n\nBase variables\n\nThese are required in order to calculate a match percentage. They are used to calculate a base match percentage and ensure that the minimum technical requirements for applying to a project are always met.\n\nFreelancer's knowledge: naturally, we take into account a freelancer's technical knowledge (specialties, super specialties, skills, and tools they know how to use).\n\nFreelancer's experience: we use information about the skills developed in past projects.\n\nProject requirements: the set of knowledge and skills that a client demands for their project.\n\nThis way, a user who has the skills \"WordPress\" or \"Web Design\" validated in their profile will have a high \"base\" match percentage with projects that require those skills.\n\nSimilarly, a user who has no knowledge of a technology such as \"React\" will never be able to have a high enough match percentage to apply for a \"React\" project.\n\nAccuracy variables\n\nThe second set of variables allows us to adjust the match percentage based on criteria beyond strictly professional ones, rewarding users who have a higher level of motivation and cultural fit with a project.\n\nAt Shakers, we have a mantra: a motivated worker will always deliver better results than one who is only looking for a paycheck at the end of the month. That's why we should always try to find candidates who stand out not only for their skills, but also for their desire to participate in a project."
+    "answer": "To calculate the match, we use a hybrid approach that combines collaborative filtering and content-based filtering techniques. Collaborative filtering is based on prior information provided by users, both freelancers and clients (variables that we have categorized as \"base\" variables and \"accuracy\" variables).\n\nOn the other hand, content-based filtering uses specific information about each candidate and job (such as skills and experience) to recommend similar jobs or candidates. These techniques are implemented in an deep learning architecture that improves the accuracy of our recommendation systems and improves our accuracy with each project and each candidate."
+  },
+  {
+    "audience": "freelancer",
+    "source": "shakers_faq",
+    "question": "What are the variables used by the algorithm?",
+    "answer": "Base variables\n\nThese are required in order to calculate a match percentage. They are used to calculate a base match percentage and ensure that the minimum technical requirements for applying to a project are always met.\n\nFreelancer's knowledge: naturally, we take into account a freelancer's technical knowledge (specialties, super specialties, skills, and tools they know how to use).\n\nFreelancer's experience: we use information about the skills developed in past projects. \n\nProject requirements: the set of knowledge and skills that a client demands for their project.\n\nThis way, a user who has the skills \"WordPress\" or \"Web Design\" validated in their profile will have a high \"base\" match percentage with projects that require those skills. \n\nSimilarly, a user who has no knowledge of a technology such as \"React\" will never be able to have a high enough match percentage to apply for a \"React\" project.\n\nAccuracy variables\n\nThe second set of variables allows us to adjust the match percentage based on criteria beyond strictly professional ones, rewarding users who have a higher level of motivation and cultural fit with a project.\n\nAt Shakers, we have a mantra: a motivated worker will always deliver better results than one who is only looking for a paycheck at the end of the month. That's why we should always try to find candidates who stand out not only for their skills, but also for their desire to participate in a project.\n\nPersonality: based on the Big Five personality model, we have designed two personality tests for the workplace that allow us to predict the level of personal affinity between a freelancer, a client, and the entire team that will be participating in a project. Because, don't we all like to have a good vibe at work? Right?\n\nMotivation: after conducting a study of more than 80 freelancers and company managers, we found that the variables that most influence motivation are: the type of professional challenge, the company's values, and the industry or sector of that company. Therefore, we have designed a test to identify a freelancer's interests and give a higher match percentage to projects that fit the talent's motivations.\n\nIf you want the match percentage you see in the application to be as accurate as possible, you will need to  so that all these accuracy variables can be taken into account."
   },
   {
     "audience": "freelancer",
@@ -489,25 +543,31 @@
     "audience": "freelancer",
     "source": "shakers_faq",
     "question": "What is the selection process for a project like?",
-    "answer": "Have you seen a project that motivates you and want to take it on? Here we explain step by step how the selection process works within Shakers, so that you can get to the signing stage with everything under control.\n\n🔍 1. Review your profile\n\nBefore applying, make sure your profile is a good match for the project. This includes specialties, skills, and languages.\n\n💡 Tip: the higher the match, the greater your chances of being selected. You can update your profile at any time.\n\n📤 2. Apply for the project\n\nFrom the project page, click on \"Apply.\" Take this opportunity to:\n\nBriefly introduce yourself\n\nShow interest and enthusiasm\n\nSuggest several slots to meet with the client using Shakers video calls\n\n🤝 3. Connect with the client\n\nUse the chat💬 or video call to get to know the client and fully understand the project. This meeting is key to:\n\nSee if there is a real match between you\n\nClarify any doubts\n\nGather all the necessary information to prepare a good financial proposal\n\n💼 4. Send your financial proposal\n\nNow it's time to talk numbers. Use the proposal generator within the platform. Do not use PDFs, as the system does not support them.\n\nYou can choose between three options:\n\nMonthly fee\n\nMilestones\n\nHourly rate\n\nChoose the one that best suits your way of working.\n\n🚀 Advantages of the proposal generator:\n\nProfessional and comprehensive proposals\n\nLegal framework included (NDA, data protection, terms of service, etc.)\n\nClear project planning\n\nRecord of your proposals and tracking of success rate\n\nSupport from the talent team to improve your proposals\n\n👉 Learn more here:\n\n✍️ 5. Sign the agreement"
+    "answer": "🔍 1. Review your profile\n\nBefore applying, make sure your profile is a good match for the project. This includes specialties, skills, and languages.\n\n📤 2. Apply for the project\n\nFrom the project page, click on \"Apply.\" Take this opportunity to:\n\nBriefly introduce yourself\n\nShow interest and enthusiasm\n\nSuggest several slots to meet with the client using Shakers video calls\n\n🤝 3. Connect with the client\n\nUse the chat💬 or video call to get to know the client and fully understand the project. This meeting is key to:\n\nSee if there is a real match between you\n\nClarify any doubts\n\nGather all the necessary information to prepare a good financial proposal\n\n💼 4. Send your financial proposal\n\nNow it's time to talk numbers. Use the proposal generator within the platform. Do not use PDFs, as the system does not support them.\n\nYou can choose between three options:\n\nMonthly fee\n\nMilestones\n\nHourly rate\n\nChoose the one that best suits your way of working.\n\n\n✍️ 5. Sign the agreement\n\nWhen the client accepts your proposal, a legal agreement is automatically generated, which includes:\n\nAll the terms you agreed upon\n\nProtection clauses drafted by our legal team\n\n📩 You will receive a confirmation email when the client accepts. From there, it's time to get to work!"
   },
   {
     "audience": "freelancer",
     "source": "shakers_faq",
-    "question": "When the client accepts your proposal, a legal agreement is automatically generated, which includes:",
-    "answer": "All the terms you agreed upon\n\nProtection clauses drafted by our legal team\n\n📩 You will receive a confirmation email when the client accepts. From there, it's time to get to work!\n\n🚨 ATTENTION 🚨\n\nThe project contract will be created based on the proposal you send\n\n(if the client accepts it).\n\nBefore submitting your proposal, you will be able to see a summary of all your terms and conditions, as well as the legal protection framework offered by Shakers, which includes an NDA, data protection, obligations of the parties, and provision of services."
+    "question": "What are the advantages of the proposal generator?",
+    "answer": "Professional and comprehensive proposals\n\nLegal framework included (NDA, data protection, terms of service, etc.)\n\nClear project planning\n\nRecord of your proposals and tracking of success rate\n\nSupport from the talent team to improve your proposals"
   },
   {
     "audience": "freelancer",
     "source": "shakers_faq",
-    "question": "What if there are problems?",
+    "question": "What if problems arise during the project?",
     "answer": "If any unforeseen issues arise during the project, you can count on your assigned Account Manager. They are there to help you and make sure everything runs smoothly."
   },
   {
     "audience": "freelancer",
     "source": "shakers_faq",
-    "question": "How do I search for and apply to projects?",
-    "answer": "To apply for a project, you must first search for it on the \"Search for projects\" page.\n\nBy default, you will see all projects sorted by your match level, i.e., the degree of affinity between your profile and what the client needs.\n\nNot sure how the match algorithm works? Check out this article👉\n\nYou can filter projects by specialties, skills, match percentage with them, or publication date.\n\n💡 Recommendation: Try to apply only to projects where you have at least a 70% match. This will increase your chances of being selected.\n\n🔍 Applying to a project step by step\n\nWhen you see a project that interests you, click on \"View Project.\" There you can read all the detailed information: what the client is looking for, specific tasks, estimated time commitment, available budget, etc.\n\nIf it suits you, click on \"Apply.\" Before submitting your application, you can:\n\nReview your profile and add any skills if necessary\n\nWrite an introductory message\n\nAttach one or two similar projects from your portfolio\n\nAnd then... \"Apply and Send\"! 🚀"
+    "question": "How do I search for projects?",
+    "answer": "To apply for a project, you must first search for it on the \"Search for projects\" page.\n\n\nBy default, you will see all projects sorted by your match level, i.e., the degree of affinity between your profile and what the client needs.\n\n\nYou can filter projects by specialties, skills, match percentage with them, or publication date."
+  },
+  {
+    "audience": "freelancer",
+    "source": "shakers_faq",
+    "question": "How do I apply to projects?",
+    "answer": "Here is the process of applying to a project step by step:\n\nWhen you see a project that interests you, click on \"View Project.\" There you can read all the detailed information: what the client is looking for, specific tasks, estimated time commitment, available budget, etc.\n\nIf it suits you, click on \"Apply.\" Before submitting your application, you can:\n\nReview your profile and add any skills if necessary\n\nWrite an introductory message\n\nAttach one or two similar projects from your portfolio\n\nAnd then... \"Apply and Send\"! 🚀"
   },
   {
     "audience": "freelancer",
@@ -519,43 +579,25 @@
     "audience": "freelancer",
     "source": "shakers_faq",
     "question": "How do I report a bug on the platform?",
-    "answer": "Your opinion is key to improving Shakers.\nIf something isn't working as it should, let us know. This is a collaborative process and we want you to be part of the change.\n\n🐛 Have you detected an error? Report it like this:\n\nGo to your profile\n\nGo to the top right corner of the screen\n\nClick on the \"Give us your feedback\" button\n\n📝 Fill out the form"
+    "answer": "Your opinion is key to improving Shakers.\nIf something isn't working as it should, let us know. This is a collaborative process and we want you to be part of the change.\n\nReport it like this:\n\nGo to your profile\n\nGo to the top right corner of the screen\n\nClick on the \"Give us your feedback\" button\n\n\n\n📝 Fill out the form\n\nWhen you click, a new tab will open with a short form. Indicate:\n\n1. Type of feedback\n\nSelect \"Report Bug/Error.\"\n\n2. Describe the error\n\nTell us as much detail as possible.\n\n3. Attach files (optional, but very useful)\n\nYou can upload screenshots, videos, or any other files that will help us better understand the problem."
   },
   {
     "audience": "freelancer",
     "source": "shakers_faq",
-    "question": "What did you expect to happen?",
-    "answer": "3. Attach files (optional, but very useful)\n\nYou can upload screenshots, videos, or any other files that will help us better understand the problem.\n\n💡 The more information, the better!\n\nThe more context you give us, the easier it will be for our technical team to reproduce and fix the error."
+    "question": "How can I contact the support  team directly?",
+    "answer": "You can also send your report by email to:\nsoporte@shakersworks.com"
   },
   {
     "audience": "freelancer",
     "source": "shakers_faq",
-    "question": "Would you rather write to us directly?",
-    "answer": "You can also send your report by email to:\nsoporte@shakersworks.com\n\nThank you for helping us improve💙\n Your feedback is part of what makes Shakers grow every day."
-  },
-  {
-    "audience": "freelancer",
-    "source": "shakers_faq",
-    "question": "How can you verify your skills through technical tests at Shakers?",
-    "answer": "Want to validate your skills in a practical way and show what you know? At Shakers, you can do this through technical tests, and here's how, step by step 🚀\n\n1. Log in to your profile\n\nLog in to your Shakers profile\n\nGo to the \"Skills\" tab\n\nClick on the \"Certify your skills\" button\n\nClick on \"Take a technical test.\"\n\n2. Choose your test\n\nYou can filter by language or framework (for example: React, Node.js, Python, etc.)\n\nSelect the test that best fits your profile and what you want to certify\n\n3. Start the technical test. When you click on \"Take test,\" a tab will open with all the information you need: Estimated duration\n⚙️ Level of difficulty\n📖 Storytelling of the challenge (gives you context to immerse yourself in the challenge)\n\n4. Connect your GitHub account\n\nYou will need to link your GitHub account\n\nA private repository will be created with your username (for example: @yourGitHubusername)\n\nYou will work directly there\n\n💡 Pro tip: make frequent commits to show your work process.\n\n5. Upload your solution\n\nTo successfully submit your test:\n\nUpload the code to the devel branch\n\nCreate a Pull Request against the main branch\n\nMerge it\n\nEnsure that the changes are reflected in the main branch\n\n6. Mark the test as complete\n\nReturn to the Shakers tab where you saw the instructions → refresh → mark as complete.\n\n7. Receive your feedback\n\nOnce we have corrected your test, we will email you:\n\n✅ A report with your results\n\n💬 Detailed feedback on your solution"
-  },
-  {
-    "audience": "freelancer",
-    "source": "shakers_faq",
-    "question": "How can I get more information?",
-    "answer": "If you need help at any point in the process, write to us at:\n📩 talent@shakersworks.com\n\nGood luck with your trial! It's your time to shine 💥"
+    "question": "How can I verify my skills through technical tests at Shakers?",
+    "answer": "Want to validate your skills in a practical way and show what you know? At Shakers, you can do this through technical tests, and here's how, step by step 🚀\n\n1. Log in to your profile\n\nLog in to your Shakers profile\n\nGo to the \"Skills\" tab\n\nClick on the \"Certify your skills\" button\n\nClick on \"Take a technical test.\"\n\n\n\n2. Choose your test\n\nYou can filter by language or framework (for example: React, Node.js, Python, etc.)\n\nSelect the test that best fits your profile and what you want to certify\n\n3. Start the technical test\n\nWhen you click on \"Take test,\" a tab will open with all the information you need:\n\n🕒 Estimated duration\n⚙️ Level of difficulty\n📖 Storytelling of the challenge (gives you context to immerse yourself in the challenge)\n\n4. Connect your GitHub account\n\nYou will need to link your GitHub account\n\nA private repository will be created with your username (for example: @yourGitHubusername)\n\nYou will work directly there\n\n\n5. Upload your solution\n\nTo successfully submit your test:\n\nUpload the code to the devel branch\n\nCreate a Pull Request against the main branch\n\nMerge it\n\nEnsure that the changes are reflected in the main branch\n\n6. Mark the test as complete\n\nReturn to the Shakers tab where you saw the instructions → refresh → mark as complete.\n\n7. Receive your feedback\n\nOnce we have corrected your test, we will email you:\n\n✅ A report with your results\n\n💬 Detailed feedback on your solution"
   },
   {
     "audience": "freelancer",
     "source": "shakers_faq",
     "question": "I have a freelance account but want to include my team. What should I do?",
-    "answer": "If you already have a freelance account with Shakers and now want to work with your team or present yourself as an organization or studio, that's great! We can help you manage it."
-  },
-  {
-    "audience": "freelancer",
-    "source": "shakers_faq",
-    "question": "💡 Why do we ask for this?",
-    "answer": "At Shakers, we work with technical profiles, not commercial ones. In other words, we want to make sure that the people who apply for projects are the ones who will actually carry them out.\nThat's why it's important for us to know who is behind your account and how you organize yourselves."
+    "answer": "If you already have a freelance account with Shakers and now want to work with your team or present yourself as an organization or studio, that's great! We can help you manage it.\n\n\nIn these cases, you need to contact our support team so we can help you with the process.\n\n📩 Write to us via the support chat or send us an email with the subject line:\n\"I want to add my team to my profile\"\n\nTo create your profile as an organization, we will need some information:\n\nName of your organization\n\nNumber of people on the team\n\nThe specialties of each member (design, development, strategy, etc.)\n\nLanguages in which they can work\n\nAny other relevant details that help us understand how you work\n\nAt Shakers, we work with technical profiles, not commercial ones. In other words, we want to make sure that the people who apply for projects are the ones who will actually carry them out.\nThat's why it's important for us to know who is behind your account and how you organize yourselves."
   },
   {
     "audience": "freelancer",
@@ -567,13 +609,13 @@
     "audience": "freelancer",
     "source": "shakers_faq",
     "question": "When a freelancer is part of Shakers, can they be removed from the platform?",
-    "answer": "Yes, it is possible. Although it is not common, there are certain scenarios in which we may decide to pause or terminate your participation in the community. Here are some of the situations in which we might make that decision:\n\n1. You stop working on projects\n\nIf you decide that you no longer want to work as a freelancer or stop applying for projects for a long period of time, we may remove you from the platform to maintain balance within the active community.\n\n2. No match with projects\n\nIf the available projects do not suit you, or you make it clear that you are not interested in the opportunities we offer, we may consider that it is not the best time for you to be part of Shakers.\n\n3. You do not follow the community rules\n\nAt Shakers, we are guided by clear values: commitment, communication, and transparency. If a profile does not follow these rules, especially in application processes or collaborations, we may remove it from the platform.\n\n🚨 Serious offenses that do lead to immediate expulsion\n\nThere are situations that we consider particularly sensitive and that may result in immediate expulsion:\n\nFailing to comply with the terms agreed with the client, without notifying us or seeking a solution.\n\nRepeatedly interrupting contact with the client or the Shakers team. If we believe you are ghosting, we will consider the relationship closed.\n\nBehavior that negatively affects the project or the team, whether due to attitude, communication, or serious breaches."
+    "answer": "Yes, it is possible. Although it is not common, there are certain scenarios in which we may decide to pause or terminate your participation in the community."
   },
   {
     "audience": "freelancer",
     "source": "shakers_faq",
-    "question": "What if I need help?",
-    "answer": "Our goal is not to \"expel\" anyone, but to maintain a healthy and high-quality collaborative environment.\nSo, if at any time you are going through a difficult situation, let us know. We are here to help you and find solutions with you.\n\n💙 We want Shakers to be The Place to Be for those who are committed to this working model."
+    "question": "What are the reasons to be removed from the platform?",
+    "answer": "Here are some of the situations in which we might make that decision:\n\n1. You stop working on projects\n\nIf you decide that you no longer want to work as a freelancer or stop applying for projects for a long period of time, we may remove you from the platform to maintain balance within the active community.\n\n2. No match with projects\n\nIf the available projects do not suit you, or you make it clear that you are not interested in the opportunities we offer, we may consider that it is not the best time for you to be part of Shakers.\n\n3. You do not follow the community rules\n\nAt Shakers, we are guided by clear values: commitment, communication, and transparency. If a profile does not follow these rules, especially in application processes or collaborations, we may remove it from the platform.\n\n🚨 Serious offenses that do lead to immediate expulsion\n\nThere are situations that we consider particularly sensitive and that may result in immediate expulsion:\n\nFailing to comply with the terms agreed with the client, without notifying us or seeking a solution.\n\nRepeatedly interrupting contact with the client or the Shakers team. If we believe you are ghosting, we will consider the relationship closed.\n\nBehavior that negatively affects the project or the team, whether due to attitude, communication, or serious breaches.\n\nOur goal is not to \"expel\" anyone, but to maintain a healthy and high-quality collaborative environment.\nSo, if at any time you are going through a difficult situation, let us know. We are here to help you and find solutions with you."
   },
   {
     "audience": "freelancer",
@@ -585,7 +627,7 @@
     "audience": "freelancer",
     "source": "shakers_faq",
     "question": "What does the methodology consist of?",
-    "answer": "It's very simple! Shakers provides you with tools to encourage continuous feedback, which facilitates good communication between clients and talent and allows Shakers account managers to closely monitor the project.\n\nThere are project application chats and video calls. You can chat with the client through the chats, so everything will be written down and the Shakers team will be able to keep track of your communication.\n\nYou can also use your own means to communicate with the client (your Slack, your email, etc.), but in that case, we provide you with the feedback tool so that you can keep a record of your work and we can help you in the event of a possible dispute. If you do your job well and keep a record of it, you are guaranteed to get paid. You can access the feedback section as follows:\n\nOpen your active project.\n\nScroll down to the bottom and click on the \"Go to project\" button.\n\nAt the top, you will see the \"👉🏼 Feedback\" panel where you can include your weekly feedback. In this weekly feedback, it is important to include the objectives achieved during the week, what is still pending, if you have any dependencies, the next steps, etc.\n\n💡 are some ideas on how to report your feedback and why it is important to give detailed feedback.\n\nIMPORTANT: if your client asks you for things outside the scope of what was agreed in the proposal, ALWAYS contact your Account Manager or support so that we are aware of this and can help you. If we are not aware of this, in the event of a dispute (a client does not want to validate a milestone), it will be your word against theirs.\n\n⚠️ If you have not sent feedback by Monday morning, the client will receive a notification indicating that you have not sent this week's feedback.\n\nAnd that's it, ready to go!"
+    "answer": "It's very simple! Shakers provides you with tools to encourage continuous feedback, which facilitates good communication between clients and talent and allows Shakers account managers to closely monitor the project.\n\nThere are project application chats and video calls. You can chat with the client through the chats, so everything will be written down and the Shakers team will be able to keep track of your communication.\n\nYou can also use your own means to communicate with the client (your Slack, your email, etc.), but in that case, we provide you with the feedback tool so that you can keep a record of your work and we can help you in the event of a possible dispute. If you do your job well and keep a record of it, you are guaranteed to get paid. You can access the feedback section as follows:\n\n\nOpen your active project.\n\nScroll down to the bottom and click on the \"Go to project\" button.\n\nAt the top, you will see the \"👉🏼 Feedback\" panel where you can include your weekly feedback. In this weekly feedback, it is important to include the objectives achieved during the week, what is still pending, if you have any dependencies, the next steps, etc.\n\nIMPORTANT: if your client asks you for things outside the scope of what was agreed in the proposal, ALWAYS contact your Account Manager or support so that we are aware of this and can help you. If we are not aware of this, in the event of a dispute (a client does not want to validate a milestone), it will be your word against theirs.\n\n\n⚠️ If you have not sent feedback by Monday morning, the client will receive a notification indicating that you have not sent this week's feedback.\n\n\n\nAnd that's it, ready to go!"
   },
   {
     "audience": "freelancer",
@@ -597,168 +639,126 @@
     "audience": "freelancer",
     "source": "shakers_faq",
     "question": "Where do I edit my profile?",
-    "answer": "From your control panel in Shakers, go to the Profile section. There you can modify all sections: from your experience to your personal details, including your portfolio and availability.\n\nSections you shouldn't overlook\n\n🌟 Cover photo and Highlights\n\nThis is your space to show who you are. Add a personal touch and make the client connect with you from the very first minute.\n\nIdeas to highlight:\n\nIntroduce yourself on video.\n\nShare your work methodology.\n\nLink to customer reviews or results you've achieved.\n\nShare something more personal: hobbies, interests, or a story that represents you.\n\n🌟 Experience\n\nWith the new feature, you can import your experience directly from LinkedIn. This saves you time and ensures that your career path is accurately reflected.\n\n🌟 Portfolio\n\nWe recommend including at least three projects that represent you. Explain why they are important to you and what you contributed.\n\n📌 Fact: 90% of candidates who complete this section have a higher success rate in their applications.\n\n🌟 Skills\n\nMake sure your list of skills is always up to date. This directly impacts the matching algorithm and the projects you are shown.\n\n🌟 Personal\n\nHere you can share who you are beyond the technical aspects. Review these sections carefully:\n\n\"Describe yourself in one sentence\"\n\n\"About you\"\n\n\"What you excel at and why\"\n\nDon't forget to keep your LinkedIn profile, availability, and language skills up to date.\n\n🌟 Motivation\n\nTake the motivation test so we can offer you projects that really connect with your interests. This test helps us understand:"
+    "answer": "From your control panel in Shakers, go to the Profile section. There you can modify all sections: from your experience to your personal details, including your portfolio and availability."
   },
   {
     "audience": "freelancer",
     "source": "shakers_faq",
-    "question": "Which collaboration formats suit you best.",
-    "answer": "🎯 Remember: everything influences the matching algorithm.\n\nReady to optimize your profile? Taking a few minutes to do so can make the difference between being left out or landing the project you're excited about!\n\n🌟 Experience\n\nWe have rolled out a new feature that allows you to export your experience from LinkedIn. Having all your LinkedIn experience on Shakers will allow clients to see what you have done in your last few years of work (whether as a freelancer or as an employee).\n\n🌟  Portfolio\n\nWe suggest you add at least three projects: highlight the projects you feel most proud of when you look back and explain why (remember that this is also part of your cover letter).\n\n(FACT: 90% of Shakers who have completed this section generate greater confidence in the eyes of clients and therefore obtain a higher project closure ratio).\n\n🌟 Skills\n\nThis tool is one of the most important parts of your professional profile on Shakers, so it is important to keep it up to date and add new skills as you improve as a professional.\n\n🌟 Personal\n\nMake sure that both your portfolio and the link to your LinkedIn profile are always up to date, as well as your availability and languages.\n\nIn this section, you have the opportunity to present yourself in a more personal way, especially in the sections \"Describe yourself in one sentence,\" \"About you,\" and \"What you excel at and why.\"\n\n🌟 Motivation\n\nTake the motivation test so we can find out which industries motivate you the most, as well as the type of projects and companies. Remember that everything influences the match algorithm!"
+    "question": "How do I improve my profile?",
+    "answer": "🌟 Cover photo and Highlights\n\nThis is your space to show who you are. Add a personal touch and make the client connect with you from the very first minute.\n\nIdeas to highlight:\n\nIntroduce yourself on video.\n\nShare your work methodology.\n\nLink to customer reviews or results you've achieved.\n\nShare something more personal: hobbies, interests, or a story that represents you.\n\n🌟 Experience\n\nWith the new feature, you can import your experience directly from LinkedIn. This saves you time and ensures that your career path is accurately reflected.\n\n🌟 Portfolio\n\nWe recommend including at least three projects that represent you. Explain why they are important to you and what you contributed.\n\n📌 Fact: 90% of candidates who complete this section have a higher success rate in their applications.\n\n🌟 Skills\n\nMake sure your list of skills is always up to date. This directly impacts the matching algorithm and the projects you are shown.\n\n🌟 Personal\n\nHere you can share who you are beyond the technical aspects. Review these sections carefully:\n\n\"Describe yourself in one sentence\"\n\n\"About you\"\n\n\"What you excel at and why\"\n\nDon't forget to keep your LinkedIn profile, availability, and language skills up to date.\n\n🌟 Motivation\n\nTake the motivation test so we can offer you projects that really connect with your interests. This test helps us understand:\n\nWhich industries motivate you.\n\nWhat type of projects you prefer.\n\nWhich collaboration formats suit you best."
   },
   {
     "audience": "freelancer",
     "source": "shakers_faq",
-    "question": "Why is it important to keep your profile up to date on Shakers?",
+    "question": "How can I optimize my profile?",
+    "answer": "Taking a few minutes to do so can make the difference between being left out or landing the project you're excited about!\n\n🌟 Experience\n\nWe have rolled out a new feature that allows you to export your experience from LinkedIn. Having all your LinkedIn experience on Shakers will allow clients to see what you have done in your last few years of work (whether as a freelancer or as an employee).\n\n🌟  Portfolio\n\nWe suggest you add at least three projects: highlight the projects you feel most proud of when you look back and explain why (remember that this is also part of your cover letter).\n\n(FACT: 90% of Shakers who have completed this section generate greater confidence in the eyes of clients and therefore obtain a higher project closure ratio).\n\n🌟 Skills\n\nThis tool is one of the most important parts of your professional profile on Shakers, so it is important to keep it up to date and add new skills as you improve as a professional.\n\n🌟 Personal\n\n\n\nMake sure that both your portfolio and the link to your LinkedIn profile are always up to date, as well as your availability and languages.\n\nIn this section, you have the opportunity to present yourself in a more personal way, especially in the sections \"Describe yourself in one sentence,\" \"About you,\" and \"What you excel at and why.\"\n\n  \n\n🌟 Motivation\n\n\n\nTake the motivation test so we can find out which industries motivate you the most, as well as the type of projects and companies. Remember that everything influences the match algorithm!"
+  },
+  {
+    "audience": "freelancer",
+    "source": "shakers_faq",
+    "question": "Why is it important to keep my profile up to date on Shakers?",
     "answer": "Having a complete and up-to-date profile is not only good practice, it is key to getting projects that really suit you. At Shakers, initial contact with a client usually starts with your profile, so the better it reflects who you are and what you can do, the more positive impact it will have."
   },
   {
     "audience": "freelancer",
     "source": "shakers_faq",
-    "question": "What should you review and update?",
-    "answer": "1. Specialties and skills\n\nBefore applying for a project, compare your skills with those the client is looking for. The more skills you have in common, the better your match with the project will be. This not only improves your chances of being selected, it also makes your application much more meaningful.\n\n2. Availability\n\nAre you partially or fully available? How many hours can you dedicate per week? This information is essential for both the algorithm and the Talent team, as it allows us to suggest projects that fit your current schedule."
-  },
-  {
-    "audience": "freelancer",
-    "source": "shakers_faq",
-    "question": "What are the benefits of keeping your profile up to date?",
-    "answer": "Greater visibility to clients.\n\nMore personalized opportunities from the Talent team.\n\nBetter match percentage for projects that interest you.\n\n💡 TIP: Think about the image you want to project and make sure your profile conveys it. From your description to your featured projects, everything counts."
+    "question": "What should I review and update?",
+    "answer": "1. Specialties and skills\n\nBefore applying for a project, compare your skills with those the client is looking for. The more skills you have in common, the better your match with the project will be. This not only improves your chances of being selected, it also makes your application much more meaningful.\n\n2. Availability\n\nAre you partially or fully available? How many hours can you dedicate per week? This information is essential for both the algorithm and the Talent team, as it allows us to suggest projects that fit your current schedule.\n\nWhat are the benefits of keeping your profile up to date?\n\nGreater visibility to clients.\n\nMore personalized opportunities from the Talent team.\n\nBetter match percentage for projects that interest you."
   },
   {
     "audience": "freelancer",
     "source": "shakers_faq",
     "question": "What are the reasons for rejection at Shakers?",
-    "answer": "We know that getting a \"no\" can be discouraging, but we want you to see it as an opportunity to improve. At Shakers, we strive to maintain high quality standards so that both talent and clients have the best experience possible. That's why we're sharing the main reasons why we might reject a profile.\n\nYour specialty is not within our offering\n\nWe work with a specific set of specialties. If your profile focuses on an area that is not currently in demand at Shakers, we may not be able to offer you relevant opportunities.\n\n👉 Check  the most in-demand specialties\n\nLack of relevant experience\n\nMost of our projects are looking for profiles with at least 2 years of verifiable experience. If you are just starting out, this may not be the ideal time to join... but you can come back later!\n\n💡 Tip: Work on freelance or personal projects that you can add to your portfolio.\n\nThe profile does not meet our quality standards\n\nWe are looking for profiles that demonstrate professionalism, clarity, and focus. If the information is incomplete, confusing, or does not accurately reflect your abilities, it is difficult to make a fair assessment.\n\nWe recommend:\n\nPay attention to the wording and structure of your profile\n\nHighlight your achievements in a concrete way\n\nShow clarity in your previous roles and responsibilities\n\nIncomplete or unclear portfolio\n\nYour portfolio is a key part of your profile. If you don't include examples of your work or the descriptions are too generic, we won't be able to get a good idea of your level.\n\n✅ What your portfolio should include:\n\nProjects with clear context (client, challenge, solution)\n\nResults achieved\n\nVisible links or files\n\nDiversity of work (if applicable)\n\nNo good cultural fit\n\nBeyond experience, we also value affinity with our way of working. Sometimes there is not a good fit in terms of vision, autonomy, or collaboration style. And that's okay.\n\n🧭 You can learn more about our values"
+    "answer": "We know that getting a \"no\" can be discouraging, but we want you to see it as an opportunity to improve. At Shakers, we strive to maintain high quality standards so that both talent and clients have the best experience possible. That's why we're sharing the main reasons why we might reject a profile.\n\nYour specialty is not within our offering \n\nWe work with a specific set of specialties. If your profile focuses on an area that is not currently in demand at Shakers, we may not be able to offer you relevant opportunities.\n\nLack of relevant experience \n\nMost of our projects are looking for profiles with at least 2 years of verifiable experience. If you are just starting out, this may not be the ideal time to join... but you can come back later!\n\n\nThe profile does not meet our quality standards \n\nWe are looking for profiles that demonstrate professionalism, clarity, and focus. If the information is incomplete, confusing, or does not accurately reflect your abilities, it is difficult to make a fair assessment.\n\nWe recommend:\n\nPay attention to the wording and structure of your profile\n\nHighlight your achievements in a concrete way\n\nShow clarity in your previous roles and responsibilities\n\nIncomplete or unclear portfolio\n\nYour portfolio is a key part of your profile. If you don't include examples of your work or the descriptions are too generic, we won't be able to get a good idea of your level."
   },
   {
     "audience": "freelancer",
     "source": "shakers_faq",
-    "question": "What can you do if you have been rejected?",
-    "answer": "Just because you haven't been accepted now doesn't mean you can't try again. Here are some ideas for improving your profile and trying again later:\n\n🔁 Update your profile: Add new information if you have worked on other projects.\n\n🎯 Enrich your portfolio: Pay attention to detail and showcase your best work.\n\n📈 Gain more experience: Sign up for freelance projects, collaborations, or internships.\n\n✅ Check that your specialty is in our catalog: This can make all the difference.\n\nWe're here to help you grow as a professional. If you think you're more prepared now, you can reapply in the future.\n\n💬 Do you have questions about your rejection or need feedback? Write to us. We want to accompany you on your journey.\n\nWe would love to see you here in the future! 💪"
+    "question": "What should my portfolio include?",
+    "answer": "Projects with clear context (client, challenge, solution)\n\nResults achieved\n\nVisible links or files\n\nDiversity of work (if applicable)"
   },
   {
     "audience": "freelancer",
     "source": "shakers_faq",
-    "question": "What do we evaluate in the personal interview at Shakers?",
-    "answer": "We know that interviews can be a little intimidating, but at Shakers, we prefer you to think of it as a chat between colleagues. We want to get to know you authentically and understand whether this community is the right place for you (and vice versa). Here we tell you what points we take into account during the personal interview.\n\n🎥 Before continuing, take a look at this video where we explain what the meet is like and what you can expect.\n\nGetting to know you better, beyond your resume\nThe most important thing: getting to know who you are as a person. What drives you? What are you passionate about? What has your journey been like so far? Tell us about your professional history, but also about yourself as a person. We want to understand your motivation and how you got to where you are today.\n\nAlignment with our values and mission \nAt Shakers, we work with purpose. That's why we really value you sharing our values and identifying with our mission: to transform the way we work.\nDuring the interview, we will talk about how you understand our proposal and how you think you could contribute in your role.\n\nThat you understand how Shakers works \nWe want you to have a clear understanding of how the platform works, how to access projects, and how to collaborate with clients.\nDuring the interview, we will explain everything to you, but we will also assess whether you have already done some research on how we work. It is a plus if you already know the basics. 😉\n\nYour career and experience\n\nWe want to know about your professional background and the lessons you have learned that have brought you to this point. It's not just about your qualifications or the companies you have worked for, but about the experiences that have helped you grow.\n\nWe are interested in knowing:"
+    "question": "What happens if there is not a good cultural fit?",
+    "answer": "Beyond experience, we also value affinity with our way of working. Sometimes there is not a good fit in terms of vision, autonomy, or collaboration style. And that's okay."
   },
   {
     "audience": "freelancer",
     "source": "shakers_faq",
-    "question": "What skills you believe set you apart",
-    "answer": "Your availability and the types of projects you are looking for\n\nTo know how and when we could count on you, it is essential to know:\n\nYour availability by the hour or by the week\n\nWhether you are looking for one-off projects or long-term collaborations"
+    "question": "What can I do if I have been rejected?",
+    "answer": "Just because you haven't been accepted now doesn't mean you can't try again. Here are some ideas for improving your profile and trying again later:\n\n🔁 Update your profile: Add new information if you have worked on other projects.\n\n🎯 Enrich your portfolio: Pay attention to detail and showcase your best work.\n\n📈 Gain more experience: Sign up for freelance projects, collaborations, or internships.\n\n✅ Check that your specialty is in our catalog: This can make all the difference.\n\nWe're here to help you grow as a professional. If you think you're more prepared now, you can reapply in the future."
   },
   {
     "audience": "freelancer",
     "source": "shakers_faq",
-    "question": "What type of clients or industries interest you",
-    "answer": "This helps us notify you when there is a perfect match for you.\n\nA mutual (and transparent) process\nThis interview is not just for us to get to know you. It is also for you to decide if you want to be part of the Shakers community.\nWe want you to feel comfortable asking any questions you may have. We are here to explain everything to you with complete transparency.\n\nIn summary:\n\nWe look at much more than just your resume. We value your story, your energy, your vision, and how you think you can contribute to our community.\n\n✨ Come ready to share, learn, and connect with a different way of working.\n\nHave you scheduled your interview? We look forward to meeting you! 🚀"
+    "question": "What do you evaluate in the personal interview at Shakers?",
+    "answer": "We know that interviews can be a little intimidating, but at Shakers, we prefer you to think of it as a chat between colleagues. We want to get to know you authentically and understand whether this community is the right place for you (and vice versa). Here we tell you what points we take into account during the personal interview.\n\n\nGetting to know you better, beyond your resume\nThe most important thing: getting to know who you are as a person. What drives you? What are you passionate about? What has your journey been like so far? Tell us about your professional history, but also about yourself as a person. We want to understand your motivation and how you got to where you are today.\n\n\nAlignment with our values and mission \nAt Shakers, we work with purpose. That's why we really value you sharing our values and identifying with our mission: to transform the way we work.\nDuring the interview, we will talk about how you understand our proposal and how you think you could contribute in your role.\n\n\nThat you understand how Shakers works \nWe want you to have a clear understanding of how the platform works, how to access projects, and how to collaborate with clients.\nDuring the interview, we will explain everything to you, but we will also assess whether you have already done some research on how we work. It is a plus if you already know the basics. 😉\n\n\nYour career and experience \n\n\nWe want to know about your professional background and the lessons you have learned that have brought you to this point. It's not just about your qualifications or the companies you have worked for, but about the experiences that have helped you grow.\n\nWe are interested in knowing:\n\nWhere you are in your career\n\nWhat kind of projects motivate you\n\nWhat skills you believe set you apart\n\nYour availability and the types of projects you are looking for\n\n\nTo know how and when we could count on you, it is essential to know:\n\nYour availability by the hour or by the week\n\nWhether you are looking for one-off projects or long-term collaborations\n\nWhat type of clients or industries interest you\n\nThis helps us notify you when there is a perfect match for you.\n\nA mutual (and transparent) process\nThis interview is not just for us to get to know you. It is also for you to decide if you want to be part of the Shakers community.\nWe want you to feel comfortable asking any questions you may have. We are here to explain everything to you with complete transparency."
   },
   {
     "audience": "freelancer",
     "source": "shakers_faq",
-    "question": "What do we evaluate when reviewing your Shakers profile?",
-    "answer": "Have you already completed your profile and are waiting for us to review it? Great, this is a key step to becoming an active part of the community. Here we tell you what aspects we analyze to make sure you're ready for the top projects happening at Shakers.\n\n🎥 Before continuing, we recommend watching this short video where we explain what we value when reviewing profiles.\n\n1. 100% complete profile\n\nIt seems obvious, but it's essential. A complete profile helps us clearly understand who you are, what you do, and how you fit into Shakers projects.\n\n✅ Profile photo\n✅ Professional bio\n✅ Detailed experience\n✅ Well-specified skills\n✅ Portfolio with examples\n\n2. Specialization within our offering\n\nWe focus on certain profiles based on our clients' needs. If your specialty is within our catalog of services, you are more likely to be selected."
-  },
-  {
-    "audience": "freelancer",
-    "source": "shakers_faq",
-    "question": "Would you like to know what profiles we are currently looking for?",
-    "answer": "3. Years of Experience\n\nMost projects are for experienced profiles. That's why we tend to prioritize people with at least 2 years of experience in their specialty.\n\n🛠️ If you are just starting out, don't worry. You can strengthen your profile with good descriptions, projects, and certifications.\n\n4. Professional Career\n\nWe look beyond time: we want to understand your evolution. Have you taken on more responsibilities? Have you led teams or key projects? Tell us about it!\n\nExample of what adds points:\n\n\"I went from being a junior designer to leading a design team in two years.\"\n\n\"I was responsible for launching the payment app for X company with 100K+ users.\"\n\n5. Certifications and Licenses\n\nHaving certifications is a nice bonus. They help us validate your technical knowledge objectively."
-  },
-  {
-    "audience": "freelancer",
-    "source": "shakers_faq",
-    "question": "Not sure how to certify your skills?",
-    "answer": "👉\n👉\n\n6. Skill Validation\n\nWe check whether your skills are well represented and validated both on Shakers and on other platforms (LinkedIn, Behance, GitHub, etc.). The more backing, the better.\n\n7. Projects in your portfolio\n\nThe projects in your portfolio should speak for you. Include clear descriptions, results achieved, and links if available. Don't underestimate this point.\n\n8. Languages\n\nWe don't require knowledge of English or other languages, but if you are fluent, it's a plus. Some international projects may require it.\n\nIn summary:\n\nWhat we are looking for is a combination of experience, clarity, and potential. We want your profile to make it clear to us why you should be working on the best projects with us."
-  },
-  {
-    "audience": "freelancer",
-    "source": "shakers_faq",
-    "question": "Do you have questions or need help improving your profile? Write to us. We're here to help you. 😉",
-    "answer": "See you inside! 🚀"
+    "question": "What do you evaluate when reviewing my Shakers profile?",
+    "answer": "Great, this is a key step to becoming an active part of the community. Here we tell you what aspects we analyze to make sure you're ready for the top projects happening at Shakers.\n\n1. 100% complete profile\n\nIt seems obvious, but it's essential. A complete profile helps us clearly understand who you are, what you do, and how you fit into Shakers projects.\n\n✅ Profile photo\n✅ Professional bio\n✅ Detailed experience\n✅ Well-specified skills\n✅ Portfolio with examples\n\n2. Specialization within our offering\n\nWe focus on certain profiles based on our clients' needs. If your specialty is within our catalog of services, you are more likely to be selected.\n\n👉Would you like to know what profiles we are currently looking for?\n\n\n3. Years of Experience\n\nMost projects are for experienced profiles. That's why we tend to prioritize people with at least 2 years of experience in their specialty.\n\n🛠️ If you are just starting out, don't worry. You can strengthen your profile with good descriptions, projects, and certifications.\n\n4. Professional Career\n\nWe look beyond time: we want to understand your evolution. Have you taken on more responsibilities? Have you led teams or key projects? Tell us about it!\n\n5. Certifications and Licenses\n\nHaving certifications is a nice bonus. They help us validate your technical knowledge objectively.\n\n6. Skill Validation\n\nWe check whether your skills are well represented and validated both on Shakers and on other platforms (LinkedIn, Behance, GitHub, etc.). The more backing, the better.\n\n7. Projects in your portfolio\n\nThe projects in your portfolio should speak for you. Include clear descriptions, results achieved, and links if available. Don't underestimate this point.\n\n\n\n8. Languages\n\nWe don't require knowledge of English or other languages, but if you are fluent, it's a plus. Some international projects may require it.\n\nIn summary:\n\nWhat we are looking for is a combination of experience, clarity, and potential. We want your profile to make it clear to us why you should be working on the best projects with us."
   },
   {
     "audience": "freelancer",
     "source": "shakers_faq",
     "question": "How do I unlock the project search engine?",
-    "answer": "Have you just joined Shakers and can't wait to see the available projects? We understand! But before you can explore the project search engine, there are a few key steps you need to complete. Here's a step-by-step guide.\n\nComplete your profile 100%\n\nThis is the first step and one of the most important. The more information we have about you, the better we can connect your profile with projects that suit you. Be sure to include:\n\nYour professional experience\n\nYour main skills\n\nPrevious projects or portfolio"
-  },
-  {
-    "audience": "freelancer",
-    "source": "shakers_faq",
-    "question": "What type of projects interest you",
-    "answer": "Talent Team Validation\n\nOnce you have completed your profile, our talent team will review and validate it. This step allows us to ensure that all profiles on Shakers maintain a standard of quality and professionalism.\n\n📌 This process may take a little time, but it is key to protecting the quality of our community.\n\nAccess to the search engine (when there are projects for you)\n\nEven if your profile is validated, you may not have immediate access to the search engine. This is not an error. We only grant access when:\n\nThere are active projects that align with your profile.\n\nThere is no other freelancer in our community who is already applying and is a better fit for the project.\n\nWe want to ensure that when you enter the search engine, you have real opportunities for you."
-  },
-  {
-    "audience": "freelancer",
-    "source": "shakers_faq",
-    "question": "Need more information?",
-    "answer": "If you want to see the Shakers application process in detail, . \n\nThank you for being part of the Shakers community! 🚀"
+    "answer": "Access to the search engine (when there are projects for you)\n\nEven if your profile is validated, you may not have immediate access to the search engine. This is not an error. We only grant access when:\n\nThere are active projects that align with your profile.\n\nThere is no other freelancer in our community who is already applying and is a better fit for the project.\n\nWe want to ensure that when you enter the search engine, you have real opportunities for you."
   },
   {
     "audience": "freelancer",
     "source": "shakers_faq",
     "question": "How do I certify my skills?",
-    "answer": "Certifying your skills is key to advancing your process within Shakers.\nIt helps us validate your profile and increases your chances of being selected for projects that suit you.\n\nHere's how to do it, step by step 👇\n\n🔍 Access from your profile\n\nLog in to your profile and go to the \"Skills\" tab.\n\nNext to each skill, you will see a button to start the certification process.\n\n📌 Options for certifying your skills\n\nOnce you enter the process, a modal will open where you can choose between several ways to certify your skill:\n\n✅ Uploading a document\n\nIt must be official, valid, and in PDF format.\n\nExamples: diploma, contract, company certificate, etc.\n\nMake sure it clearly reflects your experience in that skill.\n\n✅ Requesting an external review of a project\n\nFrom a project you have uploaded to your portfolio\n\nYou can request a review from a previous client directly from the platform.\n\n✅ Requesting a professional reference\n\nFrom the \"Experience\" section, you can request references from a former boss or colleague.\n\nThey will receive a simple form to validate your skills.\n\n✅ Through projects on Shakers"
+    "answer": "Certifying your skills is key to advancing your process within Shakers.\nIt helps us validate your profile and increases your chances of being selected for projects that suit you.\n\nHere's how to do it, step by step 👇\n\n🔍 Access from your profile\n\nLog in to your profile and go to the \"Skills\" tab.\n\nNext to each skill, you will see a button to start the certification process.\n\n\n📌 Options for certifying your skills\n\nOnce you enter the process, a modal will open where you can choose between several ways to certify your skill:\n\n✅ Uploading a document\n\nIt must be official, valid, and in PDF format.\n\nExamples: diploma, contract, company certificate, etc.\n\nMake sure it clearly reflects your experience in that skill.\n\n✅ Requesting an external review of a project\n\nFrom a project you have uploaded to your portfolio\n\nYou can request a review from a previous client directly from the platform.\n\n✅ Requesting a professional reference\n\nFrom the \"Experience\" section, you can request references from a former boss or colleague.\n\nThey will receive a simple form to validate your skills.\n\n✅ Through projects on Shakers\n\nWhen you complete a project on the platform and the client validates it, the skills you used in that project will be automatically certified.\n\n✅ Taking a technical test\n\nYou can choose to take an online technical test."
   },
   {
     "audience": "freelancer",
     "source": "shakers_faq",
     "question": "How do I complete my profile 100%?",
-    "answer": "Hello! If you're reading this, it's because you're already building your profile on Shakers. And you're probably wondering: How do I make it perfect? Here's a step-by-step guide 👇\n\nBefore you start, we recommend watching this video:\n\n1. Profile photo\n\nYour first impression.\nYou don't need a studio photo, but you do need:\n\nGood lighting\n\nA neutral background\n\nA clear, professional look\n\n💡 Think LinkedIn, but with a fresher, more approachable touch\n\n.\n\n2. At least 7 skills\n\nTell us what you do best. Examples:\n\nUX/UI\n\nProject management\n\nBackend with Node.js\n\nMotion graphics\n\nCopywriting in English\n\n🎯 Tip: choose skills that you truly master and want to continue offering.\n\n3. Availability"
+    "answer": "1. Profile photo\n\nYour first impression.\nYou don't need a studio photo, but you do need:\n\nGood lighting\n\nA neutral background\n\nA clear, professional look\n\n\n2. At least 7 skills\n\nTell us what you do best. Examples:\n\nUX/UI\n\nProject management\n\nBackend with Node.js\n\nMotion graphics\n\nCopywriting in English\n\n🎯 Tip: choose skills that you truly master and want to continue offering.\n\n3. Availability\n\nCan you work full-time or just a few hours a week?\nBe clear about this. That way, you'll only receive projects that suit you.\n\n4. Your rate\n\nSet a range that reflects your experience.\nNot sure where to start? Look at average rates on similar platforms, or talk to other freelancers.\n\n💸 Remember: you can set an hourly rate or a project rate.\n\n5. Portfolio (minimum 3 projects)\n\nYour best showcase.\nShowcase projects that speak for you: what you did, what tools you used, what you achieved. And if you can, add links or images.\n\n\n\n6. Professional experience\n\nTell your story: previous roles, companies, dates, and achievements.\nYou don't need to include everything, just focus on the most relevant information.\n\n7. Tests: Personality + Motivation\n\nThese tests help us understand:\n\nHow you work\n\nWhat motivates you\n\nWhat kind of projects might suit you\n\n🧠 They are quick, intuitive, and even fun.\n\n8. \"Describe yourself in one sentence\"\n\nSomething direct, personal, and catchy.\nExample:\n\"Designer who combines aesthetics and strategy to solve real problems.\"\n\n9. \"About you\" + \"What you excel at and why\"\n\nHere you can take your time to explain who you are: your passions, your work style, why someone should choose you.\n\n🧩 This is your space to be authentic and set yourself apart.\n\n\nOnce your profile is 100% complete and validated, you'll move on to the screening phase → interview → first project!\n\n💙 The more complete your profile is, the more visible you will be for the projects that interest you."
   },
   {
     "audience": "freelancer",
     "source": "shakers_faq",
-    "question": "What specialties are included in our offering?",
-    "answer": "At Shakers, we work with top-level independent talent to meet the needs of innovative companies in multiple sectors. Our catalog of specialties is extensive and constantly evolving, adapting to market demands and new technologies.\n\nHere is the updated list of specialties that are part of our offering:\n\n💻 Development and Technology\n\nMobile Developer\n\nBack End Developer\n\nFront-End Developer\n\nFull Stack Developer\n\nIT Project Manager / Tech Lead\n\nSoftware Architect\n\nWeb Developer\n\nNo-Code Web Developer\n\nDevOps\n\nSysadmin\n\nCloud Architect\n\nBlockchain Developer\n\nSAP ABAP Developer\n\nSCRUM Master\n\nIoT Security Specialist\n\nFractional CTO\n\n📊 Data Science and Analysis\n\nData Scientist\n\nData Engineer\n\nData Analyst / Business Intelligence\n\nMLOps\n\nML & AI Engineer\n\n🏆 Product and Quality Management\n\nProduct Manager\n\nQuality Assurance (QA)\n\nTest Engineer\n\n🔒 Security and Networks\n\nCybersecurity Specialist\n\nSecurity Architect\n\nNetwork Security Specialist\n\nOT Security Specialist\n\n🎨 Design and Creativity\n\nGraphic and Brand Designer\n\nUX/UI Designer\n\nAccessibility Designer\n\nVideomaker\n\n3D Artist\n\nCreative Project Manager\n\nCustomer Experience Specialist\n\n📈 Marketing\n\nSEO Specialist\n\nSEM and Paid Media Specialist\n\nSocial Media Specialist\n\nGrowth Hacker / CRO\n\nCopywriter / Journalist\n\nMarketing Project Manager\n\nFractional CMO\n\n📅 Consulting and Strategy\n\nBusiness Consultant\n\nDigital Strategy Consultant\n\nGaming & Esports Consultant\n\nSAP Consultant\n\n🌐 Extended Reality and New Technologies\n\nVR Engineer\n\nVR Programmer\n\nAR/MR Engineer\n\nAR Programmer\n\nMR Programmer \n\nDo you identify with any of these specialties? At Shakers, we help you work on challenging, high-impact projects.\nAnd if you're looking for talent, we're ready to help you find the perfect match."
+    "question": "What specialties are included in your offering?",
+    "answer": "At Shakers, we work with top-level independent talent to meet the needs of innovative companies in multiple sectors. Our catalog of specialties is extensive and constantly evolving, adapting to market demands and new technologies.\n\nHere is the updated list of specialties that are part of our offering:\n\n💻 Development and Technology\n\nMobile Developer \n\nBack End Developer \n\nFront-End Developer \n\nFull Stack Developer \n\nIT Project Manager / Tech Lead \n\nSoftware Architect \n\nWeb Developer \n\nNo-Code Web Developer \n\nDevOps \n\nSysadmin \n\nCloud Architect \n\nBlockchain Developer \n\nSAP ABAP Developer \n\nSCRUM Master \n\nIoT Security Specialist \n\nFractional CTO \n\n📊 Data Science and Analysis\n\nData Scientist \n\nData Engineer \n\nData Analyst / Business Intelligence \n\nMLOps \n\nML & AI Engineer \n\n🏆 Product and Quality Management\n\nProduct Manager \n\nQuality Assurance (QA) \n\nTest Engineer \n\n🔒 Security and Networks\n\nCybersecurity Specialist \n\nSecurity Architect \n\nNetwork Security Specialist \n\nOT Security Specialist \n\n🎨 Design and Creativity\n\nGraphic and Brand Designer \n\nUX/UI Designer \n\nAccessibility Designer \n\nVideomaker \n\n3D Artist \n\nCreative Project Manager \n\nCustomer Experience Specialist \n\n📈 Marketing\n\nSEO Specialist \n\nSEM and Paid Media Specialist \n\nSocial Media Specialist \n\nGrowth Hacker / CRO \n\nCopywriter / Journalist \n\nMarketing Project Manager \n\nFractional CMO \n\n📅 Consulting and Strategy\n\nBusiness Consultant \n\nDigital Strategy Consultant \n\nGaming & Esports Consultant \n\nSAP Consultant \n\n🌐 Extended Reality and New Technologies\n\nVR Engineer \n\nVR Programmer \n\nAR/MR Engineer \n\nAR Programmer \n\nMR Programmer \n\nDo you identify with any of these specialties? At Shakers, we help you work on challenging, high-impact projects.\nAnd if you're looking for talent, we're ready to help you find the perfect match."
   },
   {
     "audience": "freelancer",
     "source": "shakers_faq",
     "question": "What is the process for joining Shakers?",
-    "answer": "If you're considering joining Shakers, you're probably wondering: How do I join and how long does the whole process take? Here's a step-by-step guide 👇\n\n1. Register and complete the onboarding process\n\nStart by creating your account and completing the initial onboarding process.\nThis helps us better understand your profile and offer you a personalized recommendation about your chances of accessing the full functionality of Shakers.\n\n2. Complete your profile 100%\n\nYour profile is your cover letter. To move forward, you need to fill in:\n\nProfile photo\n\nAt least 7 skills\n\nAvailability\n\nRate (per hour or per project)\n\nMinimum of 3 projects in your portfolio\n\nProfessional experience\n\nPersonality test\n\nMotivation test\n\nDescriptions:\n\n\"Describe yourself in one sentence\"\n\n\"About you\"\n\n\"What you excel at and why\"\n\n3. Certify your skills (optional, but recommended)\n\nYou can add technical certifications that validate your skills.\nThis improves your chances of passing the selection process.\n\n👉\n👉\n\n4. Screening + video call\n\nOnce your profile is complete and validated:\n\n📹 We will ask you for a short video presentation.\n📞 Then, we will schedule a video call with you.\n\nWe want to get to know you better:"
+    "answer": "If you're considering joining Shakers, you're probably wondering: How do I join and how long does the whole process take? Here's a step-by-step guide 👇\n\n1. Register and complete the onboarding process\n\nStart by creating your account and completing the initial onboarding process.\nThis helps us better understand your profile and offer you a personalized recommendation about your chances of accessing the full functionality of Shakers.\n\n2. Complete your profile 100%\n\nYour profile is your cover letter. To move forward, you need to fill in:\n\nProfile photo\n\nAt least 7 skills\n\nAvailability\n\nRate (per hour or per project)\n\nMinimum of 3 projects in your portfolio\n\nProfessional experience\n\nPersonality test\n\nMotivation test\n\nDescriptions:\n\n\"Describe yourself in one sentence\"\n\n\"About you\"\n\n\"What you excel at and why\"\n\n3. Certify your skills (optional, but recommended)\n\nYou can add technical certifications that validate your skills.\nThis improves your chances of passing the selection process.\n\n\n4. Screening + video call\n\nOnce your profile is complete and validated:\n\n📹 We will ask you for a short video presentation.\n📞 Then, we will schedule a video call with you.\n\nWe want to get to know you better:\n\nWhere are you at right now?\n\nWhat kind of projects are you looking for?\n\nDoes our vision fit you?\n\n5. Ready to work!\n\nIf everything fits, you move on to the next level: You're ready to receive your first project briefing.\n\nThis first project is key: once you complete it, you unlock the entire Shakers offering.\nFrom there, you will be able to:\n\nView all available projects\n\nApply directly\n\nReceive personalized notifications\n\nContact clients\n\n⏱️ How long does the whole process take?\n\nCompleting your profile: it's up to you. You can do it in a day.\n\nProfile review: usually in less than a week.\n\nVideo call: scheduled right after the video.\n\nAccess to the first project: depends on demand at the time. If there is a match, we will let you know!"
   },
   {
     "audience": "freelancer",
     "source": "shakers_faq",
-    "question": "Does our vision fit you?",
-    "answer": "5. Ready to work!\n\nIf everything fits, you move on to the next level: You're ready to receive your first project briefing.\n\nThis first project is key: once you complete it, you unlock the entire Shakers offering.\nFrom there, you will be able to:\n\nView all available projects\n\nApply directly\n\nReceive personalized notifications\n\nContact clients"
+    "question": "Why do you limit access to Shakers?",
+    "answer": "At Shakers, we limit access to ensure quality, balance, and real opportunities for freelancers. We prioritize those who are already active members of the community. We are committed to long-term relationships, not one-off collaborations."
   },
   {
     "audience": "freelancer",
     "source": "shakers_faq",
-    "question": "How long does the whole process take?",
-    "answer": "Completing your profile: it's up to you. You can do it in a day.\n\nProfile review: usually in less than a week.\n\nVideo call: scheduled right after the video.\n\nAccess to the first project: depends on demand at the time. If there is a match, we will let you know!"
-  },
-  {
-    "audience": "freelancer",
-    "source": "shakers_faq",
-    "question": "Why do we limit access to Shakers?",
-    "answer": "At Shakers, we limit access to ensure quality, balance, and real opportunities for freelancers. We prioritize those who are already active members of the community. We are committed to long-term relationships, not one-off collaborations.\n\nAt Shakers, we don't want to be just another platform. We want to be your home as a freelancer, a place where you can find real, well-paid opportunities that allow you to grow.\n\nThat's why we limit access to the platform. It's not to exclude anyone, but to take care of the experience of each person who joins. Our goal is to achieve a real balance between the amount of talent and the availability of projects.\n\nEven so, with limited access, you can view some projects and apply for them. We want you to start exploring how Shakers works and give you the opportunity to showcase your talent from the very beginning.\n\n🎯 Quality > Quantity\n\nWe prefer to offer fewer projects, but of higher quality. It's part of our philosophy: we don't seek to have thousands of irrelevant projects or sign up talent en masse. We are committed to the best, which is why we filter both the projects that come in and the freelance profiles that access the platform. We want the best.\n\nYes, that means there may be fewer projects available at certain times. But it also means that the projects that are available are good ones, designed to really add value to your career.\n\n⚖️ Balance\n\nWe're committed to maintaining balance within the platform. We want to ensure that there are enough projects for all active freelancers. If there are no opportunities that suit you at a given moment, we prefer that you wait. That way, when you log in, you'll have a better chance of finding a project that really interests you.\n\n🚀 Your first project: the key to Share of Wallet\n\nYour first project is much more than a one-off collaboration. It is the gateway to the Shakers ecosystem. From that moment on, we become part of your client portfolio, and our goal is to remain relevant in your professional career. We call this Share of Wallet.\n\nWe want you to come back, grow with us, and find a stable space to work as a freelancer at Shakers. No one-off projects or sporadic relationships. We are committed to long-term relationships.\n\nSo much so that our North Star Metric, the metric that guides everything we do, is the number of people who work more than 100 hours a month with us. That's the sign that we're on the right track.\n\nNow do you understand why we limit access and prioritize the talent that is already inside? We close the community because we will always put those who are already working or about to close their next project first. We want you to find continuity, not just opportunities.\n\n🔝 Priority in projects"
-  },
-  {
-    "audience": "freelancer",
-    "source": "shakers_faq",
-    "question": "When you join Shakers, your profile will have priority over others with limited access. More visibility and better options from day one.",
-    "answer": "In summary:\n\nWe limit access to ensure the quality of everything that happens within Shakers.\n\nWe seek long-term relationships, not one-off projects with no future.\n\nWe want you to find an environment with real opportunities and good clients.\n\nThank you for your patience. When your time comes, we will welcome you with open arms. 💙"
+    "question": "Can I know more about Shakers?",
+    "answer": "At Shakers, we don't want to be just another platform. We want to be your home as a freelancer, a place where you can find real, well-paid opportunities that allow you to grow.\n\nThat's why we limit access to the platform. It's not to exclude anyone, but to take care of the experience of each person who joins. Our goal is to achieve a real balance between the amount of talent and the availability of projects.\n\nEven so, with limited access, you can view some projects and apply for them. We want you to start exploring how Shakers works and give you the opportunity to showcase your talent from the very beginning.\n\n\n\n🎯 Quality > Quantity\n\nWe prefer to offer fewer projects, but of higher quality. It's part of our philosophy: we don't seek to have thousands of irrelevant projects or sign up talent en masse. We are committed to the best, which is why we filter both the projects that come in and the freelance profiles that access the platform. We want the best.\n\nYes, that means there may be fewer projects available at certain times. But it also means that the projects that are available are good ones, designed to really add value to your career.\n\n⚖️ Balance\n\nWe're committed to maintaining balance within the platform. We want to ensure that there are enough projects for all active freelancers. If there are no opportunities that suit you at a given moment, we prefer that you wait. That way, when you log in, you'll have a better chance of finding a project that really interests you.\n\n🚀 Your first project: the key to Share of Wallet\n\nYour first project is much more than a one-off collaboration. It is the gateway to the Shakers ecosystem. From that moment on, we become part of your client portfolio, and our goal is to remain relevant in your professional career. We call this Share of Wallet.\n\nWe want you to come back, grow with us, and find a stable space to work as a freelancer at Shakers. No one-off projects or sporadic relationships. We are committed to long-term relationships. \n\nSo much so that our North Star Metric, the metric that guides everything we do, is the number of people who work more than 100 hours a month with us. That's the sign that we're on the right track.\n\nNow do you understand why we limit access and prioritize the talent that is already inside? We close the community because we will always put those who are already working or about to close their next project first. We want you to find continuity, not just opportunities.\n\n🔝 Priority in projects\n\nWhen you join Shakers, your profile will have priority over others with limited access. More visibility and better options from day one."
   },
   {
     "audience": "freelancer",
     "source": "shakers_faq",
     "question": "Do I have to be a freelancer to register with Shakers?",
-    "answer": "Spoiler: no.\n\nThis is a very common question, and the short answer is that you don't need to be registered as a freelancer to sign up for Shakers."
+    "answer": "Spoiler: no.\n\nThis is a very common question, and the short answer is that you don't need to be registered as a freelancer to sign up for Shakers.\n\nWhat is true is that the projects you will find on the platform are designed for freelance profiles, but that does not mean you have to be one from the outset."
   },
   {
     "audience": "freelancer",
     "source": "shakers_faq",
-    "question": "So... who can join Shakers?",
+    "question": "Who can join Shakers?",
     "answer": "Freelancers\n\nIf you already work for yourself, Shakers is for you. You'll find projects designed for your lifestyle: collaborations with startups, large companies, and teams that value autonomy and specialization.\n\nAgencies and studios\n\nIf you are part of an agency or studio, you can also be part of Shakers. The important thing is that the profile that registers and collaborates on projects is the professional who will carry out the work, not a commercial profile.\nThis allows us to maintain our focus on technical and creative talent."
   },
   {
     "audience": "freelancer",
     "source": "shakers_faq",
-    "question": "Not a freelancer yet but considering it?",
+    "question": "Not a freelancer yet but I am considering it",
     "answer": "You're in the right place.\n\nYou can register without any problems, complete your profile, and explore everything Shakers has to offer. Once you unlock your access, you will see the active projects and be able to assess whether these types of opportunities fit what you are looking for.\n\nThe idea is that when you decide to take the plunge and launch yourself as a freelancer, you're already in, you know how it works, and you have a clear understanding of how the ecosystem operates."
   },
   {

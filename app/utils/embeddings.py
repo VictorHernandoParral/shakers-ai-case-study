@@ -1,3 +1,8 @@
+# =============================================
+# File: app/utils/embeddings.py
+# Purpose: Embedding utilities
+# =============================================
+
 from sentence_transformers import SentenceTransformer
 from functools import lru_cache
 import os

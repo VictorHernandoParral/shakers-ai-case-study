@@ -1,3 +1,8 @@
+# =============================================
+# File: app/utils/timing.py
+# Purpose: Timing utility
+# =============================================
+
 import time
 from contextlib import contextmanager
 

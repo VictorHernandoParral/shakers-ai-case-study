@@ -1,3 +1,8 @@
+# =============================================
+# File: app/utils/chunking.py
+# Purpose: Token-aware chunking utilities
+# =============================================
+
 from typing import Iterable, List, Dict, Optional, Tuple
 import re
 

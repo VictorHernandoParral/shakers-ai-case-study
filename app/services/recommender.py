@@ -1,3 +1,8 @@
+# =============================================
+# File: app/services/recommender.py
+# Purpose: Recommender service that generates candidate resources via retrieval or KB scan
+# =============================================
+
 # app/services/recommender.py
 from __future__ import annotations
 from typing import Any, Dict, List
@@ -61,6 +66,27 @@ def _candidateize(query: str, k: int = 20) -> List[Dict[str, Any]]:
             uniq[key] = c
     return list(uniq.values())
 
+def _norm(s: str) -> str:
+    import re
+    s = (s or "").lower().strip()
+    s = re.sub(r"[^\w\s]", " ", s)
+    s = re.sub(r"\s+", " ", s)
+    return s.strip()
+
+def _looks_like_same_topic(cand: Dict[str, Any], query: str) -> bool:
+    """
+    Heuristic to avoid recommending the exact topic the user just asked.
+    Compares normalized strings; treats strong containment (~same question) as same topic.
+    """
+    t = _norm(cand.get("title", "")) or _norm(cand.get("url", "")) or _norm(cand.get("id", ""))
+    q = _norm(query)
+    if not t or not q:
+        return False
+    if t == q:
+        return True
+    short, long = (t, q) if len(t) <= len(q) else (q, t)
+    return short in long and len(short) / max(1, len(long)) >= 0.8
+
 
 def _mmr_select(cands: List[Dict[str, Any]], k: int = 3, lam: float = 0.7) -> List[Dict[str, Any]]:
     """
@@ -112,16 +138,40 @@ def recommend(user_id: str, current_query: str, k: int = 3) -> List[Dict[str, An
     """
     PROFILE_STORE.append_query(user_id, current_query)
 
-    cands = _candidateize(current_query, k=20)
+    # Larger candidate pool (env override: REC_CANDIDATE_K)
+    CAND_K = int(os.getenv("REC_CANDIDATE_K", "30"))
+    cands = _candidateize(current_query, k=CAND_K)
     prof = PROFILE_STORE.get_profile(user_id)
     seen = set(prof.get("seen_resources", []))
 
     # Filter out seen (by url or id)
     def key(c): return c.get("url") or c.get("id")
     unseen = [c for c in cands if key(c) not in seen]
+    
 
     # Diversify
     picks = _mmr_select(unseen, k=k, lam=0.7)
+    # Stage 1 padding: try to fill from remaining UNSEEN leftovers
+    need = max(2, k) - len(picks)
+    if need > 0:
+        chosen_keys = {key(x) for x in picks}
+        leftovers = [c for c in unseen if key(c) not in chosen_keys]
+        if leftovers:
+            extra = _mmr_select(leftovers, k=need, lam=0.5)
+            for e in extra:
+                ek = key(e)
+                if ek not in chosen_keys:
+                    picks.append(e); chosen_keys.add(ek)
+        need = max(2, k) - len(picks)
+        # Stage 2 padding: as a last resort, pad from the FULL candidate pool (even if seen)
+        if need > 0:
+            others = [c for c in cands if key(c) not in chosen_keys]
+            if others:
+                extra2 = _mmr_select(others, k=need, lam=0.4)
+                for e in extra2:
+                    ek = key(e)
+                    if ek not in chosen_keys:
+                        picks.append(e); chosen_keys.add(ek)
 
     # Build output with reasons
     recs: List[Dict[str, Any]] = []
@@ -131,7 +181,8 @@ def recommend(user_id: str, current_query: str, k: int = 3) -> List[Dict[str, An
                 "id": r.get("id"),
                 "title": r.get("title"),
                 "url": r.get("url"),
-                "reason": _reason_for(user_id, r, current_query),
+                # Match schema field name used by the API/UI
+                "why": _reason_for(user_id, r, current_query),
             }
         )
 
@@ -139,4 +190,5 @@ def recommend(user_id: str, current_query: str, k: int = 3) -> List[Dict[str, An
     PROFILE_STORE.add_seen(user_id, [key(r) for r in picks])
 
     logger.info(f"[recommend] user={user_id} k={k} picks={len(recs)}")
-    return recs
+    # Final safety: never return fewer than 2 items if we have anything at all
+    return recs[:max(2, k)]

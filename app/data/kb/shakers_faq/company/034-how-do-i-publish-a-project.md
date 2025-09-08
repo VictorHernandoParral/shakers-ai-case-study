@@ -1,0 +1,119 @@
+---
+title: "How do I publish a project?"
+audience: company
+source: shakers_faq
+relpath: company/034-how-do-i-publish-a-project.md
+ordinal: 34
+---
+
+**Answer:**
+
+From "My organization," go to the "Projects" section. From the Home page or the side menu on the left, you will find a "New project" button.
+
+To hire freelance talent on Shakers, you first need to publish a project. Once you have published the project, you will receive candidates in less than 24 hours and you will be able to select the candidates that are the best match for your project.
+
+From the Home page, in the side menu, or from the "My Organization" page, you will see the "New Project" button.
+
+
+Clicking on the button will open a form where you must specify the briefing for your project in three steps:
+
+1. Select a category:
+
+Choose the type of project you want to carry out from the categories Development, Design, or Marketing. For each project, you will see the estimated time it will take to find a candidate and start working.
+
+
+It is important to choose the right category, as our artificial intelligence will help you create a briefing tailored to the type of project you have selected. If you cannot find your project among those we offer, .
+
+2. Write a briefing:
+
+This is the most crucial part of creating your project, as the better written the briefing is, the greater your ability to attract the highest quality talent.
+
+⚠️ Be careful! Shakers freelancers are senior professionals looking for quality projects that motivate them. That's why we filter all the projects we launch to the community. A vague or poorly written description runs the risk of not being published.
+
+But don't worry, if you follow the steps below, you'll be able to write a briefing🔝 and capture the attention of the best digital talent.
+
+Step 1: Title
+
+Follow our AI's suggestions or choose a title that quickly describes your needs.
+
+Step 2: About your company
+
+Add a brief description of your company's activity. Keep in mind that the best professionals are not only looking for projects to work on, but projects that motivate them, so the better you "sell" your company, the more you will attract the attention of freelancers.
+
+We will use the information you include here to match your project with the talent that is most motivated to work in companies like yours.
+
+Step 3: Project objectives
+
+In this section, you need to define as clearly as possible what you want to achieve with your project:
+
+Objectives or deliverables: what you hope to achieve with your project. For example: development of a website.
+
+Tasks to be performed: tasks you expect to be included during the process. For example: writing website content or creating brand identity
+
+Freelancer support: tasks that you or your team will take care of so that the freelancer doesn't have to. For example: purchasing and configuring the domain.
+
+
+
+Step 4: Answer the talent's FAQs
+
+Depending on the type of project you have selected, you will be shown a series of common questions that freelancers often have about this type of project. Get ahead of the game and avoid answering the same question to every candidate interested in your project.
+
+You can add customized FAQs to provide more information.
+
+
+
+Step 5: Scope
+
+Add the date you would like to start and the estimated duration of the project.
+
+
+
+Freelancers are usually more interested in long-term, ongoing projects, so a short-term project may be more difficult to find top talent for.
+
+Step 6: Budget
+
+Indicate an estimate of the budget you have available for the project. This budget is simply a guideline, as the final budget will depend on the proposals you receive from freelancers.
+
+
+
+3. Confirm the skills
+
+Based on the content of your briefing, our artificial intelligence will detect the skills you need to successfully carry out your project.
+
+Confirm the skills and add new ones if you find that any skills you need for your project are missing.
+
+
+
+4. Set up your Dream Team
+
+Based on the skills you need and all the information you have provided in the briefing, the artificial intelligence will recommend the number of positions your team needs to carry out the project. 
+
+
+
+You can review and edit them if you think it's necessary (this helps our AI improve for future projects, so thank you in advance😅 ).
+
+Once these steps are complete, two things can happen:
+
+If your briefing is sufficiently detailed, we will contact you by email to confirm a few quick questions and upload your project to the platform. 
+
+If your briefing is unclear and we need to go into more detail, a Shakers digital consultant will contact you to help you define your needs in terms of the necessary profiles, roadmap, and budget.
+
+And then you'll have your project on the Shakers app!
+
+
+
+Your first steps: we'll show you how to use the app
+
+Have you just registered and don't know where to start? Here are some interesting things! 👀
+
+If you've just joined Shakers and aren't sure what to do, you can start by going to your organization's page and checking if you can add more information about your company:
+
+
+
+For a good match with talents, it's not only the project information that's important, but also everything you have about your organization. Make sure you polish that up as much as possible, and we'll make sure you work with the ideal talent for you!
+
+
+
+Once that's done, the next step is to get the ball rolling!
+
+From the Home page, in the side menu, or from the "My Organization" page, you will see the "New Project" button. Click on it and start the process of publishing your first project on Shakers!

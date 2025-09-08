@@ -1,3 +1,8 @@
+# =============================================
+# File: app/routers/query.py
+# Purpose: Aspects of retrieval
+# =============================================
+
 # app/routers/query.py
 from __future__ import annotations
 

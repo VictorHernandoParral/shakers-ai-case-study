@@ -1,3 +1,8 @@
+# =============================================
+# File: app/services/retrieval.py
+# Purpose: Retrieval service over Chroma vector DB
+# =============================================
+
 # app/services/retrieval.py
 from __future__ import annotations
 

@@ -1,3 +1,8 @@
+# =============================================
+# File: app/utils/ratelimit.py
+# Purpose: In-memory per-key rate limiter
+# =============================================
+
 # app/utils/ratelimit.py
 # Simple per-key rate limiter (fixed window) with in-memory storage
 

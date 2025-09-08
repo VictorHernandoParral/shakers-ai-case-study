@@ -1,3 +1,8 @@
+# =============================================
+# File: app/services/profiles.py
+# Purpose: User profile store backed by JSON
+# =============================================
+
 # app/services/profiles.py
 from __future__ import annotations
 import json

@@ -1,5 +1,10 @@
+# =============================================
+# File: app/services/eval.py
+# Purpose: Recommendation API endpoint
+# =============================================
+
 # Minimal metrics service — expand with real counters
-import random
+
 
 async def get_metrics():
     return {

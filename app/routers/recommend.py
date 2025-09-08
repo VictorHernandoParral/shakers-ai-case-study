@@ -1,3 +1,8 @@
+# =============================================
+# File: app/routers/recommend.py
+# Purpose: Recommendation API endpoint
+# =============================================
+
 # app/routers/recommend.py
 from __future__ import annotations
 
@@ -102,8 +107,18 @@ def _normalize_recs(recs: List[Dict[str, Any]]) -> List[Recommendation]:
             anchor = str(rid or title)
             url = f"kb://{_slug(anchor)}"
 
-        normalized.append(Recommendation(id=(rid if isinstance(rid, str) else None),
-                                         title=title, url=url, reason=reason))
+        # 2) If rid is still empty/None, use URL, else a slug from the title
+        if not isinstance(rid, str) or not rid.strip():
+            rid = url or f"kb://{_slug(title)}"
+
+        normalized.append(
+            Recommendation(
+                id=str(rid),     # always a non-empty string
+                title=title,
+                url=url,
+                reason=reason,
+            )
+        )
     return normalized
 
 

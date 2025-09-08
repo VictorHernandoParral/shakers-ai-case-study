@@ -1,12 +1,13 @@
 # =============================================
 # File: app/utils/answer_style.py
-# Purpose: Enforce answer style: <= 6 sentences; bulletize lists; preserve citations.
+# Purpose: Enforce answer style: <= N sentences; bulletize simple lists; preserve trailing "Sources:".
 # =============================================
 from __future__ import annotations
 import re
 from typing import Tuple
 
-_SOURCES_RE = re.compile(r"\n\s*Sources:\s", flags=re.IGNORECASE)
+
+_SOURCES_RE = re.compile(r"\n\s*Sources\s*:\s", flags=re.IGNORECASE)
 
 _SENT_SPLIT_RE = re.compile(r'(?<=[.!?])\s+')
 
@@ -15,53 +16,44 @@ def _split_answer_and_sources(text: str) -> Tuple[str, str]:
         return "", ""
     m = _SOURCES_RE.search(text)
     if not m:
-        return text.strip(), ""
-    idx = m.start()
-    body = text[:idx].rstrip()
-    tail = text[idx:].lstrip("\n")
-    return body, tail
+        return text, ""
+    return text[: m.start()].rstrip(), text[m.start() :].strip()
 
-def _split_sentences(body: str) -> list[str]:
-    if not body:
-        return []
-    body = " ".join(body.split())
-    parts = _SENT_SPLIT_RE.split(body.strip())
-    return [p.strip() for p in parts if p.strip()]
+def _truncate_sentences(text: str, max_sentences: int) -> str:
+    if max_sentences <= 0 or not text:
+        return text
+    parts = _SENT_SPLIT_RE.split(text.strip())
+    if len(parts) <= max_sentences:
+        return text.strip()
+    kept = " ".join(parts[:max_sentences]).strip()
+    return kept + "…"
 
-def _truncate_sentences(body: str, max_sentences: int = 6) -> str:
-    sents = _split_sentences(body)
-    if len(sents) <= max_sentences:
-        return body
-    return " ".join(sents[:max_sentences]).rstrip()
+def _looks_semicolon_list(text: str) -> bool:
+    # Heuristics
+    return (";" in text) and (text.count(". ") <= 2)
 
-def _looks_semicolon_list(body: str) -> bool:
-    # Heuristic: 3+ segments separated by semicolons, each reasonably short.
-    parts = [p.strip() for p in body.split(";") if p.strip()]
-    if len(parts) < 3:
-        return False
-    return all(len(p) <= 140 for p in parts[:6])
+def _bulletize_semicolon_list(text: str) -> str:
+    items = [i.strip(" ;\n\t") for i in text.split(";")]
+    items = [i for i in items if i]
+    if len(items) < 3:
+        return text
+    return "- " + "\n- ".join(items)
 
-def _bulletize_semicolon_list(body: str) -> str:
-    parts = [p.strip().rstrip(".") for p in body.split(";") if p.strip()]
-    return "\n- " + "\n- ".join(parts)
-
-def enforce_style(answer_text: str, max_sentences: int = 6) -> str:
+def enforce_style(answer_text: str, max_sentences: int = 14) -> str:
     """
-    Enforce:
-      - <= max_sentences in the main body.
-      - Bulletize if body looks like a semicolon-separated list.
-      - Preserve any trailing "Sources: ..." block exactly as-is.
+    - If the body looks like a list separated by ‘;’, format it as bullet points.
+    - Otherwise, trim it to ‘max_sentences’ sentences (default 14).
+    - Preserve a final block “Sources: ...” exactly as it is.
     """
     if not answer_text:
         return answer_text or ""
 
     body, sources_block = _split_answer_and_sources(answer_text)
 
-    # Try bulletization first (only if it clearly looks like a list)
+    
     if _looks_semicolon_list(body):
         body_fmt = _bulletize_semicolon_list(body)
     else:
-        # Otherwise, truncate sentences if necessary
         body_fmt = _truncate_sentences(body, max_sentences=max_sentences)
 
     if sources_block:

@@ -1,54 +1,83 @@
 # Shakers AI Case Study — Intelligent Support + Recommendations
 
-AI-powered assistant for answering knowledge-base (KB) questions in English, using FastAPI, ChromaDB, and retrieval-augmented generation (RAG).
+A Retrieval-Augmented Generation (RAG) chatbot for Shakers’ knowledge base.  
+It answers user questions with grounded content from your KB and proposes personalized follow-ups.
+
 
 # Project Structure
 
 app/
- ├── routers/        # API endpoints (query, health, etc.)
- ├── services/       # Core services (retrieval, indexing, etc.)
- ├── utils/          # Helpers (chunking, metadata, OOS detection)
- └── data/           # Knowledge base docs (English only)
+main.py # FastAPI app
+routers/
+query.py # /query endpoint (RAG + generation)
+recommend.py # /recommend endpoint (follow-ups)
+metrics.py # optional health/metrics
+services/
+retrieval.py # Chroma collection + similarity search
+generation.py # OpenAI wrapper + robust retries
+recommender.py # candidate pool + MMR + padding (>=2 items)
+utils/
+prompting.py # message builder (definition-first)
+answer_post.py # clean/remove headings, strip echoes
+sanitize.py # context & output sanitizer (labels, ****)
+rcache.py # response cache
+reranker.py # cross-encoder (optional)
+compressor.py # sentence selector (optional)
 scripts/
- └── index_kb.py     # Script to index KB into Chroma
-store/
- └── chroma/         # Local Chroma vector DB (ignored in Git)
-tests/               # Unit/integration tests
+streamlit_app.py # simple front-end
+index_kb.py # KB indexing script
+
 
 # Architecture Overview
 
           ┌──────────────┐
-          │   Client      │
-          │ (API caller)  │
+          │   Client     │
+          │ (API caller) │
           └──────┬───────┘
                  │  POST /query
                  ▼
           ┌──────────────┐
-          │   FastAPI     │
-          │   (routers)   │
+          │   FastAPI    │
+          │   (routers)  │
           └──────┬───────┘
                  │
                  ▼
           ┌──────────────┐
-          │  Retrieval    │
-          │  (ChromaDB)   │
+          │  Retrieval   │
+          │  (ChromaDB)  │
           └──────┬───────┘
                  │
                  ▼
           ┌──────────────┐
-          │   LLM         │
-          │ (OpenAI etc.) │
+          │   LLM        │
+          │ (OpenAI etc.)│
           └──────┬───────┘
                  │
                  ▼
           ┌──────────────┐
-          │  Response     │
-          │ (answer + src)│
+          │  Response    │
+          │(answer + src)│
           └──────────────┘
 
 
 
-# SETUP
+## ⚙️ Requirements
+
+- **Python 3.11+**
+- **Poetry**
+- OpenAI API key
+
+---
+
+## 🔐 Environment
+
+Create `.env` in repo root:
+
+```ini
+OPENAI_API_KEY=sk-xxx
+
+
+## SETUP
 
 
 1 - Clone the repo
@@ -65,7 +94,7 @@ poetry install
 3 - Environment variables
 Copy .env.example to .env and set:
 
-OPENAI_API_KEY=sk-...
+OPENAI_API_KEY=
 CHROMA_PATH=store/chroma
 COLLECTION_NAME=shakers-kb
 MIN_SIMILARITY=0.75
@@ -94,38 +123,40 @@ Start FastAPI app:
 poetry run uvicorn app.main:app --reload
 
 
-By default:
+6 - Run the UI
 
-Local dev: http://127.0.0.1:8000
-
-Explicit host: http://0.0.0.0:8000 (useful in Docker/VMs)
-
-Test health:
-
-curl http://127.0.0.1:8000/health
-
-# Query Endpoint
-
-Example request:
-
-curl -X POST "http://127.0.0.1:8000/query/" \
-  -H "Content-Type: application/json" \
-  -d '{
-    "user_id": "u123",
-    "query": "How do payments work?"
-  }'
+poetry run streamlit run scripts\streamlit_app.py
 
 
-Example response:
+## How it works (RAG flow)
 
-{
-  "answer": "Payments are processed via...",
-  "sources": [
-    {"id": "doc1", "title": "Payments FAQ", "url": "https://..."}
-  ],
-  "latency_ms": 120,
-  "oos": false
-}
+Retrieve: query → Chroma similarity search over KB chunks.
+
+(Optional) Re-rank and compress: reorder + trim context.
+
+Generate: OpenAI (gpt-4o-mini) produces a definition-first answer.
+
+Clean: strip headings/labels/****, remove any echoed question.
+
+Recommend: MMR + padding → ≥2 follow-ups, excluding the main topic.
+
+Render: UI shows answer, references, recommendations, and history.
+
+
+## Endpoints
+
+POST /query
+
+Body: { "query": "string", "top_k": (optional) }
+
+Resp: { "answer": "string", "references": [...], "recommendations": [...], "meta": {...} }
+
+POST /recommend
+
+Body: { "question":"string", "ctx": {"session_id":"string"}, "k": 3 }
+
+Resp: { "items": [{ "id", "title", "url", "reason" }] }
+
 
 # Metrics
 
@@ -139,19 +170,6 @@ oos_rate
 
 query_count
 
-# Testing
-
-Run unit + integration tests:
-
-poetry run pytest -v
-
-# Notes
-
-All answers must be in English only (enforced by prompt).
-
-OOS detection via similarity threshold (MIN_SIMILARITY in .env).
-
-KB expansion is manual: add English docs under app/data/kb/ and re-run index.
 
 ## Out-of-Scope (OOS) Detection
 
@@ -191,4 +209,18 @@ Response: `{ "recommendations": [{ "id": string|null, "title": string, "url": st
 - Profiles are also updated after `/query` answers (query appended; sources marked as seen).
 - Storage: JSON file at `app/data/profiles/profiles.json`.
 
+
+# Notes
+
+All answers must be in English only (enforced by prompt).
+
+OOS detection via similarity threshold (MIN_SIMILARITY in .env).
+
+KB expansion is manual: add English docs under app/data/kb/ and re-run index.
+
+Latency depends on model & context size. Repeated queries are faster thanks to the cache.
+
+
+## 🧾 License / Ownership
+Internal use for the Shakers AI case study. 
 

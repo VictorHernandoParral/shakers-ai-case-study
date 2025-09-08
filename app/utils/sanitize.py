@@ -1,3 +1,8 @@
+# =============================================
+# File: app/utils/sanitize.py
+# Purpose: Sanitization utilities
+# =============================================
+
 # app/utils/sanitize.py (patch: stronger cue stripping)
 from __future__ import annotations
 import re
@@ -61,12 +66,19 @@ def _strip_injection_sentences(text: str, cues: Iterable[str] = _INJECTION_CUES)
 def sanitize_context_snippet(text: str, max_chars: int = 800) -> str:
     """
     Collapse whitespace, remove *sentences* that look like prompt-injection,
-    and also strip cue phrases inline as a safety net. Then truncate.
+    strip KB artefacts (Introduction/Question/Answer labels and ****), then truncate.
     """
-    t = _strip_injection_sentences(text)
-    # Safety net: remove cue phrases inline if any survived
+    t = text or ""
+    # strip leftover labels/headings and separators first
+    t = re.sub(r"\b(?:Introduction|Question|Answer)\s*:\s*", "", t, flags=re.IGNORECASE)
+    t = re.sub(r"\s*\*{2,}\s*", " ", t)          # '****' → single space
+    t = re.sub(r"\n{3,}", "\n\n", t)             # compact excessive line breaks
+    # remove sentences that look like prompt-injection
+    t = _strip_injection_sentences(t)
+    # safety net: remove cue phrases inline if any survived
     for c in _INJECTION_CUES:
         t = re.sub(re.escape(c), "", t, flags=re.IGNORECASE)
+    # normalize whitespace and truncate
     t = collapse_ws(t)
     if max_chars and len(t) > max_chars:
         t = t[:max_chars].rstrip() + "…"

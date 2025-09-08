@@ -1,3 +1,8 @@
+# =============================================
+# File: app/db/repo.py
+# Purpose: DB repository bootstrap: configure engine from DB_URL (default SQLite) and expose init_db() to create tables.
+# =============================================
+
 from sqlmodel import SQLModel, Session, create_engine
 import os
 

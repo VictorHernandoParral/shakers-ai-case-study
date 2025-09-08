@@ -1,3 +1,8 @@
+# =============================================
+# File: scripts/streamlit_app.py
+# Purpose: Streamlit app frontend for Shakers AI
+# =============================================
+
 # streamlit_app.py
 # -----------------------------------------------------------
 # Shakers AI — Support & Recommendations (Streamlit frontend)
@@ -27,6 +32,11 @@ st.set_page_config(
     page_icon="⚡",
     layout="wide",
 )
+
+# ----------- Enter input -----------
+def _mark_enter_submit():
+    # This is toggled by the text_input's on_change (Enter or input commit)
+    st.session_state["_ask_from_enter"] = True
 
 # ---------- Small helpers ----------
 
@@ -114,16 +124,22 @@ def fetch_recommendations(api_base: str, session_user_id: str, question: str) ->
         normalized: List[Dict[str, Any]] = []
         seen_ids: set[str] = set()
         for it in recs or []:
-            doc_id = str(it.get("doc_id") or it.get("id") or it.get("source_id") or "")
+            title = (it.get("title") or it.get("name") or "Untitled").strip()
+            url = (it.get("url") or it.get("link") or "").strip()
+            # Build a stable id: prefer backend id; else URL; else slug of title
+            raw_id = it.get("id") or it.get("doc_id") or it.get("source_id")
+            doc_id = str(raw_id).strip() if raw_id else (url if url else f"kb://{re.sub(r'[^a-z0-9]+','-', title.lower()).strip('-') or 'item'}")
+            # Ensure URL exists too
+            if not url:
+                url = doc_id if doc_id.startswith("kb://") else f"kb://{re.sub(r'[^a-z0-9]+','-', title.lower()).strip('-') or 'item'}"
+            # De-dupe by doc_id
             if doc_id in seen_ids:
                 continue
             seen_ids.add(doc_id)
-            fallback_url_id = (doc_id or "item").replace(" ", "-").lower()
             normalized.append({
                 "doc_id": doc_id,
-                "title": it.get("title") or it.get("name") or "Untitled",
-                "url": it.get("url") or it.get("link") or f"kb://{fallback_url_id}",
-                # Accept 'why' or historical 'reason'
+                "title": title,
+                "url": url,
                 "why": it.get("why") or it.get("reason") or "",
             })
         return normalized
@@ -131,21 +147,19 @@ def fetch_recommendations(api_base: str, session_user_id: str, question: str) ->
         return []
 
 def render_recommendations(recs: List[Dict[str, Any]]) -> None:
-    """Small, unobtrusive list under the latest answer."""
-    with st.expander("Personalized recommendations", expanded=True if recs else False):
+    """Show recommendations as plain text (no links, no Ask buttons)."""
+    with st.expander("Personalized recommendations", expanded=bool(recs)):
         if not recs:
             st.caption("No recommendations at the moment.")
             return
-        st.markdown("<ul class='refs'>", unsafe_allow_html=True)
+
         for r in recs:
             title = r.get("title", "Untitled")
-            why_text = f" — {r.get('why','')}" if r.get("why") else ""
-            url = r.get("url", "")
-            if url and (url.startswith("http") or url.startswith("kb://")):
-                st.markdown(f"- [{title}]({url}){why_text}")
-            else:
-                st.markdown(f"- **{title}**{why_text}")
-        st.markdown("</ul>", unsafe_allow_html=True)
+            why = r.get("why") or r.get("reason") or ""
+            st.markdown(f"- **{title}**")
+            if why:
+                st.caption(f"— {why}")
+
     # Mark these as seen so subsequent requests can dedupe
     _add_seen([r.get("doc_id", "") for r in recs if r.get("doc_id")])
 
@@ -242,7 +256,22 @@ st.write("")  # spacer
 
 # ---------- Query input row ----------
 
-q = st.text_input("Your question", key="q_input", placeholder="How can I help?")
+# Prefill handoff from recommendation clicks (or older prefill)
+forced = None
+if "__force_q" in st.session_state:
+    forced = st.session_state.pop("__force_q")
+elif "__prefill_q" in st.session_state:
+    forced = st.session_state.pop("__prefill_q")
+
+if forced:
+    # Set the input value BEFORE instantiating the widget
+    st.session_state["q_input"] = forced
+q = st.text_input(
+    "Your question",
+    key="q_input",
+    placeholder="How can I help?",
+    on_change=_mark_enter_submit,  # submit on Enter (or input commit)
+)
 c1, c2, c3 = st.columns([0.12, 0.18, 0.70])
 
 ask_clicked = False
@@ -273,24 +302,21 @@ with c3:
             unsafe_allow_html=True,
         )
 
-# Submit also on Enter in the input (without double-submit)
-if q and st.session_state.get("_last_q") != q and st.session_state.get("_enter_submit_once") is None:
-    st.session_state._enter_submit_once = True
-elif not q:
-    st.session_state._enter_submit_once = None
-
-should_ask = ask_clicked or (st.session_state._enter_submit_once is True and q.strip() != "")
+force_submit = bool(st.session_state.get("_force_ask"))
+enter_submit = bool(st.session_state.get("_ask_from_enter"))
+should_ask = ask_clicked or force_submit or enter_submit
 
 # ---------- Answer area ----------
 
 st.write("")  # spacer
-st.subheader("Latest answer")
+st.subheader("Shakers Agent:")
 
 recs_to_render: List[Dict[str, Any]] = []  # filled after each query
 
 if should_ask:
-    st.session_state._last_q = q
-    user_q = q.strip()
+    # Always read the latest value from session_state to avoid stale 'q' on reruns
+    user_q = (st.session_state.get("q_input") or "").strip()
+    st.session_state._last_q = user_q
 
     # Greeting → friendly message (no backend call)
     if is_greeting(user_q):
@@ -342,24 +368,17 @@ if should_ask:
             st.markdown(f'<span class="chip meta">{took_ms} ms</span>', unsafe_allow_html=True)
 
             st.write("")
-            # Show the question once (title-ish), then the cleaned answer
-            st.markdown(f"**{user_q}**")
             st.markdown(answer)
 
             # References
             with st.expander("References"):
                 if refs:
-                    st.markdown('<ul class="refs">', unsafe_allow_html=True)
                     for r in refs:
                         title = (r.get("title") or r.get("path") or r.get("id") or "KB").strip()
-                        url = r.get("url") or ""
-                        if url and (url.startswith("http") or url.startswith("kb://")):
-                            st.markdown(f"- [{title}]({url})")
-                        else:
-                            st.markdown(f"- {title}")
-                    st.markdown("</ul>", unsafe_allow_html=True)
+                        st.markdown(f"- {title}")
                 else:
                     st.caption("No references returned.")
+                
 
             # History
             st.session_state.history.insert(0, {"q": user_q, "oos": oos, "ms": took_ms})
@@ -369,6 +388,10 @@ if should_ask:
 
         elif resp is not None:
             st.error(f"Backend returned {resp.status_code}: {resp.text}")
+    
+    # Clear one-shot submit flags now that we've processed this run
+    st.session_state.pop("_force_ask", None)
+    st.session_state.pop("_ask_from_enter", None)
 
 # Render recommendations panel (updates after every query/greeting)
 if recs_to_render is not None:

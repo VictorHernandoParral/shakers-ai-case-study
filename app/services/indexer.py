@@ -1,4 +1,3 @@
-
 # =============================================
 # File: app/services/indexer.py
 # Purpose: Rebuild/refresh Chroma vector store from a local KB.

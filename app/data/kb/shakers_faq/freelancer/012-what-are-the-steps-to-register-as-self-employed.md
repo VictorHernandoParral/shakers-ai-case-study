@@ -2,16 +2,13 @@
 title: "What are the steps to register as self-employed?"
 audience: freelancer
 source: shakers_faq
+relpath: freelancer/012-what-are-the-steps-to-register-as-self-employed.md
 ordinal: 12
-relpath: shakers_faq/freelancer/012-what-are-the-steps-to-register-as-self-employed.md
-tags: [faq]
 ---
 
-# What are the steps to register as self-employed?
+**Answer:**
 
-**Q:** What are the steps to register as self-employed?
-
-**A:** Registration with the Tax Office:
+Registration with the Tax Office:
 
 Form 036 or 037: You must submit one of these forms to the Tax Office to notify them of the start of your economic activity. Form 037 is a simplified version of form 036.
 

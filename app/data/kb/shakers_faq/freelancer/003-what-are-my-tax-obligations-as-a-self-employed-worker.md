@@ -2,16 +2,13 @@
 title: "What are my tax obligations as a self-employed worker?"
 audience: freelancer
 source: shakers_faq
+relpath: freelancer/003-what-are-my-tax-obligations-as-a-self-employed-worker.md
 ordinal: 3
-relpath: shakers_faq/freelancer/003-what-are-my-tax-obligations-as-a-self-employed-worker.md
-tags: [faq]
 ---
 
-# What are my tax obligations as a self-employed worker?
+**Answer:**
 
-**Q:** What are my tax obligations as a self-employed worker?
-
-**A:** Declaration of registration with Social Security and the Tax Office.
+Declaration of registration with Social Security and the Tax Office.
 
 Invoicing: issue monthly invoices that must include your tax identification number, your client's tax identification number, the date of issue, a description of the goods or services, etc.
 
