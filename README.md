@@ -210,6 +210,32 @@ Response: `{ "recommendations": [{ "id": string|null, "title": string, "url": st
 - Storage: JSON file at `app/data/profiles/profiles.json`.
 
 
+## 📊 Metrics Dashboard
+
+The system includes a **live metrics dashboard** to monitor performance in real time.
+
+### Features
+- **KPIs:** total requests, rate-limit hits, OOS (true/false).
+- **Latency histogram:** requests distribution by response time buckets.
+- **Model usage:** per-model request counts.
+- **Endpoint performance:** average and p95 latency per route.
+- **Auto-refresh:** updates every 5 seconds.
+
+### Endpoints
+- `GET /metrics` → raw JSON snapshot (machine-friendly).
+- `GET /metrics/dashboard` → HTML dashboard (human-friendly).
+
+### How to Use
+1. Start the FastAPI app:
+
+   poetry run uvicorn app.main:app --reload
+
+2 . Go to:
+
+   http://localhost:8000/metrics/dashboard    
+
+
+
 # Notes
 
 All answers must be in English only (enforced by prompt).

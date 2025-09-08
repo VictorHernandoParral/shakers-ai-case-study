@@ -1,0 +1,217 @@
+<!-- =============================================
+File: app/templates/metrics.html
+Purpose: Simple metrics dashboard (cards + tables + charts)
+============================================= -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>{{ app_name }} — Metrics Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Lightweight styling -->
+  <style>
+    :root { --bg:#0b1220; --panel:#111a2b; --muted:#93a0b5; --fg:#e7eefc; --ok:#10b981; --warn:#f59e0b; --card:#0f172a; }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial; background: var(--bg); color: var(--fg); }
+    header { padding: 18px 22px; border-bottom: 1px solid #1f2a44; display:flex; justify-content:space-between; align-items:center;}
+    header h1 { margin: 0; font-size: 18px; letter-spacing:.3px; }
+    header .muted { color: var(--muted); font-size: 13px; }
+    .wrap { padding: 20px; max-width: 1200px; margin: 0 auto; }
+    .grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 16px; }
+    .card { background: var(--panel); border: 1px solid #1f2a44; border-radius: 12px; padding: 16px; }
+    .kpi { grid-column: span 3; }
+    .kpi h3 { margin: 0 0 8px 0; font-size: 13px; color: var(--muted); font-weight:600; }
+    .kpi .val { font-size: 28px; font-weight:800; margin: 0; }
+    .kpi.ok .val { color: var(--ok); }
+    .kpi.warn .val { color: var(--warn); }
+    .panel-title { margin: 0 0 10px 0; font-size: 14px; color: var(--muted); text-transform:uppercase; letter-spacing:.6px; }
+    table { width: 100%; border-collapse: collapse; font-size: 14px; }
+    th, td { padding: 8px 10px; border-bottom: 1px solid #1f2a44; text-align: left; }
+    th { color: var(--muted); font-weight: 600; }
+    .footer { color: var(--muted); font-size: 12px; margin-top: 10px; }
+    a { color: #93c5fd; text-decoration: none; }
+    .small { font-size: 12px; color: var(--muted); }
+    .row { display:flex; gap:16px; }
+    .flex-1 { flex:1 1 0; }
+    .chip { display:inline-block; border:1px solid #1f2a44; padding:2px 8px; border-radius:999px; font-size:12px; color:var(--muted); }
+  </style>
+  <!-- Chart.js via CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+<header>
+  <div>
+    <h1>{{ app_name }} • Metrics</h1>
+    <div class="muted">Live metrics fetched from <code>{{ metrics_endpoint }}</code> every {{ refresh_interval_ms // 1000 }}s</div>
+  </div>
+  <div><a class="chip" href="/docs">API docs</a></div>
+</header>
+
+<div class="wrap">
+  <div class="grid">
+    <div class="card kpi">
+      <h3>Requests total</h3>
+      <p class="val" id="k_req">—</p>
+      <div class="small">All endpoints</div>
+    </div>
+    <div class="card kpi warn">
+      <h3>Rate limit hits</h3>
+      <p class="val" id="k_rl">—</p>
+      <div class="small">HTTP 429 counts</div>
+    </div>
+    <div class="card kpi">
+      <h3>OOS (true)</h3>
+      <p class="val" id="k_oos_t">—</p>
+      <div class="small">Out-of-scope decisions</div>
+    </div>
+    <div class="card kpi">
+      <h3>OOS (false)</h3>
+      <p class="val" id="k_oos_f">—</p>
+      <div class="small">In-scope decisions</div>
+    </div>
+  </div>
+
+  <div class="row" style="margin-top:16px;">
+    <div class="card flex-1">
+      <h2 class="panel-title">Latency histogram (ms)</h2>
+      <canvas id="latencyChart" height="120"></canvas>
+    </div>
+    <div class="card" style="width:360px;">
+      <h2 class="panel-title">Model usage</h2>
+      <table id="modelTable">
+        <thead><tr><th>Model</th><th>Count</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top:16px;">
+    <h2 class="panel-title">Per-endpoint performance</h2>
+    <table id="endpointTable">
+      <thead>
+        <tr>
+          <th>Endpoint</th>
+          <th>Count</th>
+          <th>Avg (ms)</th>
+          <th>p95 (ms)</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+    <div class="footer">Generated: <span id="generatedAt">—</span></div>
+  </div>
+</div>
+
+<script>
+const METRICS_URL = "{{ metrics_endpoint }}";
+const REFRESH_MS = "{{ refresh_interval_ms }}";
+
+let latencyChart;
+
+function toFixed(n, d=1){ return (typeof n === "number") ? n.toFixed(d) : "0"; }
+
+function renderKPIs(m) {
+  document.getElementById('k_req').textContent = (m.counters?.requests_total ?? 0);
+  document.getElementById('k_rl').textContent  = (m.counters?.rate_limit_hits_total ?? 0);
+  document.getElementById('k_oos_t').textContent = (m.oos?.true ?? 0);
+  document.getElementById('k_oos_f').textContent = (m.oos?.false ?? 0);
+}
+
+function renderLatencyChart(m) {
+  const labels = (m.latency_ms?.buckets || []).map(String);
+  const counts = (m.latency_ms?.counts || []);
+  const ctx = document.getElementById('latencyChart').getContext('2d');
+
+  const data = {
+    labels,
+    datasets: [{
+      label: 'Requests',
+      data: counts,
+    }]
+  };
+  const opts = {
+    responsive: true,
+    plugins: { legend: { display: false } },
+    scales: {
+      x: { ticks: { color: '#93a0b5' } },
+      y: { ticks: { color: '#93a0b5' } }
+    }
+  };
+
+  if (latencyChart) {
+    latencyChart.data = data;
+    latencyChart.update();
+  } else {
+    latencyChart = new Chart(ctx, { type: 'bar', data, options: opts });
+  }
+}
+
+function renderModelUsage(m) {
+  const body = document.querySelector('#modelTable tbody');
+  body.innerHTML = '';
+  const mu = m.model_usage || {};
+  const keys = Object.keys(mu).sort((a,b)=>mu[b]-mu[a]);
+  if (keys.length === 0) {
+    const tr = document.createElement('tr');
+    tr.innerHTML = '<td colspan="2" class="small">No model usage yet.</td>';
+    body.appendChild(tr);
+    return;
+  }
+  keys.forEach(k => {
+    const tr = document.createElement('tr');
+    tr.innerHTML = `<td>${k}</td><td>${mu[k]}</td>`;
+    body.appendChild(tr);
+  });
+}
+
+function renderEndpoints(m) {
+  const body = document.querySelector('#endpointTable tbody');
+  body.innerHTML = '';
+  const eps = m.performance?.endpoints || {};
+  const rows = Object.entries(eps).map(([k,v]) => ({
+    key: k,
+    count: v.count || 0,
+    avg: v.avg_latency_ms || 0,
+    p95: v.p95_latency_ms || 0
+  })).sort((a,b)=>b.count-a.count);
+
+  if (rows.length === 0) {
+    const tr = document.createElement('tr');
+    tr.innerHTML = '<td colspan="4" class="small">No endpoint samples yet.</td>';
+    body.appendChild(tr);
+    return;
+  }
+
+  rows.forEach(r => {
+    const tr = document.createElement('tr');
+    tr.innerHTML = `
+      <td>${r.key}</td>
+      <td>${r.count}</td>
+      <td>${toFixed(r.avg)}</td>
+      <td>${toFixed(r.p95)}</td>
+    `;
+    body.appendChild(tr);
+  });
+
+  const ts = m.performance?.generated_at ? new Date(m.performance.generated_at * 1000) : null;
+  document.getElementById('generatedAt').textContent = ts ? ts.toLocaleString() : '—';
+}
+
+async function refresh() {
+  try {
+    const r = await fetch(METRICS_URL, { cache: 'no-store' });
+    const m = await r.json();
+    renderKPIs(m);
+    renderLatencyChart(m);
+    renderModelUsage(m);
+    renderEndpoints(m);
+  } catch (e) {
+    console.error('Failed to fetch metrics:', e);
+  }
+}
+
+refresh();
+setInterval(refresh, REFRESH_MS);
+</script>
+</body>
+</html>

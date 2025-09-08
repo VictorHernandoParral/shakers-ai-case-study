@@ -19,6 +19,7 @@ import time
 from app.utils import slog
 from app.routers import recommend as recommend_router
 from app.utils.metrics import record_request, record_endpoint
+from app.routers import metrics_dashboard
 
 from dotenv import load_dotenv
 load_dotenv()
@@ -143,3 +144,4 @@ app.include_router(query.router, prefix="/query", tags=["query"])        # :cont
 app.include_router(recommend.router, prefix="/recommend", tags=["recommend"])  # :contentReference[oaicite:1]{index=1}
 app.include_router(metrics.router)  #   :contentReference[oaicite:2]{index=2}
 app.include_router(recommend_router.router)
+app.include_router(metrics_dashboard.router)  # serves GET /metrics/dashboard
